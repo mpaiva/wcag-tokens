@@ -1,8 +1,20 @@
 # Accessible Design Tokens
 Explore a curated collection of design tokens designed to meet WCAG standards, aiding design systems in maintaining accessibility across size, spacing, color, typography, and timing. This repository provides guidelines, examples, and best practices to help designers and developers implement these tokens into their design systems, ensuring consistent and accessible digital interfaces.
 
+## Goals of the Accessible Design Tokens Repository
+
+The primary goal of the "Accessible Design Tokens" repository is to provide a comprehensive and standardized set of design tokens that align with the Web Content Accessibility Guidelines (WCAG). These tokens are crafted to facilitate the integration of accessibility into existing design systems efficiently and effectively. By utilizing this repository, designers and developers can achieve several key objectives:
+
+1. **Enhance Accessibility**: Ensure that digital products are accessible to all users, including those with disabilities. The tokens help address crucial accessibility issues related to visual and interactive elements.
+2. **Promote Consistency**: Aid in maintaining a consistent approach to accessibility across different parts of a product or service. By implementing these standardized tokens, teams can ensure that accessibility considerations are uniformly applied throughout.
+3. **Ease of Integration**: Provide a ready-to-use resource that can be seamlessly incorporated into existing design systems. The tokens are designed to be adaptable and can be customized to meet specific design requirements while adhering to accessibility standards.
+4. **Educate and Guide**: Serve as an educational tool for designers and developers new to accessibility, offering clear guidelines, examples, and best practices. This repository aims to raise awareness and understanding of accessibility principles and how they can be implemented in everyday design work.
+5. **Support Compliance**: Assist in meeting legal and regulatory requirements for accessibility. As many regions enforce compliance with standards like WCAG, using these design tokens can help organizations meet these obligations and avoid potential legal issues.
+6. **Foster Community Contribution**: Encourage the design and development community to contribute to the ongoing refinement and expansion of the design tokens. Open collaboration will help keep the tokens up-to-date with the latest accessibility standards and best practices.
+
+
 ## WCAG Success Criteria Supported by Design Tokens
-This section outlines how design tokens can be strategically employed within design systems to meet various WCAG success criteria. It focuses on size, spacing, color, typography, and timing, providing a framework for designers and developers to ensure that all digital content adheres to accessibility standards.
+This section explains how design tokens can be used in design systems to meet different WCAG success criteria. It focuses on key areas like size, spacing, color, typography, and timing. This provides a clear method for designers and developers to make sure all digital content follows accessibility standards. These tokens act as helpful tools that allow design teams to consistently apply accessibility throughout their projects, ensuring their work is inclusive and meets global accessibility guidelines.
 
 ### Size and Spacing
 - **1.4.12 Text Spacing**
