@@ -90,9 +90,41 @@ As we continue to refine and expand our repository, we aim to keep improving the
 We warmly invite contributions from the community! Whether you're a designer, developer, accessibility expert, or just passionate about making the web more accessible, your input is valuable. Here’s how you can get involved:
 
 - **Submit Token Ideas**: If you have ideas for new tokens or improvements to existing ones, please share them with us.
-- **Report Issues**: If you find any issues or inconsistencies in the current tokens, let us know through the repository's Issues section.
+- **Report Issues**: If you find any issues or inconsistencies in the current tokens, let us know through the repository's [Issues](https://github.com/mpaiva/accessible-design-tokens/issues) section.
 - **Improve Documentation**: Help us make our documentation clearer and more comprehensive to assist others in using and understanding our tokens.
 - **Spread the Word**: Share the repository with others who might find it useful or could contribute to its growth.
+
+To get started, check out our [contribution guidelines]((https://github.com/mpaiva/accessible-design-tokens/contribute.md)) on the repository’s main page. Together, we can build a more accessible digital world, one design token at a time!
+
+## How to Make a Contribution
+
+### Fork the Repository:
+- Start by forking the repository to your GitHub account.
+
+### Create a Branch:
+- Create a branch in your forked repository. This keeps your changes organized and separate from the main branch.
+
+### Make Your Changes:
+- Make the necessary changes or additions in your branch. Ensure that your changes adhere to the existing coding and documentation standards.
+
+### Submit a Pull Request:
+- Once you have completed your changes, submit a pull request to the main repository. Please provide a comprehensive description of what changes you have made and why.
+
+### Respond to Feedback:
+- Once your pull request is reviewed, there may be feedback. Responding promptly and making any required updates is crucial in the review process.
+
+## Code of Conduct
+- Be respectful of all contributors.
+- Engage constructively during disagreements.
+- Follow the community guidelines for appropriate behavior.
+
+By following these guidelines, you will help us maintain the quality and efficacy of our design tokens. We look forward to your contributions and thank you for helping us make the web a more accessible place for everyone!
+
+Please remember, your contributions indicate your agreement to abide by the repository's terms of use and its licensing agreements.
+
+## Questions?
+If you have any questions about contributing, please feel free to contact us via the repository's [Issues](https://github.com/mpaiva/accessible-design-tokens/issues) section or directly through our community communication channels.
+
 
 ## Credits (Placeholder)
 
