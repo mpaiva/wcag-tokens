@@ -94,7 +94,7 @@ We warmly invite contributions from the community! Whether you're a designer, de
 - **Improve Documentation**: Help us make our documentation clearer and more comprehensive to assist others in using and understanding our tokens.
 - **Spread the Word**: Share the repository with others who might find it useful or could contribute to its growth.
 
-To get started, check out our [contribution guidelines]((https://github.com/mpaiva/accessible-design-tokens/contribute.md) on the repository’s main page. Together, we can build a more accessible digital world, one design token at a time!
+To get started, check out our [contribution guidelines](https://github.com/mpaiva/accessible-design-tokens/contribute.md) on the repository’s main page. Together, we can build a more accessible digital world, one design token at a time!
 
 ## How to Make a Contribution
 
