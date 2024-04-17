@@ -43,4 +43,25 @@ This section outlines how design tokens can be strategically employed within des
   - Keyboard focus indicator must be visible.
 - **2.5.3 Label in Name**
   - Text labels must match the visual presentation for interactive elements.
+ 
+## Accessible Design Tokens Example
+The JSON file below provides a collection of design tokens structured to address the Web Content Accessibility Guidelines (WCAG). Each token corresponds to specific criteria such as size and spacing, colors, typography, and timing units, ensuring that your interfaces not only meet legal compliance but are genuinely accessible to all users. For developers looking to incorporate these tokens into their design systems, this resource offers a standardized approach to enforce accessibility features consistently. Import this JSON into your project to enhance interface accessibility and maintain consistency across your digital products.
+
+```json
+{  
+    "category": {  
+        "name": "category name",   
+        "description": "category description",   
+        "wcag-sc": "#.#.#",    
+        "token-set": {  
+            "token-name": "value",   
+            "token-name": "value",   
+            "token-name": "value",    
+            "token-name": "value",   
+            "token-name": "value"  
+        },   
+        "token-name": "value"
+    }  
+}  
+```
 
