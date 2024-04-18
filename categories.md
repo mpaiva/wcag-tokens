@@ -3,12 +3,12 @@
 This documentation provides detailed JSON structures for various design tokens aligned with specific WCAG success criteria. These tokens are intended to help designers and developers implement accessible design systems consistently and effectively.
 
 ## Table of Contents
-1. [Target Size (Minimum)](#target-size-minimum)
-2. [Reduced Motion](#reduced-motion)
-3. [Timing Control](#timing-control)
-4. [Focus Visibility](#focus-visibility)
-5. [Reflow](#reflow)
-6. [Content on Hover or Focus](#content-on-hover-or-focus)
+1. [Target Size (Minimum)](#255-target-size-minimum)
+2. [Reduced Motion](#233-animation-from-interactions)
+3. [Timing Control](#221-timing-adjustable)
+4. [Focus Visibility](#247-focus-visible)
+5. [Reflow](#1410-reflow)
+6. [Content on Hover or Focus](#1413-content-on-hover-or-focus)
 
 ---
 
