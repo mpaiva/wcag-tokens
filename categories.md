@@ -14,6 +14,7 @@ This documentation provides detailed JSON structures for various design tokens a
 
 ## 2.5.5 Target Size (Minimum)
 **Ensures interactive elements are large enough to be easily tapped or clicked.**
+
 **User Benefit:** Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity or precision, such as the elderly or those with motor disabilities, to interact with the content without frustration or errors. Larger clickable areas reduce the chance of missed clicks and improve the overall user experience by making interfaces more forgiving and easier to use.
 
 ```json
@@ -54,6 +55,7 @@ This documentation provides detailed JSON structures for various design tokens a
 
 ## 2.3.3 Animation from Interactions
 **Reduces or eliminates motion animation triggered by interaction unless essential.**
+
 **User Benefit:** Reducing or eliminating motion animations helps users who experience discomfort or seizures from animated content. It also benefits users who find animations distracting. Enabling reduced motion settings ensures that the interface remains comfortable and accessible for all users, including those sensitive to motion.
 
 ```json
@@ -72,27 +74,27 @@ This documentation provides detailed JSON structures for various design tokens a
         "tokens": [
           {
             "token-name": "reduceMotionEnabled",
-            "value": "true", // Boolean value indicating if the reduce motion settings should be applied
+            "value": "true",
             "wcag-level": "AAA"
           },
           {
             "token-name": "animationDuration",
-            "value": "0s", // Duration to effectively remove animations or transition effects
+            "value": "0s",
             "wcag-level": "AAA"
           },
           {
             "token-name": "animationTimingFunction",
-            "value": "linear", // Ensures animations are smooth and less intrusive if enabled
+            "value": "linear",
             "wcag-level": "AAA"
           },
           {
             "token-name": "animationTimingSpeed",
-            "value": "300ms", // Speed of animation, adjusted for reduced motion preferences
+            "value": "300ms",
             "wcag-level": "AAA"
           },
           {
             "token-name": "animationBezierCurve",
-            "value": "ease-out", // Specifies the Bezier curve to make the motion feel smoother and less jarring
+            "value": "ease-out",
             "wcag-level": "AAA"
           }
         ]
@@ -105,6 +107,7 @@ This documentation provides detailed JSON structures for various design tokens a
 
 ## 2.2.1 Timing Adjustable
 **Allows users to modify, extend, or disable timing constraints unless essential for real-time functionality.**
+
 **User Benefit:** Providing controls to adjust time limits allows users with different abilities to interact at their own pace. This is especially helpful for those who need more time to read or understand information, ensuring that everyone can use content comfortably without feeling rushed.
 
 ```json
@@ -123,12 +126,12 @@ This documentation provides detailed JSON structures for various design tokens a
         "tokens": [
           {
             "token-name": "defaultTimeLimit",
-            "value": "120000ms", // Default 120 seconds before content changes
+            "value": "120000ms",
             "wcag-level": "A"
           },
           {
             "token-name": "extendedTimeOption",
-            "value": "true", // Allows extension of time limits
+            "value": "true",
             "wcag-level": "A"
           }
         ]
@@ -140,6 +143,7 @@ This documentation provides detailed JSON structures for various design tokens a
 
 ## 2.2.2 Pause, Stop, Hide
 **Provides mechanisms for users to pause, stop, or hide moving, blinking, or auto-updating content.**
+
 **User Benefit:** This capability allows users to control media and animations that could be distracting or cause discomfort. By giving users the ability to pause, stop, or hide such content, it enhances accessibility and allows for a more personalized interaction experience.
 
 ```json
@@ -156,22 +160,22 @@ This documentation provides detailed JSON structures for various design tokens a
         "tokens": [
           {
             "token-name": "pauseControl",
-            "value": "available", // Indicates availability of a pause control
+            "value": "available",
             "wcag-level": "A"
           },
           {
             "token-name": "stopControl",
-            "value": "available", // Indicates availability of a stop control
+            "value": "available",
             "wcag-level": "A"
           },
           {
             "token-name": "hideControl",
-            "value": "available", // Indicates availability of a hide control
+            "value": "available",
             "wcag-level": "A"
           },
           {
             "token-name": "autoUpdateTimeout",
-            "value": "300000ms", // 5 minutes before auto-updating content changes, with control to pause or stop
+            "value": "300000ms",
             "wcag-level": "A"
           }
         ]
@@ -183,6 +187,7 @@ This documentation provides detailed JSON structures for various design tokens a
 ```
 ## 2.4.7 Focus Visible
 **Ensures that keyboard-operable user interfaces have a visible keyboard focus indicator.**
+
 **User Benefit:** Ensuring visible focus on interactive elements enhances accessibility for keyboard users, including those with visual impairments. It makes navigation predictable and provides clear feedback on where the interaction is occurring within the interface.
 
 ```json
@@ -201,47 +206,47 @@ This documentation provides detailed JSON structures for various design tokens a
         "tokens": [
           {
             "token-name": "focusBorderColor",
-            "value": "#FF3B3F", // Bright red for high visibility
+            "value": "#FF3B3F",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusBorderWidth",
-            "value": "2px", // Thick enough to be easily noticeable
+            "value": "2px",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusBorderStyle",
-            "value": "solid", // Solid style for clear visibility
+            "value": "solid",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusBorderRadius",
-            "value": "4px", // Optional styling for rounded corners
+            "value": "4px",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusOutlineWidth",
-            "value": "3px", // Width of the outline shown on focused elements
+            "value": "3px",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusOutlineStyle",
-            "value": "solid", // Style of the outline (e.g., solid, dotted, dashed)
+            "value": "solid",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusOutlineColor",
-            "value": "#3b99fc", // Color of the outline, should be highly visible against the background
+            "value": "#3b99fc",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusBackgroundColor",
-            "value": "#eaf4ff", // Background color change on focus to enhance visibility
+            "value": "#eaf4ff",
             "wcag-level": "AA"
           },
           {
             "token-name": "focusTextColor",
-            "value": "#000000", // Text color on focused elements, ensuring high contrast with background
+            "value": "#000000",
             "wcag-level": "AA"
           }
         ]
@@ -252,8 +257,10 @@ This documentation provides detailed JSON structures for various design tokens a
 ```
 ## 1.4.10 Reflow
 **Requires that content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:**
+
 - **Vertical scrolling content at a width equivalent to 320 CSS pixels;**
 - **Horizontal scrolling content at a height equivalent to 256 CSS pixels.**
+
 **User Benefit:** Ensuring content reflows properly allows users, especially those with low vision who may need to enlarge text, to view content without the need to scroll in two directions. This makes navigation easier and less frustrating, enhancing accessibility for users utilizing screen magnifiers or other assistive technologies.
 
 ```json
@@ -272,22 +279,22 @@ This documentation provides detailed JSON structures for various design tokens a
         "tokens": [
           {
             "token-name": "baseMargin",
-            "value": "16px", // Ensures sufficient space on the edges of content
+            "value": "16px",
             "wcag-level": "AA"
           },
           {
             "token-name": "basePadding",
-            "value": "16px", // Provides padding around content to prevent clipping
+            "value": "16px",
             "wcag-level": "AA"
           },
           {
             "token-name": "minimumViewportWidth",
-            "value": "320px", // Minimum width without horizontal scrolling
+            "value": "320px",
             "wcag-level": "AA"
           },
           {
             "token-name": "minimumViewportHeight",
-            "value": "256px", // Minimum height without vertical scrolling
+            "value": "256px",
             "wcag-level": "AA"
           }
         ]
@@ -298,6 +305,7 @@ This documentation provides detailed JSON structures for various design tokens a
 ```
 ## 1.4.13 Content on Hover or Focus
 **Ensures that additional content triggered by hover or keyboard focus is dismissible, hoverable, and persistent.**
+
 **User Benefit:** This criterion helps users who need more time to interact with content that appears when an element is hovered over or focused. Making this content dismissible, hoverable, and persistent ensures that all users, especially those with limited motor skills or cognitive disabilities, can fully interact with additional content without it disappearing unexpectedly.
 
 ```json
@@ -316,22 +324,22 @@ This documentation provides detailed JSON structures for various design tokens a
         "tokens": [
           {
             "token-name": "focusBorderColor",
-            "value": "#1A73E8", // A blue color that generally meets contrast requirements
+            "value": "#1A73E8",
             "wcag-level": "AA"
           },
           {
             "token-name": "hoverBackgroundColor",
-            "value": "#F1F3F4", // Light grey background for hover, ensuring visibility
+            "value": "#F1F3F4",
             "wcag-level": "AA"
           },
           {
             "token-name": "dismissButtonSize",
-            "value": "44px", // Ensures that dismiss buttons are easily clickable, meeting minimum target size
+            "value": "44px",
             "wcag-level": "AA"
           },
           {
             "token-name": "persistentVisibilityDuration",
-            "value": "5000ms", // Duration to keep hover/focus content visible, facilitating ease of use
+            "value": "5000ms",
             "wcag-level": "AA"
           }
         ]
