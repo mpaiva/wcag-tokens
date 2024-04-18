@@ -57,23 +57,23 @@ This section explains how design tokens can be used in design systems to meet di
   - Text labels must match the visual presentation for interactive elements.
  
 ## Accessible Design Tokens Example
-The JSON file below provides a collection of design tokens structured to address the Web Content Accessibility Guidelines (WCAG). Each token corresponds to specific criteria such as size and spacing, colors, typography, and timing units, ensuring that your interfaces not only meet legal compliance but are genuinely accessible to all users. For developers looking to incorporate these tokens into their design systems, this resource offers a standardized approach to enforce accessibility features consistently. Import this JSON into your project to enhance interface accessibility and maintain consistency across your digital products.
+The JSON file presented below offers an example of a collection of design tokens designed to align with the Web Content Accessibility Guidelines (WCAG). These tokens encapsulate the best practices as per WCAG 2.5.5, ensuring that elements such as buttons, links, and custom controls have a minimum size of 44x44 pixels:
 
 ### Target Size (Minimum)
-Design tokens that specify minimum target sizes for interactive elements to enhance usability and accessibility for all users.
+Design tokens that establish minimum target sizes for interactive elements, thereby enhancing usability and accessibility for all users.
 ```json
 {
   "category": {
     "category-name": "Target Size",
-    "category-description": "Design tokens to ensure compliance with WCAG 2.5.5, specifying minimum target sizes for interactive elements.",
+    "category-description": "Design tokens to ensure compliance with WCAG 2.5.5, specifying minimum target sizes for interactive elements to promote better interaction.",
     "token-sets": [
       {
         "token-set-name": "Minimum Target Size Tokens",
-        "token-set-description": "Tokens define the minimum size for interactive elements such as buttons, links, and custom controls.",
+        "token-set-description": "These tokens set the minimum dimensions for interactive elements like buttons, links, and custom controls to facilitate easier access.",
         "wcag-sc": "2.5.5",
         "wcag-url": "https://www.w3.org/TR/WCAG/#target-size",
         "wcag-level": "AA",
-        "user-benefit": "Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity to interact without frustration.",
+        "user-benefit": "By specifying a minimum target size, these tokens help ensure that all users, especially those with limited dexterity, can interact with elements more easily and with less likelihood of error.",
         "tokens": [
           {"token-name": "minimumButtonSize", "value": "44px"},
           {"token-name": "minimumIconSize", "value": "44px"},
@@ -84,6 +84,8 @@ Design tokens that specify minimum target sizes for interactive elements to enha
   }
 }
 ```
+
+For a complete set of WCAG success criteria tokens, [visit the Categories page](categories.md). 
 
 ## Next Steps and Contributing to the Repository
 
