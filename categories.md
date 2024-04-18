@@ -341,9 +341,10 @@ This documentation provides detailed JSON structures for various design tokens a
 }
 ```
 
-## Additional tokens under evaluation
-Describe
+## Additional Tokens Under Evaluation
+This section outlines potential future tokens or current considerations for new token implementations aimed at further enhancing accessibility. We continuously explore new areas where design tokens can be beneficial, such as adapting to emerging technologies, addressing newly identified accessibility challenges, or refining existing solutions based on user feedback. Our goal is to stay at the forefront of accessibility improvements to ensure that all users have the best possible experience.
 
-## Suggest a token
-Describe
+## Suggest a Token
+We highly value community input and encourage you to propose new tokens or suggest improvements to existing ones. Your contributions can make a significant impact on making digital content more accessible to everyone. If you have ideas for new tokens or enhancements to our current set, please submit your suggestions through our [GitHub Issues page](https://github.com/mpaiva/accessible-design-tokens/issues). We look forward to your innovative ideas and feedback!
+
 
