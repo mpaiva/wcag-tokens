@@ -83,6 +83,7 @@ Design tokens that specify minimum target sizes for interactive elements to enha
     ]
   }
 }
+```
 
 ## Next Steps and Contributing to the Repository
 
