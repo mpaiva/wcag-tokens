@@ -7,6 +7,8 @@ Our mission is to enhance digital accessibility by providing a robust and standa
 ## Creating WCAG Design Tokens
 Our initiative focuses on creating design tokens that can be used in design systems to meet different WCAG success criteria. It focuses on key areas like size, spacing, color, typography, and timing. This provides a clear method for designers and developers to make sure all digital content follows accessibility standards. These tokens act as helpful tools that allow design teams to consistently apply accessibility throughout their projects, ensuring their work is inclusive and meets global accessibility guidelines.
 
+Below is a comprehensive list of the key WCAG criteria that our design tokens will address:
+
 ### Size and Spacing
 - **1.4.12 Text Spacing**
   - Modify text spacing (line height, paragraph spacing, letter spacing, word spacing) without loss of content or functionality.
