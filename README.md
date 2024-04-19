@@ -50,32 +50,40 @@ Below is a comprehensive list of the key WCAG criteria that our design tokens wi
   - Text labels must match the visual presentation for interactive elements.
  
 ## Accessible Design Tokens Example
-The JSON file presented below offers an example of a collection of design tokens designed to align with the Web Content Accessibility Guidelines (WCAG). These tokens encapsulate the best practices as per WCAG 2.5.5, ensuring that elements such as buttons, links, and custom controls have a minimum size of 44x44 pixels:
+The JSON file presented below offers an example of a collection of design tokens designed to align with the Web Content Accessibility Guidelines (WCAG):
 
-### Target Size (Minimum)
-Design tokens that establish minimum target sizes for interactive elements, thereby enhancing usability and accessibility for all users.
-```json
+```
 {
   "category": {
-    "category-name": "Target Size",
-    "category-description": "Design tokens to ensure compliance with WCAG 2.5.5, specifying minimum target sizes for interactive elements to promote better interaction.",
+    "category-name": "Category Name",
+    "category-description": "Description of how these design tokens ensure compliance with a specific WCAG criterion, highlighting their role in enhancing usability and accessibility.",
     "token-sets": [
       {
-        "token-set-name": "Minimum Target Size Tokens",
-        "token-set-description": "These tokens set the minimum dimensions for interactive elements like buttons, links, and custom controls to facilitate easier access.",
-        "wcag-sc": "2.5.5",
-        "wcag-url": "https://www.w3.org/TR/WCAG/#target-size",
-        "wcag-level": "AA",
-        "user-benefit": "By specifying a minimum target size, these tokens help ensure that all users, especially those with limited dexterity, can interact with elements more easily and with less likelihood of error.",
+        "token-set-name": "Token Set Name",
+        "token-set-description": "Detailed description of what these tokens accomplish and how they meet or exceed specific WCAG criteria.",
+        "wcag-sc": "WCAG Success Criterion Number",
+        "wcag-url": "URL to the specific WCAG criterion",
+        "wcag-level": "WCAG Compliance Level (A, AA, or AAA)",
+        "user-benefit": "Explanation of how these tokens benefit users, particularly those with disabilities, to interact more effectively with the content.",
         "tokens": [
-          {"token-name": "minimumButtonSize", "value": "44px"},
-          {"token-name": "minimumIconSize", "value": "44px"},
-          {"token-name": "minimumCustomControlSize", "value": "44px"}
+          {
+            "token-name": "Token Name",
+            "value": "Token Value",
+            "wcag-level": "WCAG Compliance Level"
+          },
+          {
+            "token-name": "Additional Token Name",
+            "value": "Additional Token Value",
+            "wcag-level": "WCAG Compliance Level"
+          }
+          // Add more tokens as needed
         ]
       }
+      // Add more token sets as needed
     ]
   }
 }
+
 ```
 
 For a complete set of WCAG success criteria tokens, [visit the Categories page](categories.md). 
