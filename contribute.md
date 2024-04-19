@@ -4,10 +4,10 @@ Thank you for your interest in contributing to the Accessible Design Tokens repo
 
 ## Ways to Contribute
 1. **Submit Design Token Proposals**:
-   - If you have ideas for new design tokens or improvements to existing ones that can enhance accessibility, we encourage you to share them via the [Issues page](https://github.com/mpaiva/accessible-design-tokens/issues). Please include a detailed description and rationale for how these tokens will help meet WCAG standards.
+   - If you have ideas for new design tokens or improvements to existing ones that can enhance accessibility, we encourage you to please include a detailed description and rationale for how these tokens will help meet WCAG standards and share them via the [Issues page](https://github.com/mpaiva/accessible-design-tokens/issues).
 
 2. **Report Bugs and Issues**:
-   - If you encounter any bugs or issues within the existing tokens or documentation, please report them through the [Issues page](https://github.com/mpaiva/accessible-design-tokens/issues). Provide a clear description of the problem and, if possible, steps to reproduce it.
+   - If you encounter any bugs or issues within the existing tokens or documentation, please provide a clear description of the problem and, if possible, steps to reproduce it, through the [Issues page](https://github.com/mpaiva/accessible-design-tokens/issues).
 
 3. **Enhance Documentation**:
    - Good documentation helps everyone. If you can clarify existing content, add examples, or translate documentation into other languages, your contributions are greatly welcome.
