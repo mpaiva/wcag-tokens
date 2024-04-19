@@ -85,10 +85,11 @@ The JSON file below offers an example of the template we are using for a collect
 }
 
 ```
-### Bringing it to the real world
+
+**Bringing it to the real world**
 And here is how this would translate for a WCAG criterion like **WCAG 2.5.5 Target Size (Minimum)**
 
-#### 2.5.5 Target Size (Minimum)
+### 2.5.5 Target Size (Minimum)
 **Ensures interactive elements are large enough to be easily tapped or clicked.**
 
 **User Benefit:** Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity or precision, such as the elderly or those with motor disabilities, to interact with the content without frustration or errors. Larger clickable areas reduce the chance of missed clicks and improve the overall user experience by making interfaces more forgiving and easier to use.
