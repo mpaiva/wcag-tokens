@@ -87,6 +87,7 @@ The JSON file below offers an example of the template we are using for a collect
 ```
 
 **Bringing it to the real world**
+
 And here is how this would translate for a WCAG criterion like **WCAG 2.5.5 Target Size (Minimum)**
 
 ### 2.5.5 Target Size (Minimum)
