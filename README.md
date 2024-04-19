@@ -2,12 +2,10 @@
 Explore a curated collection of design tokens designed to meet WCAG standards, aiding design systems in maintaining accessibility across size, spacing, color, typography, and timing. This repository provides guidelines, examples, and best practices to help designers and developers implement these tokens into their design systems, ensuring consistent and accessible digital interfaces.
 
 ## About this community
-
 Our mission is to enhance digital accessibility by providing a robust and standardized set of design tokens aligned with the Web Content Accessibility Guidelines (WCAG). We empower designers and developers to seamlessly integrate these tokens into existing design systems, ensuring that digital products are accessible to all users, including those with disabilities.
 
-
-## WCAG Success Criteria Supported by Design Tokens
-This section explains how design tokens can be used in design systems to meet different WCAG success criteria. It focuses on key areas like size, spacing, color, typography, and timing. This provides a clear method for designers and developers to make sure all digital content follows accessibility standards. These tokens act as helpful tools that allow design teams to consistently apply accessibility throughout their projects, ensuring their work is inclusive and meets global accessibility guidelines.
+## Creating WCAG Design Tokens
+Our initiative focuses on creating design tokens that can be used in design systems to meet different WCAG success criteria. It focuses on key areas like size, spacing, color, typography, and timing. This provides a clear method for designers and developers to make sure all digital content follows accessibility standards. These tokens act as helpful tools that allow design teams to consistently apply accessibility throughout their projects, ensuring their work is inclusive and meets global accessibility guidelines.
 
 ### Size and Spacing
 - **1.4.12 Text Spacing**
