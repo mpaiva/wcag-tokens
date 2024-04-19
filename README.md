@@ -50,7 +50,7 @@ Below is a comprehensive list of the key WCAG criteria that our design tokens wi
   - Text labels must match the visual presentation for interactive elements.
  
 ## Accessible Design Tokens Example
-The JSON file presented below offers an example of a collection of design tokens designed to align with the Web Content Accessibility Guidelines (WCAG):
+The JSON file below offers an example of the template we are using for a collection of design tokens designed to align with the Web Content Accessibility Guidelines (WCAG):
 
 ```json
 {
@@ -84,6 +84,48 @@ The JSON file presented below offers an example of a collection of design tokens
   }
 }
 
+```
+And here is how this would translate for a WCAG criterion like **WCAG 2.5.5 Target Size (Minimum)**
+
+### 2.5.5 Target Size (Minimum)
+**Ensures interactive elements are large enough to be easily tapped or clicked.**
+
+**User Benefit:** Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity or precision, such as the elderly or those with motor disabilities, to interact with the content without frustration or errors. Larger clickable areas reduce the chance of missed clicks and improve the overall user experience by making interfaces more forgiving and easier to use.
+
+```json
+{
+  "category": {
+    "category-name": "Target Size",
+    "category-description": "Design tokens to ensure compliance with WCAG 2.5.5, specifying minimum target sizes for interactive elements to enhance usability and accessibility for all users, including those with motor impairments.",
+    "token-sets": [
+      {
+        "token-set-name": "Minimum Target Size Tokens",
+        "token-set-description": "Tokens define the minimum size for interactive elements such as buttons, links, and custom controls to meet or exceed the recommended target size of 44 by 44 CSS pixels, enhancing accessibility for users who may struggle with smaller targets.",
+        "wcag-sc": "2.5.5",
+        "wcag-url": "https://www.w3.org/TR/WCAG/#target-size",
+        "wcag-level": "AA",
+        "user-benefit": "Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity or precision, such as the elderly or those with motor disabilities, to interact with the content without frustration or errors. Larger clickable areas reduce the chance of missed clicks and improve the overall user experience by making interfaces more forgiving and easier to use.",
+        "tokens": [
+          {
+            "token-name": "minimumButtonSize",
+            "value": "44px",
+            "wcag-level": "AA"
+          },
+          {
+            "token-name": "minimumIconSize",
+            "value": "44px",
+            "wcag-level": "AA"
+          },
+          {
+            "token-name": "minimumCustomControlSize",
+            "value": "44px",
+            "wcag-level": "AA"
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 
 For a complete set of WCAG success criteria tokens, [visit the Categories page](categories.md). 
