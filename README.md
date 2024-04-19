@@ -85,9 +85,10 @@ The JSON file below offers an example of the template we are using for a collect
 }
 
 ```
+### Bringing it to the real world
 And here is how this would translate for a WCAG criterion like **WCAG 2.5.5 Target Size (Minimum)**
 
-### 2.5.5 Target Size (Minimum)
+#### 2.5.5 Target Size (Minimum)
 **Ensures interactive elements are large enough to be easily tapped or clicked.**
 
 **User Benefit:** Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity or precision, such as the elderly or those with motor disabilities, to interact with the content without frustration or errors. Larger clickable areas reduce the chance of missed clicks and improve the overall user experience by making interfaces more forgiving and easier to use.
@@ -107,18 +108,18 @@ And here is how this would translate for a WCAG criterion like **WCAG 2.5.5 Targ
         "user-benefit": "Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity or precision, such as the elderly or those with motor disabilities, to interact with the content without frustration or errors. Larger clickable areas reduce the chance of missed clicks and improve the overall user experience by making interfaces more forgiving and easier to use.",
         "tokens": [
           {
-            "token-name": "minimumButtonSize",
-            "value": "44px",
+            "token-name": "minimumButtonSize",  // Token name
+            "value": "44px",                    // Token value
             "wcag-level": "AA"
           },
           {
-            "token-name": "minimumIconSize",
-            "value": "44px",
+            "token-name": "minimumIconSize",    // Token name
+            "value": "44px",                    // Token value
             "wcag-level": "AA"
           },
           {
-            "token-name": "minimumCustomControlSize",
-            "value": "44px",
+            "token-name": "minimumCustomControlSize",   // Token name
+            "value": "44px",                            // Token value
             "wcag-level": "AA"
           }
         ]
