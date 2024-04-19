@@ -52,7 +52,7 @@ Below is a comprehensive list of the key WCAG criteria that our design tokens wi
 ## Accessible Design Tokens Example
 The JSON file presented below offers an example of a collection of design tokens designed to align with the Web Content Accessibility Guidelines (WCAG):
 
-```
+```python
 {
   "category": {
     "category-name": "Category Name",
