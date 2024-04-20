@@ -63,7 +63,7 @@ The JSON file below offers an example of the template we are using for a collect
         "token-set-description": "Detailed description of what these tokens accomplish and how they meet or exceed specific WCAG criteria.",
         "wcag-sc": "WCAG Success Criterion Number",
         "wcag-ver": "WCAG Release version",
-        "wcag-rel": [
+        "wcag-rel": [    // Laws are included if relate to this WCAG success criteria
           "S508",     // Section 508 (USA)
           "ADAT2",    // ADA Title II (USA)
           "ADAT3",    // ADA Title III (USA)
@@ -78,10 +78,12 @@ The JSON file below offers an example of the template we are using for a collect
         "user-benefit": "Explanation of how these tokens benefit users, particularly those with disabilities, to interact more effectively with the content.",
         "tokens": [
           {
-            "token-name": "Token Name",
+            "token-name": "wcag-tokenName",      // "wcag-" prefix + "tokenName"
             "value": "Token Value",
-            "type": "Token Type",
-            "wcag-level": "WCAG Compliance Level"
+            "type": "Value Type",
+            "wcag-level": "WCAG Compliance Level",
+            "wcag-principle": "POUR Category"
+            "instructions": "How to apply this token?"
           },
           {
             "token-name": "Additional Token Name",
@@ -96,7 +98,6 @@ The JSON file below offers an example of the template we are using for a collect
     ]
   }
 }
-
 
 ```
 
