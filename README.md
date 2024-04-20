@@ -1,5 +1,5 @@
-# Accessible Design Tokens
-Explore a curated collection of design tokens designed to meet WCAG standards, aiding design systems in maintaining accessibility across size, spacing, color, typography, and timing. This repository provides guidelines, examples, and best practices to help designers and developers implement these tokens into their design systems, ensuring consistent and accessible digital interfaces.
+# WCAG Tokens
+Explore a curated collection of design tokens designed to meet WCAG standards, aiding design systems in maintaining accessibility across size, spacing, color, typography, and timing. This repository provides guidelines, examples, and best practices to help designers and developers **implement these tokens into their existing design systems**, ensuring consistent and accessible digital interfaces.
 
 ## About this community
 Our mission is to enhance digital accessibility by providing a robust and standardized set of design tokens aligned with the Web Content Accessibility Guidelines (WCAG). We empower designers and developers to seamlessly integrate these tokens into existing design systems, ensuring that digital products are accessible to all users, including those with disabilities.
