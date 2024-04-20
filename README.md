@@ -112,38 +112,40 @@ And here is how this would translate for a WCAG criterion like **WCAG 2.5.5 Targ
 
 ```json
 {
-  "category": {
-    "category-name": "Target Size",
-    "category-description": "Design tokens to ensure compliance with WCAG 2.5.5, specifying minimum target sizes for interactive elements to enhance usability and accessibility for all users, including those with motor impairments.",
-    "token-sets": [
-      {
-        "token-set-name": "Minimum Target Size Tokens",
-        "token-set-description": "Tokens define the minimum size for interactive elements such as buttons, links, and custom controls to meet or exceed the recommended target size of 44 by 44 CSS pixels, enhancing accessibility for users who may struggle with smaller targets.",
-        "wcag-sc": "2.5.5",
-        "wcag-url": "https://www.w3.org/TR/WCAG/#target-size",
-        "wcag-level": "AA",
-        "user-benefit": "Ensuring a minimum target size for interactive elements makes it easier for users with limited dexterity or precision, such as the elderly or those with motor disabilities, to interact with the content without frustration or errors. Larger clickable areas reduce the chance of missed clicks and improve the overall user experience by making interfaces more forgiving and easier to use.",
-        "tokens": [
-          {
-            "token-name": "minimumButtonSize",  // Token name
-            "value": "44px",                    // Token value
-            "wcag-level": "AA"
-          },
-          {
-            "token-name": "minimumIconSize",    // Token name
-            "value": "44px",                    // Token value
-            "wcag-level": "AA"
-          },
-          {
-            "token-name": "minimumCustomControlSize",   // Token name
-            "value": "44px",                            // Token value
-            "wcag-level": "AA"
-          }
-        ]
-      }
-    ]
-  }
+  "category-name": "Interactive Element Size",
+  "category-description": "Ensures that interactive elements are of a minimum size to be easily tapped or clicked, improving usability for all users, especially those with motor disabilities.",
+  "token-sets": [
+    {
+      "token-set-name": "Minimum Target Size Tokens",
+      "token-set-description": "Provides design tokens that specify the minimum size for interactive elements to meet WCAG 2.5.5 requirements, ensuring accessibility for users with motor impairments.",
+      "wcag-sc": "2.5.5",
+      "wcag-ver": "WCAG 2.2",
+      "wcag-rel": ["EAA", "EAUK", "DDAAU"],
+      "wcag-url": "https://www.w3.org/TR/WCAG21/#target-size-minimum",
+      "wcag-level": "AA",
+      "user-benefit": "Makes interactive elements easier to operate, reducing errors and improving interaction for users with limited dexterity or precision.",
+      "tokens": [
+        {
+          "token-name": "wcag-minimumButtonSize",
+          "value": "44px",
+          "type": "Dimension",
+          "wcag-level": "AA",
+          "wcag-principle": "Operable",
+          "instructions": "Apply this size as the minimum dimension for buttons and similar interactive controls."
+        },
+        {
+          "token-name": "wcag-minimumIconSize",
+          "value": "44px",
+          "type": "Dimension",
+          "wcag-level": "AA",
+          "wcag-principle": "Operable",
+          "instructions": "Ensure icons that function as interactive controls also meet this minimum size requirement."
+        }
+      ]
+    }
+  ]
 }
+
 ```
 
 For a complete set of WCAG success criteria tokens, [visit the Categories page](categories.md). 
