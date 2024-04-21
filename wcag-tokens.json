@@ -1,4 +1,4 @@
-[
+  [
    {
       "category-name":"Typography",
       "category-description":"Enhances readability and accessibility by allowing customization of text spacing to accommodate user needs.",
@@ -57,7 +57,7 @@
             ]
          }
       ]
-   },
+  },
    {
       "category-name":"Color Usage",
       "category-description":"Ensures that color is not used as the sole method for conveying critical information, to accommodate users who cannot perceive color differences.",
@@ -181,4 +181,4 @@
          }
       ]
    }
-]
+  ]
