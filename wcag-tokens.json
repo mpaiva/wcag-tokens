@@ -1,0 +1,184 @@
+[
+   {
+      "category-name":"Typography",
+      "category-description":"Enhances readability and accessibility by allowing customization of text spacing to accommodate user needs.",
+      "token-sets":[
+         {
+            "token-set-name":"Text Spacing Adjustment",
+            "token-set-description":"Provides tokens to adjust line height, letter spacing, word spacing, and paragraph spacing to ensure text remains readable when spacing is increased up to the levels specified in WCAG 1.4.12.",
+            "wcag-sc":"1.4.12",
+            "wcag-ver":"WCAG 2.1",
+            "wcag-rel":[
+               "S508",
+               "ADAT2",
+               "ADAT3",
+               "ACA",
+               "EAA",
+               "EAUK",
+               "DDAAU",
+               "IRPDA"
+            ],
+            "wcag-url":"https://www.w3.org/TR/WCAG21/#text-spacing",
+            "wcag-level":"AA",
+            "user-benefit":"Allows users with visual impairments or cognitive disabilities to adjust text spacing to improve readability and comprehension.",
+            "tokens":[
+               {
+                  "token-name":"wcag-lineHeight",
+                  "value":"1.5em",
+                  "type":"Length",
+                  "wcag-level":"AA",
+                  "wcag-principle":"Understandable",
+                  "instructions":"Apply as minimum line height to text content."
+               },
+               {
+                  "token-name":"wcag-letterSpacing",
+                  "value":"0.12em",
+                  "type":"Length",
+                  "wcag-level":"AA",
+                  "wcag-principle":"Understandable",
+                  "instructions":"Apply as letter spacing to all text elements."
+               },
+               {
+                  "token-name":"wcag-wordSpacing",
+                  "value":"0.16em",
+                  "type":"Length",
+                  "wcag-level":"AA",
+                  "wcag-principle":"Understandable",
+                  "instructions":"Apply as word spacing to enhance readability."
+               },
+               {
+                  "token-name":"wcag-paragraphSpacing",
+                  "value":"0.8em",
+                  "type":"Length",
+                  "wcag-level":"AA",
+                  "wcag-principle":"Understandable",
+                  "instructions":"Use to set spacing between paragraphs to avoid visual crowding."
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "category-name":"Color Usage",
+      "category-description":"Ensures that color is not used as the sole method for conveying critical information, to accommodate users who cannot perceive color differences.",
+      "token-sets":[
+         {
+            "token-set-name":"Color Usage Guidelines",
+            "token-set-description":"Provides design tokens that ensure text and interactive elements can be understood without relying solely on color, thereby meeting WCAG 1.4.1 requirements.",
+            "wcag-sc":"1.4.1",
+            "wcag-ver":"WCAG 2.1",
+            "wcag-rel":[
+               "S508",
+               "ADAT2",
+               "ADAT3",
+               "ACA",
+               "EAA",
+               "EAUK",
+               "DDAAU",
+               "IRPDA"
+            ],
+            "wcag-url":"https://www.w3.org/TR/WCAG21/#use-of-color",
+            "wcag-level":"A",
+            "user-benefit":"Helps users who have color vision deficiencies to access and understand content without ambiguity.",
+            "tokens":[
+               {
+                  "token-name":"wcag-nonColorIndicator",
+                  "value":"Underline",
+                  "type":"Visual Indicator",
+                  "wcag-level":"A",
+                  "wcag-principle":"Perceivable",
+                  "instructions":"Apply non-color indicators such as underlines to links or other interactive elements."
+               },
+               {
+                  "token-name":"wcag-additionalCues",
+                  "value":"Icons, Text Labels",
+                  "type":"Additional Cues",
+                  "wcag-level":"A",
+                  "wcag-principle":"Perceivable",
+                  "instructions":"Incorporate icons or text labels to supplement color cues for actions or statuses."
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "category-name":"Contrast",
+      "category-description":"Ensures that text and images of text maintain a minimum contrast ratio, making content accessible to users with visual impairments.",
+      "token-sets":[
+         {
+            "token-set-name":"Minimum Contrast Tokens",
+            "token-set-description":"Provides design tokens that specify color combinations for text and backgrounds that meet or exceed the minimum contrast ratio requirements of WCAG 1.4.3.",
+            "wcag-sc":"1.4.3",
+            "wcag-ver":"WCAG 2.1",
+            "wcag-rel":[
+               "S508",
+               "ADAT2",
+               "ADAT3",
+               "ACA",
+               "EAA",
+               "EAUK",
+               "DDAAU",
+               "IRPDA"
+            ],
+            "wcag-url":"https://www.w3.org/TR/WCAG21/#contrast-minimum",
+            "wcag-level":"AA",
+            "user-benefit":"Facilitates readability for users with low vision and those who struggle with text under less than ideal conditions.",
+            "tokens":[
+               {
+                  "token-name":"wcag-textContrast",
+                  "value":"4.5:1",
+                  "type":"Contrast Ratio",
+                  "wcag-level":"AA",
+                  "wcag-principle":"Perceivable",
+                  "instructions":"Apply this contrast ratio between text and its background for normal text."
+               },
+               {
+                  "token-name":"wcag-largeTextContrast",
+                  "value":"3:1",
+                  "type":"Contrast Ratio",
+                  "wcag-level":"AA",
+                  "wcag-principle":"Perceivable",
+                  "instructions":"Apply this contrast ratio for large-scale text and images of large-scale text."
+               }
+            ]
+         },
+         {
+            "token-set-name":"Enhanced Contrast Tokens",
+            "token-set-description":"These design tokens define color combinations for text and backgrounds that exceed the minimum requirements, meeting the enhanced contrast ratios specified in WCAG 1.4.6.",
+            "wcag-sc":"1.4.6",
+            "wcag-ver":"WCAG 2.1",
+            "wcag-rel":[
+               "S508",
+               "ADAT2",
+               "ADAT3",
+               "ACA",
+               "EAA",
+               "EAUK",
+               "DDAAU",
+               "IRPDA"
+            ],
+            "wcag-url":"https://www.w3.org/TR/WCAG21/#contrast-enhanced",
+            "wcag-level":"AAA",
+            "user-benefit":"Ensures that text is easily readable without strain in a variety of settings and for users with more significant vision impairments.",
+            "tokens":[
+               {
+                  "token-name":"wcag-enhancedTextContrast",
+                  "value":"7:1",
+                  "type":"Contrast Ratio",
+                  "wcag-level":"AAA",
+                  "wcag-principle":"Perceivable",
+                  "instructions":"Apply this contrast ratio between text and its background for normal text."
+               },
+               {
+                  "token-name":"wcag-largeEnhancedTextContrast",
+                  "value":"4.5:1",
+                  "type":"Contrast Ratio",
+                  "wcag-level":"AAA",
+                  "wcag-principle":"Perceivable",
+                  "instructions":"Apply this contrast ratio for large-scale text and images of large-scale text."
+               }
+            ]
+         }
+      ]
+   }
+]
