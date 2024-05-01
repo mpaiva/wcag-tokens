@@ -4,10 +4,6 @@
     "version": "0.1.0",
     "title": "Accessibility Design Tokens",
     "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
-    "author": "Marcelo Paiva",
-    "date": "2024-May-22",
-    "license": "MIT",
-    "repository": "https://github.com/mpaiva/wcag-tokens",
     "wcagTokens": [
       {
         "tokenSetName": "Live Captions",
@@ -494,7 +490,77 @@
             "tokenInstructions": "Optionally apply this animation to the focus indicator to gently draw attention."
           }
         ]
+      },
+      {
+        "tokenSetName": "Target Size Enhanced",
+        "tokenSetDescription": "Design tokens for ensuring enhanced target sizes for interactive elements, adhering to WCAG 2.5.5 (Level AAA).",
+        "tokenSetBenefit": "Improves accessibility for users with motor impairments or those using assistive technologies by providing larger target areas for interaction.",
+        "wcagVersion": "2.1",
+        "wcagCriterion": "2.5.5",
+        "wcagPrinciple": "Operable",
+        "wcagLevel": "AAA",
+        "wcagUrl": "https://www.w3.org/TR/WCAG21/#target-size-enhanced",
+        "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+        "tokens": [
+          {
+            "tokenName": "wcag-enhancedTargetSize",
+            "tokenValue": "48px",
+            "tokenType": "Length",
+            "tokenInstructions": "Set the minimum size for interactive elements (buttons, links, form controls, etc.) to enhance target acquisition."
+          },
+          {
+            "tokenName": "wcag-enhancedTargetSpacing",
+            "tokenValue": "16px",
+            "tokenType": "Length",
+            "tokenInstructions": "Set the minimum spacing between interactive elements to prevent accidental activation."
+          },
+          {
+            "tokenName": "wcag-enhancedTargetShape",
+            "tokenValue": "square",
+            "tokenType": "Choice",
+            "tokenInstructions": "Define the shape of interactive elements (e.g., square, circle) to optimize target acquisition."
+          }
+        ]
+      },
+      {
+        "tokenSetName": "Target Size Minimum",
+        "tokenSetDescription": "Design tokens for ensuring minimum target sizes for interactive elements, adhering to WCAG 2.5.8 (Level AA).",
+        "tokenSetBenefit": "Improves accessibility for users with motor impairments or those using assistive technologies by providing reasonably sized target areas for interaction.",
+        "wcagVersion": "2.2",
+        "wcagCriterion": "2.5.8",
+        "wcagPrinciple": "Operable",
+        "wcagLevel": "AA",
+        "wcagUrl": "https://www.w3.org/TR/WCAG22/#target-size-minimum",
+        "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+        "tokens": [
+          {
+            "tokenName": "wcag-minTargetSize",
+            "tokenValue": "24px",
+            "tokenType": "Length",
+            "tokenInstructions": "Set the minimum size for interactive elements (buttons, links, form controls, etc.) to ensure reasonable target acquisition."
+          },
+          {
+            "tokenName": "wcag-minTargetSpacing",
+            "tokenValue": "8px",
+            "tokenType": "Length",
+            "tokenInstructions": "Set the minimum spacing between interactive elements to prevent accidental activation."
+          },
+          {
+            "tokenName": "wcag-targetHitArea",
+            "tokenValue": "true",
+            "tokenType": "Boolean",
+            "tokenInstructions": "Enable or disable the use of larger hit areas for interactive elements to improve target acquisition."
+          }
+        ]
       }
-    ]
+    ],
+    "contributors": [
+      {"name": "Marcelo Paiva", "role": "Creator", "email": "email@example.com"}, 
+      {"name": "Jane Doe", "role": "Contributor", "email": "jane@example.com"}, 
+      {"name": "Jane Doe", "role": "Contributor", "email": "jane@example.com"}
+    ],
+    "date": "2024-May-22",
+    "license": "MIT",
+    "repository": "https://github.com/mpaiva/wcag-tokens"
   }
 ]
