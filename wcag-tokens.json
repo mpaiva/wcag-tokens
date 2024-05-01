@@ -202,7 +202,7 @@
           },
           {
             "tokenName": "wcag-textColor",
-            "tokenValue": "#333333",
+            "tokenValue": "#ff0099",
             "tokenType": "Color",
             "tokenInstructions": "Set the text color for content areas. Ensure sufficient contrast with the background color."
           },
