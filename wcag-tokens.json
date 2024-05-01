@@ -1,184 +1,355 @@
   [
    {
-      "category-name":"Typography",
-      "category-description":"Enhances readability and accessibility by allowing customization of text spacing to accommodate user needs.",
-      "token-sets":[
-         {
-            "token-set-name":"Text Spacing Adjustment",
-            "token-set-description":"Provides tokens to adjust line height, letter spacing, word spacing, and paragraph spacing to ensure text remains readable when spacing is increased up to the levels specified in WCAG 1.4.12.",
-            "wcag-sc":"1.4.12",
-            "wcag-ver":"WCAG 2.1",
-            "wcag-rel":[
-               "S508",
-               "ADAT2",
-               "ADAT3",
-               "ACA",
-               "EAA",
-               "EAUK",
-               "DDAAU",
-               "IRPDA"
-            ],
-            "wcag-url":"https://www.w3.org/TR/WCAG21/#text-spacing",
-            "wcag-level":"AA",
-            "user-benefit":"Allows users with visual impairments or cognitive disabilities to adjust text spacing to improve readability and comprehension.",
-            "tokens":[
-               {
-                  "token-name":"wcag-lineHeight",
-                  "value":"1.5em",
-                  "type":"Length",
-                  "wcag-level":"AA",
-                  "wcag-principle":"Understandable",
-                  "instructions":"Apply as minimum line height to text content."
-               },
-               {
-                  "token-name":"wcag-letterSpacing",
-                  "value":"0.12em",
-                  "type":"Length",
-                  "wcag-level":"AA",
-                  "wcag-principle":"Understandable",
-                  "instructions":"Apply as letter spacing to all text elements."
-               },
-               {
-                  "token-name":"wcag-wordSpacing",
-                  "value":"0.16em",
-                  "type":"Length",
-                  "wcag-level":"AA",
-                  "wcag-principle":"Understandable",
-                  "instructions":"Apply as word spacing to enhance readability."
-               },
-               {
-                  "token-name":"wcag-paragraphSpacing",
-                  "value":"0.8em",
-                  "type":"Length",
-                  "wcag-level":"AA",
-                  "wcag-principle":"Understandable",
-                  "instructions":"Use to set spacing between paragraphs to avoid visual crowding."
-               }
+      "name": "WCAG Tokens",
+      "version": "0.0.1",
+      "title": "Accessibility Design Tokens",
+      "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
+      "author": "Marcelo Paiva",
+      "date": "2024-04-22T12:44:06Z",
+      "license": "MIT",
+      "repository": "https://github.com/mpaiva/wcag-tokens",
+      "wcagTokens":[
+          {
+            "tokenSetName": "Reflow",
+            "tokenSetDescription": "Tokens to ensure content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels; Horizontal scrolling content at a height equivalent to 256 CSS pixels.",
+            "tokenSetBenefit": "By providing tokens for defining maximum width, minimum height, responsive breakpoints, and media queries, content can reflow effectively to accommodate different viewport sizes, meeting the WCAG guidelines for accessibility.",
+            "wcagVersion": "WCAG 2.1",
+            "wcagCriterion": "1.4.10",
+            "wcagPrinciple": "Perceivable",
+            "wcagLevel": "AA",
+            "wcagUrl": "https://www.w3.org/WAI/WCAG21/quickref/#reflow",
+            "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+            "tokens": [
+              {
+                "tokenName": "wcag-maxWidth",
+                "tokenValue": "320px",
+                "tokenType": "CSS Value",
+                "tokenInstructions": "Apply this token to set the maximum width of content containers to ensure they do not exceed 320 CSS pixels for vertical scrolling content."
+              },
+              {
+                "tokenName": "wcag-minHeight",
+                "tokenValue": "256px",
+                "tokenType": "CSS Value",
+                "tokenInstructions": "Use this token to specify the minimum height of content containers to meet the height equivalent to 256 CSS pixels for horizontal scrolling content."
+              },
+              {
+                "tokenName": "wcag-responsiveBreakpoints",
+                "tokenValue": "[480px, 768px, 1024px]",
+                "tokenType": "Array of CSS Values",
+                "tokenInstructions": "Define responsive breakpoints for different viewport sizes to ensure content reflows appropriately."
+              },
+              {
+                "tokenName": "wcag-mediaQuery",
+                "tokenValue": "@media screen and (min-width: 768px) { /* Custom CSS rules for larger viewports */ }",
+                "tokenType": "CSS Media Query",
+                "tokenInstructions": "Use this token to specify custom media queries for layout adjustments based on viewport dimensions."
+              }
             ]
-         }
-      ]
-  },
-   {
-      "category-name":"Color Usage",
-      "category-description":"Ensures that color is not used as the sole method for conveying critical information, to accommodate users who cannot perceive color differences.",
-      "token-sets":[
-         {
-            "token-set-name":"Color Usage Guidelines",
-            "token-set-description":"Provides design tokens that ensure text and interactive elements can be understood without relying solely on color, thereby meeting WCAG 1.4.1 requirements.",
-            "wcag-sc":"1.4.1",
-            "wcag-ver":"WCAG 2.1",
-            "wcag-rel":[
-               "S508",
-               "ADAT2",
-               "ADAT3",
-               "ACA",
-               "EAA",
-               "EAUK",
-               "DDAAU",
-               "IRPDA"
-            ],
-            "wcag-url":"https://www.w3.org/TR/WCAG21/#use-of-color",
-            "wcag-level":"A",
-            "user-benefit":"Helps users who have color vision deficiencies to access and understand content without ambiguity.",
-            "tokens":[
-               {
-                  "token-name":"wcag-nonColorIndicator",
-                  "value":"Underline",
-                  "type":"Visual Indicator",
-                  "wcag-level":"A",
-                  "wcag-principle":"Perceivable",
-                  "instructions":"Apply non-color indicators such as underlines to links or other interactive elements."
-               },
-               {
-                  "token-name":"wcag-additionalCues",
-                  "value":"Icons, Text Labels",
-                  "type":"Additional Cues",
-                  "wcag-level":"A",
-                  "wcag-principle":"Perceivable",
-                  "instructions":"Incorporate icons or text labels to supplement color cues for actions or statuses."
-               }
+          },
+          {
+            "name": "WCAG Tokens",
+            "version": "0.0.1",
+            "title": "Accessibility Design Tokens",
+            "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
+            "author": "Marcelo Paiva",
+            "date": "2024-04-22T12:44:06Z",
+            "license": "MIT",
+            "repository": "https://github.com/mpaiva/wcag-tokens",
+            "wcagTokens": [
+              {
+                "tokenSetName": "Text Spacing Accessibility",
+                "tokenSetDescription": "Design tokens to control text spacing according to WCAG 1.4.12 to improve readability for users with dyslexia or other reading disabilities.",
+                "tokenSetBenefit": "Allows users to adjust text spacing properties to improve readability without losing content or functionality, fostering greater accessibility.",
+                "wcagVersion": "2.1",
+                "wcagCriterion": "1.4.12",
+                "wcagPrinciple": "Operable",
+                "wcagLevel": "AA",
+                "wcagUrl": "https://www.w3.org/TR/WCAG21/#text-spacing",
+                "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+                "tokens": [
+                  {
+                    "tokenName": "lineHeight",
+                    "tokenValue": "1.5em",
+                    "tokenType": "Multiplier",
+                    "tokenInstructions": "Apply this multiplier to the font size for setting line height."
+                  },
+                  {
+                    "tokenName": "paragraphSpacing",
+                    "tokenValue": "2em",
+                    "tokenType": "Multiplier",
+                    "tokenInstructions": "Apply this multiplier to the font size for setting spacing after paragraphs."
+                  },
+                  {
+                    "tokenName": "letterSpacing",
+                    "tokenValue": "0.12em",
+                    "tokenType": "Multiplier",
+                    "tokenInstructions": "Apply this multiplier to the font size for setting letter spacing."
+                  },
+                  {
+                    "tokenName": "wordSpacing",
+                    "tokenValue": "0.16em",
+                    "tokenType": "Multiplier",
+                    "tokenInstructions": "Apply this multiplier to the font size for setting word spacing."
+                  },
+                  {
+                    "tokenName": "spacingScale",
+                    "tokenValue": "1",
+                    "tokenType": "Scalar",
+                    "tokenInstructions": "Use this scalar to adjust all spacing values simultaneously as needed."
+                  }
+                ]
+              }
             ]
-         }
-      ]
-   },
-   {
-      "category-name":"Contrast",
-      "category-description":"Ensures that text and images of text maintain a minimum contrast ratio, making content accessible to users with visual impairments.",
-      "token-sets":[
-         {
-            "token-set-name":"Minimum Contrast Tokens",
-            "token-set-description":"Provides design tokens that specify color combinations for text and backgrounds that meet or exceed the minimum contrast ratio requirements of WCAG 1.4.3.",
-            "wcag-sc":"1.4.3",
-            "wcag-ver":"WCAG 2.1",
-            "wcag-rel":[
-               "S508",
-               "ADAT2",
-               "ADAT3",
-               "ACA",
-               "EAA",
-               "EAUK",
-               "DDAAU",
-               "IRPDA"
-            ],
-            "wcag-url":"https://www.w3.org/TR/WCAG21/#contrast-minimum",
-            "wcag-level":"AA",
-            "user-benefit":"Facilitates readability for users with low vision and those who struggle with text under less than ideal conditions.",
-            "tokens":[
-               {
-                  "token-name":"wcag-textContrast",
-                  "value":"4.5:1",
-                  "type":"Contrast Ratio",
-                  "wcag-level":"AA",
-                  "wcag-principle":"Perceivable",
-                  "instructions":"Apply this contrast ratio between text and its background for normal text."
-               },
-               {
-                  "token-name":"wcag-largeTextContrast",
-                  "value":"3:1",
-                  "type":"Contrast Ratio",
-                  "wcag-level":"AA",
-                  "wcag-principle":"Perceivable",
-                  "instructions":"Apply this contrast ratio for large-scale text and images of large-scale text."
-               }
+          },
+          {
+            "name": "WCAG Tokens",
+            "version": "0.0.1",
+            "title": "Accessibility Design Tokens",
+            "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
+            "author": "Marcelo Paiva",
+            "date": "2024-04-22T12:44:06Z",
+            "license": "MIT",
+            "repository": "https://github.com/mpaiva/wcag-tokens",
+            "wcagTokens": [
+              {
+                "tokenSetName": "Contrast Accessibility",
+                "tokenSetDescription": "Design tokens that specify minimum contrast ratios for text to ensure readability and compliance with WCAG 1.4.3.",
+                "tokenSetBenefit": "Improves readability for users with visual impairments by ensuring text stands out against its background.",
+                "wcagVersion": "2.1",
+                "wcagCriterion": "1.4.3",
+                "wcagPrinciple": "Perceivable",
+                "wcagLevel": "AA",
+                "wcagUrl": "https://www.w3.org/TR/WCAG21/#contrast-minimum",
+                "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+                "tokens": [
+                  {
+                    "tokenName": "textContrast",
+                    "tokenValue": "4.5:1",
+                    "tokenType": "Ratio",
+                    "tokenInstructions": "Ensure that text and images of text have at least a 4.5:1 contrast ratio against their background."
+                  },
+                  {
+                    "tokenName": "largeTextContrast",
+                    "tokenValue": "3:1",
+                    "tokenType": "Ratio",
+                    "tokenInstructions": "Ensure that large text (18pt and above, or 14pt and bold) has at least a 3:1 contrast ratio against its background."
+                  }
+                ]
+              }
             ]
-         },
-         {
-            "token-set-name":"Enhanced Contrast Tokens",
-            "token-set-description":"These design tokens define color combinations for text and backgrounds that exceed the minimum requirements, meeting the enhanced contrast ratios specified in WCAG 1.4.6.",
-            "wcag-sc":"1.4.6",
-            "wcag-ver":"WCAG 2.1",
-            "wcag-rel":[
-               "S508",
-               "ADAT2",
-               "ADAT3",
-               "ACA",
-               "EAA",
-               "EAUK",
-               "DDAAU",
-               "IRPDA"
-            ],
-            "wcag-url":"https://www.w3.org/TR/WCAG21/#contrast-enhanced",
-            "wcag-level":"AAA",
-            "user-benefit":"Ensures that text is easily readable without strain in a variety of settings and for users with more significant vision impairments.",
-            "tokens":[
-               {
-                  "token-name":"wcag-enhancedTextContrast",
-                  "value":"7:1",
-                  "type":"Contrast Ratio",
-                  "wcag-level":"AAA",
-                  "wcag-principle":"Perceivable",
-                  "instructions":"Apply this contrast ratio between text and its background for normal text."
-               },
-               {
-                  "token-name":"wcag-largeEnhancedTextContrast",
-                  "value":"4.5:1",
-                  "type":"Contrast Ratio",
-                  "wcag-level":"AAA",
-                  "wcag-principle":"Perceivable",
-                  "instructions":"Apply this contrast ratio for large-scale text and images of large-scale text."
-               }
+          },
+          {
+            "tokenSetName": "Enhanced Contrast Accessibility",
+            "tokenSetDescription": "Design tokens to specify enhanced contrast ratios for text, exceeding the minimum WCAG requirements, to aid users with low vision.",
+            "tokenSetBenefit": "Provides higher contrast ratios for text, significantly improving readability for users with visual impairments.",
+            "wcagVersion": "2.1",
+            "wcagCriterion": "1.4.6",
+            "wcagPrinciple": "Perceivable",
+            "wcagLevel": "AAA",
+            "wcagUrl": "https://www.w3.org/TR/WCAG21/#contrast-enhanced",
+            "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+            "tokens": [
+              {
+                "tokenName": "enhancedTextContrast",
+                "tokenValue": "7:1",
+                "tokenType": "Ratio",
+                "tokenInstructions": "Ensure that text (below large text thresholds) achieves at least a 7:1 contrast ratio against its background."
+              },
+              {
+                "tokenName": "enhancedLargeTextContrast",
+                "tokenValue": "4.5:1",
+                "tokenType": "Ratio",
+                "tokenInstructions": "Ensure that large text achieves at least a 4.5:1 contrast ratio against its background."
+              }
             ]
-         }
+          },
+          {
+            "tokenSetName": "Text Resizing Accessibility",
+            "tokenSetDescription": "Design tokens that facilitate text resizing up to 200%, ensuring readability and usability for users with visual impairments as stipulated by WCAG 1.4.4.",
+            "tokenSetBenefit": "Enables text to be scaled without loss of content or functionality, enhancing accessibility for users requiring larger text sizes.",
+            "wcagVersion": "2.1",
+            "wcagCriterion": "1.4.4",
+            "wcagPrinciple": "Operable",
+            "wcagLevel": "AA",
+            "wcagUrl": "https://www.w3.org/TR/WCAG21/#resize-text",
+            "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+            "tokens": [
+              {
+                "tokenName": "baseFontSize",
+                "tokenValue": "16px",
+                "tokenType": "Length",
+                "tokenInstructions": "Set this as the base font size from which scaling is applied."
+              },
+              {
+                "tokenName": "scalingFactor",
+                "tokenValue": "2",
+                "tokenType": "Multiplier",
+                "tokenInstructions": "Apply this factor to the base font size to increase text up to 200% without loss of functionality."
+              },
+              {
+                "tokenName": "maxTextSize",
+                "tokenValue": "32px",
+                "tokenType": "Length",
+                "tokenInstructions": "This is the maximum text size achievable through scaling, ensuring content remains functional at increased sizes."
+              }
+            ]
+          },
+          {
+            "tokenSetName": "Visual Presentation Accessibility",
+            "tokenSetDescription": "Design tokens to enhance the visual presentation of text by managing width, alignment, spacing, and direction, as stipulated by WCAG 1.4.8.",
+            "tokenSetBenefit": "Improves readability and clarity of text, particularly for users with visual or cognitive disabilities, by standardizing critical aspects of text layout.",
+            "wcagVersion": "2.1",
+            "wcagCriterion": "1.4.8",
+            "wcagPrinciple": "Perceivable",
+            "wcagLevel": "AAA",
+            "wcagUrl": "https://www.w3.org/TR/WCAG21/#visual-presentation",
+            "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+            "tokens": [
+              {
+                "tokenName": "maxTextWidth",
+                "tokenValue": "80ch",
+                "tokenType": "Length",
+                "tokenInstructions": "Apply this maximum width to text blocks to ensure they do not exceed 80 characters or glyphs."
+              },
+              {
+                "tokenName": "justification",
+                "tokenValue": "left",
+                "tokenType": "Text Alignment",
+                "tokenInstructions": "Set text alignment to left to avoid full justification and improve readability."
+              },
+              {
+                "tokenName": "lineSpacing",
+                "tokenValue": "1.5em",
+                "tokenType": "Multiplier",
+                "tokenInstructions": "Use this spacing multiplier within paragraphs to maintain at least space-and-a-half line spacing."
+              },
+              {
+                "tokenName": "paragraphSpacing",
+                "tokenValue": "2.25em",
+                "tokenType": "Multiplier",
+                "tokenInstructions": "Apply this spacing multiplier between paragraphs, set at least 1.5 times the line spacing."
+              },
+              {
+                "tokenName": "textDirection",
+                "tokenValue": "ltr",
+                "tokenType": "Direction",
+                "tokenInstructions": "Set text direction as left-to-right or right-to-left depending on the language and cultural context."
+              }
+            ]
+          },
+          {
+            "tokenSetName": "Adjustable Timing Settings",
+            "tokenSetDescription": "Design tokens that facilitate the creation of user-adjustable timing settings for apps, helping comply with WCAG 2.2.1 and enhancing user accessibility.",
+            "tokenSetBenefit": "Allows users to customize timing settings to suit their needs, ensuring a more accessible and personalized interaction.",
+            "wcagVersion": "2.1",
+            "wcagCriterion": "2.2.1",
+            "wcagPrinciple": "Operable",
+            "wcagLevel": "A",
+            "wcagUrl": "https://www.w3.org/TR/WCAG21/#timing-adjustable",
+            "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+            "tokens": [
+              {
+                "tokenName": "defaultTimeLimit",
+                "tokenValue": "120s",
+                "tokenType": "Duration",
+                "tokenInstructions": "Set this as the default time limit for timed interactions, adjustable via app settings."
+              },
+              {
+                "tokenName": "timeLimitAdjustmentRange",
+                "tokenValue": "120s-1200s",
+                "tokenType": "Range",
+                "tokenInstructions": "Provides a range of time limits that users can choose from in app settings to adjust their experience."
+              },
+              {
+                "tokenName": "automaticTimeExtension",
+                "tokenValue": "true",
+                "tokenType": "Boolean",
+                "tokenInstructions": "When enabled in settings, this allows automatic extensions of time limits for tasks."
+              },
+              {
+                "tokenName": "saveUserTimeSettings",
+                "tokenValue": "true",
+                "tokenType": "Boolean",
+                "tokenInstructions": "Ensures that user-defined time settings are saved and applied in future sessions."
+              }
+            ]
+          },
+          {
+            "tokenSetName": "User Control Settings for Dynamic Content",
+            "tokenSetDescription": "Design tokens that enable users to customize their preferences for managing animations, autoplay content, visibility of dynamic elements, and update frequencies, complying with WCAG 2.2.2.",
+            "tokenSetBenefit": "Empowers users to adjust their interaction with dynamic content to reduce distractions, manage sensory inputs, and improve usability, ensuring accessibility for individuals with various disabilities.",
+            "wcagVersion": "2.1",
+            "wcagCriterion": "2.2.2",
+            "wcagPrinciple": "Operable",
+            "wcagLevel": "A",
+            "wcagUrl": "https://www.w3.org/TR/WCAG21/#pause-stop-hide",
+            "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+            "tokens": [
+              {
+                "tokenName": "motionReductionPreference",
+                "tokenValue": "none",
+                "tokenType": "Choice",
+                "tokenInstructions": "Users can select 'none', 'reduce', or 'eliminate' to control motion intensity across the platform."
+              },
+              {
+                "tokenName": "autoPlayPreference",
+                "tokenValue": "off",
+                "tokenType": "Boolean",
+                "tokenInstructions": "Users can set this to 'on' or 'off' to control the automatic playing of videos and animations."
+              },
+              {
+                "tokenName": "contentVisibilityPreference",
+                "tokenValue": "show",
+                "tokenType": "Choice",
+                "tokenInstructions": "Users can choose to 'show' or 'hide' non-essential dynamic content to reduce distractions."
+              },
+              {
+                "tokenName": "updateFrequencyPreference",
+                "tokenValue": "normal",
+                "tokenType": "Choice",
+                "tokenInstructions": "Users can adjust the update frequency to 'low', 'normal', or 'high', based on their preference for how dynamic the content should be."
+              }
+            ]
+          },
+          {
+            "tokenSetName": "Keyboard Focus Visibility",
+            "tokenSetDescription": "Design tokens to enhance the visibility of keyboard focus indicators, ensuring that keyboard users can clearly identify which element has focus.",
+            "tokenSetBenefit": "Enhances usability for keyboard users, particularly those with visual impairments, by providing clear and customizable focus indicators.",
+            "wcagVersion": "2.1",
+            "wcagCriterion": "2.4.7",
+            "wcagPrinciple": "Operable",
+            "wcagLevel": "AA",
+            "wcagUrl": "https://www.w3.org/TR/WCAG21/#focus-visible",
+            "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+            "tokens": [
+              {
+                "tokenName": "focusColor",
+                "tokenValue": "#FFD700",  // Example value: gold color
+                "tokenType": "Color",
+                "tokenInstructions": "Apply this color to the focus indicator to ensure it is visible against a variety of backgrounds."
+              },
+              {
+                "tokenName": "focusStyle",
+                "tokenValue": "outline 2px solid",
+                "tokenType": "CSS",
+                "tokenInstructions": "Use this style for focus indicators to maintain visibility across UI components."
+              },
+              {
+                "tokenName": "focusWidth",
+                "tokenValue": "3px",
+                "tokenType": "Thickness",
+                "tokenInstructions": "Set the thickness of the focus indicator to this value to enhance visibility without distraction."
+              },
+              {
+                "tokenName": "focusAnimation",
+                "tokenValue": "fade-in 0.3s",
+                "tokenType": "Animation",
+                "tokenInstructions": "Optionally apply this animation to the focus indicator to gently draw attention."
+              }
+            ]
+          },
+          
+
       ]
    }
   ]
