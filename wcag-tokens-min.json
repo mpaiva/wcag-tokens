@@ -1,0 +1,490 @@
+[
+  {
+    "Token Name": "wcag-liveCaptionsEnabled",
+    "Value": "true",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Boolean",
+    "Instructions": "Enable or disable live closed captions for audio and video content."
+  },
+  {
+    "Token Name": "wcag-liveCaptionsColor",
+    "Value": "#FFFFFF",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Color",
+    "Instructions": "Set the color of the live closed captions for optimal visibility."
+  },
+  {
+    "Token Name": "wcag-liveCaptionsBackground",
+    "Value": "#000000",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Color",
+    "Instructions": "Set the background color of the live closed captions for optimal contrast and readability."
+  },
+  {
+    "Token Name": "wcag-maxWidth",
+    "Value": "320px",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "CSS Value",
+    "Instructions": "Apply this token to set the maximum width of content containers to ensure they do not exceed 320 CSS pixels for vertical scrolling content."
+  },
+  {
+    "Token Name": "wcag-minHeight",
+    "Value": "256px",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "CSS Value",
+    "Instructions": "Use this token to specify the minimum height of content containers to meet the height equivalent to 256 CSS pixels for horizontal scrolling content."
+  },
+  {
+    "Token Name": "wcag-responsiveBreakpoints",
+    "Value": "[480px, 768px, 1024px]",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "Array of CSS Values",
+    "Instructions": "Define responsive breakpoints for different viewport sizes to ensure content reflows appropriately."
+  },
+  {
+    "Token Name": "wcag-mediaQuery",
+    "Value": "@media screen and (min-width: 768px) { /* Custom CSS rules for larger viewports */ }",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "CSS Media Query",
+    "Instructions": "Use this token to specify custom media queries for layout adjustments based on viewport dimensions."
+  },
+  {
+    "Token Name": "wcag-maxContentWidth",
+    "Value": "60ch",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "CSS Value",
+    "Instructions": "Apply this token to set the maximum width for content blocks, such as text or paragraphs, to improve readability across different screen sizes."
+  },
+  {
+    "Token Name": "wcag-contentWrapping",
+    "Value": "break-word",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "CSS Value",
+    "Instructions": "Apply this token to ensure long words or URLs wrap within their container without overflowing."
+  },
+  {
+    "Token Name": "wcag-responsiveSpacing",
+    "Value": "[16px, 24px, 32px, 40px]",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "Array of CSS Values",
+    "Instructions": "Define spacing values for different viewport sizes to ensure proper spacing between elements across different screen sizes."
+  },
+  {
+    "Token Name": "wcag-responsiveFontSizes",
+    "Value": "[14px, 16px, 18px, 20px]",
+    "wcag": "WCAG 2.1",
+    "Level": "AA",
+    "Type": "Array of CSS Values",
+    "Instructions": "Define font sizes for different viewport sizes to ensure optimal readability across different screen sizes."
+  },
+  {
+    "Token Name": "wcag-nonTextContrast",
+    "Value": "3:1",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Ratio",
+    "Instructions": "Ensure that non-text elements have at least a 3:1 contrast ratio against their background."
+  },
+  {
+    "Token Name": "wcag-nonTextColor",
+    "Value": "#000000",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Color",
+    "Instructions": "Set the color of non-text elements for optimal visibility and contrast."
+  },
+  {
+    "Token Name": "wcag-nonTextBackground",
+    "Value": "#FFFFFF",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Color",
+    "Instructions": "Set the background color for non-text elements to ensure sufficient contrast."
+  },
+  {
+    "Token Name": "wcag-lineHeight",
+    "Value": "1.5em",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Multiplier",
+    "Instructions": "Apply this multiplier to the font size for setting line height."
+  },
+  {
+    "Token Name": "wcag-paragraphSpacing",
+    "Value": "2em",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Multiplier",
+    "Instructions": "Apply this multiplier to the font size for setting spacing after paragraphs."
+  },
+  {
+    "Token Name": "wcag-letterSpacing",
+    "Value": "0.12em",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Multiplier",
+    "Instructions": "Apply this multiplier to the font size for setting letter spacing."
+  },
+  {
+    "Token Name": "wcag-wordSpacing",
+    "Value": "0.16em",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Multiplier",
+    "Instructions": "Apply this multiplier to the font size for setting word spacing."
+  },
+  {
+    "Token Name": "wcag-spacingScale",
+    "Value": "1",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Scalar",
+    "Instructions": "Use this scalar to adjust all spacing values simultaneously as needed."
+  },
+  {
+    "Token Name": "wcag-textContrast",
+    "Value": "4.5:1",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Ratio",
+    "Instructions": "Ensure that text and images of text have at least a 4.5:1 contrast ratio against their background."
+  },
+  {
+    "Token Name": "wcag-largeTextContrast",
+    "Value": "3:1",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Ratio",
+    "Instructions": "Ensure that large text (18pt and above, or 14pt and bold) has at least a 3:1 contrast ratio against its background."
+  },
+  {
+    "Token Name": "wcag-backgroundColor",
+    "Value": "#ffffff",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Color",
+    "Instructions": "Set the background color for content areas. Ensure sufficient contrast with text colors."
+  },
+  {
+    "Token Name": "wcag-textColor",
+    "Value": "#ff0099",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Color",
+    "Instructions": "Set the text color for content areas. Ensure sufficient contrast with the background color."
+  },
+  {
+    "Token Name": "wcag-fontWeight",
+    "Value": "400",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Number",
+    "Instructions": "Set the font weight for text. Higher font weights may require higher contrast ratios."
+  },
+  {
+    "Token Name": "wcag-minTextSize",
+    "Value": "16px",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "CSS Value",
+    "Instructions": "Set the minimum text size for content areas. Larger text sizes may have different contrast ratio requirements."
+  },
+  {
+    "Token Name": "wcag-enhancedTextContrast",
+    "Value": "7:1",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Ratio",
+    "Instructions": "Ensure that text (below large text thresholds) achieves at least a 7:1 contrast ratio against its background."
+  },
+  {
+    "Token Name": "wcag-enhancedLargeTextContrast",
+    "Value": "4.5:1",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Ratio",
+    "Instructions": "Ensure that large text achieves at least a 4.5:1 contrast ratio against its background."
+  },
+  {
+    "Token Name": "wcag-baseFontSize",
+    "Value": "16px",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Length",
+    "Instructions": "Set this as the base font size from which scaling is applied."
+  },
+  {
+    "Token Name": "wcag-scalingFactor",
+    "Value": "2",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Multiplier",
+    "Instructions": "Apply this factor to the base font size to increase text up to 200% without loss of functionality."
+  },
+  {
+    "Token Name": "wcag-maxTextSize",
+    "Value": "32px",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Length",
+    "Instructions": "This is the maximum text size achievable through scaling, ensuring content remains functional at increased sizes."
+  },
+  {
+    "Token Name": "wcag-maxLineLength",
+    "Value": "80ch",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "CSS Value",
+    "Instructions": "Set the maximum line length for text content to improve readability, especially when text is resized."
+  },
+  {
+    "Token Name": "wcag-minLineHeight",
+    "Value": "1.5",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Number",
+    "Instructions": "Set the minimum line height as a multiplier of the font size to ensure proper vertical spacing when text is resized."
+  },
+  {
+    "Token Name": "wcag-responsiveLayout",
+    "Value": "true",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Boolean",
+    "Instructions": "Enable or disable responsive layout techniques (e.g., flexbox, grid) to adjust content flow and positioning when text is resized."
+  },
+  {
+    "Token Name": "wcag-maxTextWidth",
+    "Value": "80ch",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Length",
+    "Instructions": "Apply this maximum width to text blocks to ensure they do not exceed 80 characters or glyphs."
+  },
+  {
+    "Token Name": "wcag-minLineHeight",
+    "Value": "1.5",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Number",
+    "Instructions": "Set the minimum line height as a multiplier of the font size to ensure proper vertical spacing and content density."
+  },
+  {
+    "Token Name": "wcag-contentDensity",
+    "Value": "medium",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Choice",
+    "Instructions": "Set the content density to 'low', 'medium', or 'high' to adjust the amount of content displayed in a given area, impacting readability and comprehension."
+  },
+  {
+    "Token Name": "wcag-justification",
+    "Value": "left",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Text Alignment",
+    "Instructions": "Set text alignment to left to avoid full justification and improve readability."
+  },
+  {
+    "Token Name": "wcag-lineSpacing",
+    "Value": "1.5em",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Multiplier",
+    "Instructions": "Use this spacing multiplier within paragraphs to maintain at least space-and-a-half line spacing."
+  },
+  {
+    "Token Name": "wcag-paragraphSpacing",
+    "Value": "2.25em",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Multiplier",
+    "Instructions": "Apply this spacing multiplier between paragraphs, set at least 1.5 times the line spacing."
+  },
+  {
+    "Token Name": "wcag-textDirection",
+    "Value": "ltr",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Direction",
+    "Instructions": "Set text direction as left-to-right or right-to-left depending on the language and cultural context."
+  },
+  {
+    "Token Name": "wcag-defaultTimeLimit",
+    "Value": "120s",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Duration",
+    "Instructions": "Set this as the default time limit for timed interactions, adjustable via app settings."
+  },
+  {
+    "Token Name": "wcag-timeLimitAdjustmentRange",
+    "Value": "120s-1200s",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Range",
+    "Instructions": "Provides a range of time limits that users can choose from in app settings to adjust their experience."
+  },
+  {
+    "Token Name": "wcag-automaticTimeExtension",
+    "Value": "true",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Boolean",
+    "Instructions": "When enabled in settings, this allows automatic extensions of time limits for tasks."
+  },
+  {
+    "Token Name": "wcag-saveUserTimeSettings",
+    "Value": "true",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Boolean",
+    "Instructions": "Ensures that user-defined time settings are saved and applied in future sessions."
+  },
+  {
+    "Token Name": "wcag-motionReductionPreference",
+    "Value": "none",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Choice",
+    "Instructions": "Users can select 'none', 'reduce', or 'eliminate' to control motion intensity across the platform."
+  },
+  {
+    "Token Name": "wcag-autoPlayPreference",
+    "Value": "off",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Boolean",
+    "Instructions": "Users can set this to 'on' or 'off' to control the automatic playing of videos and animations."
+  },
+  {
+    "Token Name": "wcag-contentVisibilityPreference",
+    "Value": "show",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Choice",
+    "Instructions": "Users can choose to 'show' or 'hide' non-essential dynamic content to reduce distractions."
+  },
+  {
+    "Token Name": "wcag-updateFrequencyPreference",
+    "Value": "normal",
+    "wcag": "2.1",
+    "Level": "A",
+    "Type": "Choice",
+    "Instructions": "Users can adjust the update frequency to 'low', 'normal', or 'high', based on their preference for how dynamic the content should be."
+  },
+  {
+    "Token Name": "wcag-siteMapEnabled",
+    "Value": "true",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Boolean",
+    "Instructions": "Enable or disable a site map for providing an overview of the website's content and structure."
+  },
+  {
+    "Token Name": "wcag-searchEnabled",
+    "Value": "true",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Boolean",
+    "Instructions": "Enable or disable a search functionality for users to quickly locate specific content."
+  },
+  {
+    "Token Name": "wcag-navigationOptions",
+    "Value": "sidebar,breadcrumbs,pagination",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Array",
+    "Instructions": "Define the navigation options to be provided, such as a sidebar, breadcrumbs, or pagination."
+  },
+  {
+    "Token Name": "wcag-focusColor",
+    "Value": "#FFD700",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Color",
+    "Instructions": "Apply this color to the focus indicator to ensure it is visible against a variety of backgrounds."
+  },
+  {
+    "Token Name": "wcag-focusStyle",
+    "Value": "outline 2px solid",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "CSS",
+    "Instructions": "Use this style for focus indicators to maintain visibility across UI components."
+  },
+  {
+    "Token Name": "wcag-focusWidth",
+    "Value": "3px",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Thickness",
+    "Instructions": "Set the thickness of the focus indicator to this value to enhance visibility without distraction."
+  },
+  {
+    "Token Name": "wcag-focusAnimation",
+    "Value": "fade-in 0.3s",
+    "wcag": "2.1",
+    "Level": "AA",
+    "Type": "Animation",
+    "Instructions": "Optionally apply this animation to the focus indicator to gently draw attention."
+  },
+  {
+    "Token Name": "wcag-enhancedTargetSize",
+    "Value": "48px",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Length",
+    "Instructions": "Set the minimum size for interactive elements (buttons, links, form controls, etc.) to enhance target acquisition."
+  },
+  {
+    "Token Name": "wcag-enhancedTargetSpacing",
+    "Value": "16px",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Length",
+    "Instructions": "Set the minimum spacing between interactive elements to prevent accidental activation."
+  },
+  {
+    "Token Name": "wcag-enhancedTargetShape",
+    "Value": "square",
+    "wcag": "2.1",
+    "Level": "AAA",
+    "Type": "Choice",
+    "Instructions": "Define the shape of interactive elements (e.g., square, circle) to optimize target acquisition."
+  },
+  {
+    "Token Name": "wcag-minTargetSize",
+    "Value": "24px",
+    "wcag": "2.2",
+    "Level": "AA",
+    "Type": "Length",
+    "Instructions": "Set the minimum size for interactive elements (buttons, links, form controls, etc.) to ensure reasonable target acquisition."
+  },
+  {
+    "Token Name": "wcag-minTargetSpacing",
+    "Value": "8px",
+    "wcag": "2.2",
+    "Level": "AA",
+    "Type": "Length",
+    "Instructions": "Set the minimum spacing between interactive elements to prevent accidental activation."
+  },
+  {
+    "Token Name": "wcag-targetHitArea",
+    "Value": "true",
+    "wcag": "2.2",
+    "Level": "AA",
+    "Type": "Boolean",
+    "Instructions": "Enable or disable the use of larger hit areas for interactive elements to improve target acquisition."
+  }
+]
