@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "WCAG Tokens",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "title": "Accessibility Design Tokens",
       "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
       "date": "2024-May-22",
