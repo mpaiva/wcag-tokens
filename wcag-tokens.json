@@ -1,9 +1,14 @@
 [
   {
-    "name": "WCAG Tokens",
-    "version": "0.1.0",
-    "title": "Accessibility Design Tokens",
-    "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
+    "metadata": {
+      "name": "WCAG Tokens",
+      "version": "0.1.0",
+      "title": "Accessibility Design Tokens",
+      "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
+      "date": "2024-May-22",
+      "license": "MIT",
+      "repository": "https://github.com/mpaiva/wcag-tokens"
+    },
     "wcagTokens": [
       {
         "tokenSetName": "Live Captions",
@@ -14,7 +19,7 @@
         "wcagPrinciple": "Perceivable",
         "wcagLevel": "AA",
         "wcagUrl": "https://www.w3.org/TR/WCAG21/#caption-live",
-        "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
         "tokens": [
           {
             "tokenName": "wcag-liveCaptionsEnabled",
@@ -106,7 +111,7 @@
         "wcagPrinciple": "Perceivable",
         "wcagLevel": "AA",
         "wcagUrl": "https://www.w3.org/TR/WCAG21/#non-text-contrast",
-        "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
         "tokens": [
           {
             "tokenName": "wcag-nonTextContrast",
@@ -202,7 +207,7 @@
           },
           {
             "tokenName": "wcag-textColor",
-            "tokenValue": "#333333", 
+            "tokenValue": "#333333",
             "tokenType": "Color",
             "tokenInstructions": "Set the text color for content areas. Ensure sufficient contrast with the background color."
           },
@@ -432,7 +437,7 @@
         "wcagPrinciple": "Operable",
         "wcagLevel": "AA",
         "wcagUrl": "https://www.w3.org/TR/WCAG21/#multiple-ways",
-        "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
         "tokens": [
           {
             "tokenName": "wcag-siteMapEnabled",
@@ -500,7 +505,7 @@
         "wcagPrinciple": "Operable",
         "wcagLevel": "AAA",
         "wcagUrl": "https://www.w3.org/TR/WCAG21/#target-size-enhanced",
-        "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
         "tokens": [
           {
             "tokenName": "wcag-enhancedTargetSize",
@@ -531,7 +536,7 @@
         "wcagPrinciple": "Operable",
         "wcagLevel": "AA",
         "wcagUrl": "https://www.w3.org/TR/WCAG22/#target-size-minimum",
-        "wcagLaw": ["S508", "ADAT2", "ADAT3", "ACA", "EAA", "EAUK", "DDAAU", "IRPDA"],
+        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
         "tokens": [
           {
             "tokenName": "wcag-minTargetSize",
@@ -555,12 +560,18 @@
       }
     ],
     "contributors": [
-      {"name": "Marcelo Paiva", "role": "Creator", "email": "email@example.com"}, 
-      {"name": "Jane Doe", "role": "Contributor", "email": "jane@example.com"}, 
-      {"name": "Jane Doe", "role": "Contributor", "email": "jane@example.com"}
+      {
+        "name": "Marcelo Paiva",
+        "role": "Creator",
+        "email": "email@example.com"
+      },
+      {
+        "name": "Jane Doe",
+        "role": "Contributor",
+        "email": "jane@example.com"
+      },
+      { "name": "Jane Doe", "role": "Contributor", "email": "jane@example.com" }
     ],
-    "date": "2024-May-22",
-    "license": "MIT",
-    "repository": "https://github.com/mpaiva/wcag-tokens"
+
   }
 ]
