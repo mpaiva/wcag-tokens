@@ -7,7 +7,24 @@
       "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
       "date": "2024-May-22",
       "license": "MIT",
-      "repository": "https://github.com/mpaiva/wcag-tokens"
+      "repository": "https://github.com/mpaiva/wcag-tokens",
+      "contributors": [
+        {
+          "name": "Marcelo Paiva",
+          "role": "Creator",
+          "email": "email@example.com"
+        },
+        {
+          "name": "Jane Doe",
+          "role": "Contributor",
+          "email": "jane@example.com"
+        },
+        {
+          "name": "Jane Doe",
+          "role": "Contributor",
+          "email": "jane@example.com"
+        }
+      ]
     },
     "wcagTokens": [
       {
@@ -558,20 +575,6 @@
           }
         ]
       }
-    ],
-    "contributors": [
-      {
-        "name": "Marcelo Paiva",
-        "role": "Creator",
-        "email": "email@example.com"
-      },
-      {
-        "name": "Jane Doe",
-        "role": "Contributor",
-        "email": "jane@example.com"
-      },
-      { "name": "Jane Doe", "role": "Contributor", "email": "jane@example.com" }
-    ],
-
+    ]
   }
 ]
