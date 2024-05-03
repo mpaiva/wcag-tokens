@@ -62,7 +62,7 @@
         "tokenSetName": "Reflow",
         "tokenSetDescription": "Tokens to ensure content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels; Horizontal scrolling content at a height equivalent to 256 CSS pixels.",
         "tokenSetBenefit": "By providing tokens for defining maximum width, minimum height, responsive breakpoints, and media queries, content can reflow effectively to accommodate different viewport sizes, meeting the WCAG guidelines for accessibility.",
-        "wcagVersion": "WCAG 2.1",
+        "wcagVersion": "2.1",
         "wcagCriterion": "1.4.10",
         "wcagPrinciple": "Perceivable",
         "wcagLevel": "AA",
