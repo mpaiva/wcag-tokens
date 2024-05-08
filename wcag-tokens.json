@@ -42,12 +42,12 @@
   "wcag-max-text-characters-latin-ch": {
     "$type": "number",
     "$value": "80",
-    "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 80 for Latin scripts."
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 80 for Latin scripts. Note: 1 ch unit is relative to the average character advance of a narrow glyph in the element's font, as represented by the '0' (ZERO, U+0030) glyph."
   },
   "wcag-max-text-characters-cjk-ch": {
     "$type": "number",
     "$value": "40",
-    "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 40 for Chinese, Japanese, and Korean scripts."
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 40 for Chinese, Japanese, and Korean scripts. Note: 1 ch unit is relative to the average character advance of a narrow glyph in the element's font, as represented by the '〇' (Japanese ZERO, U+3007) the Ideographic Number Zero glyph."
   },
   "wcag-text-line-spacing-multiplier": {
     "$type": "number",
