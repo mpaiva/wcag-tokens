@@ -144,26 +144,6 @@
     "$value": "solid",
     "$description": "WCAG 2.4.7 (AA v2.0) - Style of the outline used for focus indicators (e.g., solid, dashed)."
   },
-  "focus-indicator-width-px": {
-    "$type": "number",
-    "$value": "4",
-    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the width of the focus indicator in pixels to ensure it is clearly visible."
-  },
-  "focus-indicator-style": {
-    "$type": "string",
-    "$value": "solid",
-    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the style of the focus indicator, e.g., solid, dotted, dashed."
-  },
-  "focus-indicator-outline-offset-px": {
-    "$type": "number",
-    "$value": "2",
-    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the outline offset of the focus indicator from the element border in pixels to prevent visual merging."
-  },
-  "focus-indicator-radius-px": {
-    "$type": "number",
-    "$value": "4",
-    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the border-radius of the focus indicator in pixels to match design aesthetics."
-  },
   "wcag-minimum-target-size-px": {
     "$type": "number",
     "$value": "44",
