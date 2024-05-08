@@ -65,12 +65,12 @@ The JSON file below offers an example of the template we are using for a collect
 ```json
   "wcag-focus-visible-color": {
     "$type": "color",
-    "$value": "#33CC33",
+    "$value": "#0088ff",
     "$description": "WCAG 2.4.7 (AA v2.0) - Color for focus indicators that ensures high visibility when elements receive focus."
   },
   "wcag-focus-visible-outline-width-px": {
     "$type": "number",
-    "$value": "3",
+    "$value": "2",
     "$description": "WCAG 2.4.7 (AA v2.0) - Width of the outline used for focus indicators to ensure visibility."
   },
   "wcag-focus-visible-outline-style": {
