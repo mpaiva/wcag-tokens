@@ -1,580 +1,177 @@
-[
-  {
-    "metadata": {
-      "name": "WCAG Tokens",
-      "version": "0.1.1",
-      "title": "Accessibility Design Tokens",
-      "description": "A collection of design tokens aimed at enhancing accessibility compliance according to WCAG guidelines.",
-      "date": "2024-May-22",
-      "license": "MIT",
-      "repository": "https://github.com/mpaiva/wcag-tokens",
-      "contributors": [
-        {
-          "name": "Marcelo Paiva",
-          "role": "Creator",
-          "email": "email@example.com"
-        },
-        {
-          "name": "Jane Doe",
-          "role": "Contributor",
-          "email": "jane@example.com"
-        },
-        {
-          "name": "Jane Doe",
-          "role": "Contributor",
-          "email": "jane@example.com"
-        }
-      ]
-    },
-    "wcagTokens": [
-      {
-        "tokenSetName": "Live Captions",
-        "tokenSetDescription": "Design tokens for enabling and customizing closed captions for live audio and video content, adhering to WCAG 1.2.4.",
-        "tokenSetBenefit": "Provides accessibility for users with hearing impairments by allowing them to access live audio and video content through captions.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.2.4",
-        "wcagPrinciple": "Perceivable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#caption-live",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-liveCaptionsEnabled",
-            "tokenValue": "true",
-            "tokenType": "Boolean",
-            "tokenInstructions": "Enable or disable live closed captions for audio and video content."
-          },
-          {
-            "tokenName": "wcag-liveCaptionsColor",
-            "tokenValue": "#FFFFFF",
-            "tokenType": "Color",
-            "tokenInstructions": "Set the color of the live closed captions for optimal visibility."
-          },
-          {
-            "tokenName": "wcag-liveCaptionsBackground",
-            "tokenValue": "#000000",
-            "tokenType": "Color",
-            "tokenInstructions": "Set the background color of the live closed captions for optimal contrast and readability."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Reflow",
-        "tokenSetDescription": "Tokens to ensure content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels; Horizontal scrolling content at a height equivalent to 256 CSS pixels.",
-        "tokenSetBenefit": "By providing tokens for defining maximum width, minimum height, responsive breakpoints, and media queries, content can reflow effectively to accommodate different viewport sizes, meeting the WCAG guidelines for accessibility.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.4.10",
-        "wcagPrinciple": "Perceivable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/WAI/WCAG21/quickref/#reflow",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-maxWidth",
-            "tokenValue": "320px",
-            "tokenType": "CSS Value",
-            "tokenInstructions": "Apply this token to set the maximum width of content containers to ensure they do not exceed 320 CSS pixels for vertical scrolling content."
-          },
-          {
-            "tokenName": "wcag-minHeight",
-            "tokenValue": "256px",
-            "tokenType": "CSS Value",
-            "tokenInstructions": "Use this token to specify the minimum height of content containers to meet the height equivalent to 256 CSS pixels for horizontal scrolling content."
-          },
-          {
-            "tokenName": "wcag-responsiveBreakpoints",
-            "tokenValue": "[480px, 768px, 1024px]",
-            "tokenType": "Array of CSS Values",
-            "tokenInstructions": "Define responsive breakpoints for different viewport sizes to ensure content reflows appropriately."
-          },
-          {
-            "tokenName": "wcag-mediaQuery",
-            "tokenValue": "@media screen and (min-width: 768px) { /* Custom CSS rules for larger viewports */ }",
-            "tokenType": "CSS Media Query",
-            "tokenInstructions": "Use this token to specify custom media queries for layout adjustments based on viewport dimensions."
-          },
-          {
-            "tokenName": "wcag-maxContentWidth",
-            "tokenValue": "60ch",
-            "tokenType": "CSS Value",
-            "tokenInstructions": "Apply this token to set the maximum width for content blocks, such as text or paragraphs, to improve readability across different screen sizes."
-          },
-          {
-            "tokenName": "wcag-contentWrapping",
-            "tokenValue": "break-word",
-            "tokenType": "CSS Value",
-            "tokenInstructions": "Apply this token to ensure long words or URLs wrap within their container without overflowing."
-          },
-          {
-            "tokenName": "wcag-responsiveSpacing",
-            "tokenValue": "[16px, 24px, 32px, 40px]",
-            "tokenType": "Array of CSS Values",
-            "tokenInstructions": "Define spacing values for different viewport sizes to ensure proper spacing between elements across different screen sizes."
-          },
-          {
-            "tokenName": "wcag-responsiveFontSizes",
-            "tokenValue": "[14px, 16px, 18px, 20px]",
-            "tokenType": "Array of CSS Values",
-            "tokenInstructions": "Define font sizes for different viewport sizes to ensure optimal readability across different screen sizes."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Non-Text Contrast",
-        "tokenSetDescription": "Design tokens for ensuring sufficient contrast between non-text elements (such as icons, buttons, and controls) and their backgrounds, adhering to WCAG 1.4.11.",
-        "tokenSetBenefit": "Improves accessibility for users with visual impairments by ensuring non-text elements are distinguishable from their surroundings.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.4.11",
-        "wcagPrinciple": "Perceivable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#non-text-contrast",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-nonTextContrast",
-            "tokenValue": "3:1",
-            "tokenType": "Ratio",
-            "tokenInstructions": "Ensure that non-text elements have at least a 3:1 contrast ratio against their background."
-          },
-          {
-            "tokenName": "wcag-nonTextColor",
-            "tokenValue": "#000000",
-            "tokenType": "Color",
-            "tokenInstructions": "Set the color of non-text elements for optimal visibility and contrast."
-          },
-          {
-            "tokenName": "wcag-nonTextBackground",
-            "tokenValue": "#FFFFFF",
-            "tokenType": "Color",
-            "tokenInstructions": "Set the background color for non-text elements to ensure sufficient contrast."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Text Spacing",
-        "tokenSetDescription": "Design tokens to control text spacing according to WCAG 1.4.12 to improve readability for users with dyslexia or other reading disabilities.",
-        "tokenSetBenefit": "Allows users to adjust text spacing properties to improve readability without losing content or functionality, fostering greater accessibility.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.4.12",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#text-spacing",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-lineHeight",
-            "tokenValue": "1.5em",
-            "tokenType": "Multiplier",
-            "tokenInstructions": "Apply this multiplier to the font size for setting line height."
-          },
-          {
-            "tokenName": "wcag-paragraphSpacing",
-            "tokenValue": "2em",
-            "tokenType": "Multiplier",
-            "tokenInstructions": "Apply this multiplier to the font size for setting spacing after paragraphs."
-          },
-          {
-            "tokenName": "wcag-letterSpacing",
-            "tokenValue": "0.12em",
-            "tokenType": "Multiplier",
-            "tokenInstructions": "Apply this multiplier to the font size for setting letter spacing."
-          },
-          {
-            "tokenName": "wcag-wordSpacing",
-            "tokenValue": "0.16em",
-            "tokenType": "Multiplier",
-            "tokenInstructions": "Apply this multiplier to the font size for setting word spacing."
-          },
-          {
-            "tokenName": "wcag-spacingScale",
-            "tokenValue": "1",
-            "tokenType": "Scalar",
-            "tokenInstructions": "Use this scalar to adjust all spacing values simultaneously as needed."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Contrast",
-        "tokenSetDescription": "Design tokens that specify minimum contrast ratios for text to ensure readability and compliance with WCAG 1.4.3.",
-        "tokenSetBenefit": "Improves readability for users with visual impairments by ensuring text stands out against its background.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.4.3",
-        "wcagPrinciple": "Perceivable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#contrast-minimum",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-textContrast",
-            "tokenValue": "4.5:1",
-            "tokenType": "Ratio",
-            "tokenInstructions": "Ensure that text and images of text have at least a 4.5:1 contrast ratio against their background."
-          },
-          {
-            "tokenName": "wcag-largeTextContrast",
-            "tokenValue": "3:1",
-            "tokenType": "Ratio",
-            "tokenInstructions": "Ensure that large text (18pt and above, or 14pt and bold) has at least a 3:1 contrast ratio against its background."
-          },
-          {
-            "tokenName": "wcag-backgroundColor",
-            "tokenValue": "#ffffff",
-            "tokenType": "Color",
-            "tokenInstructions": "Set the background color for content areas. Ensure sufficient contrast with text colors."
-          },
-          {
-            "tokenName": "wcag-textColor",
-            "tokenValue": "#333333",
-            "tokenType": "Color",
-            "tokenInstructions": "Set the text color for content areas. Ensure sufficient contrast with the background color."
-          },
-          {
-            "tokenName": "wcag-fontWeight",
-            "tokenValue": "400",
-            "tokenType": "Number",
-            "tokenInstructions": "Set the font weight for text. Higher font weights may require higher contrast ratios."
-          },
-          {
-            "tokenName": "wcag-minTextSize",
-            "tokenValue": "16px",
-            "tokenType": "CSS Value",
-            "tokenInstructions": "Set the minimum text size for content areas. Larger text sizes may have different contrast ratio requirements."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Enhanced Contrast",
-        "tokenSetDescription": "Design tokens to specify enhanced contrast ratios for text, exceeding the minimum WCAG requirements, to aid users with low vision.",
-        "tokenSetBenefit": "Provides higher contrast ratios for text, significantly improving readability for users with visual impairments.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.4.6",
-        "wcagPrinciple": "Perceivable",
-        "wcagLevel": "AAA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#contrast-enhanced",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-enhancedTextContrast",
-            "tokenValue": "7:1",
-            "tokenType": "Ratio",
-            "tokenInstructions": "Ensure that text (below large text thresholds) achieves at least a 7:1 contrast ratio against its background."
-          },
-          {
-            "tokenName": "wcag-enhancedLargeTextContrast",
-            "tokenValue": "4.5:1",
-            "tokenType": "Ratio",
-            "tokenInstructions": "Ensure that large text achieves at least a 4.5:1 contrast ratio against its background."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Text Resizing",
-        "tokenSetDescription": "Design tokens that facilitate text resizing up to 200%, ensuring readability and usability for users with visual impairments as stipulated by WCAG 1.4.4.",
-        "tokenSetBenefit": "Enables text to be scaled without loss of content or functionality, enhancing accessibility for users requiring larger text sizes.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.4.4",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#resize-text",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-baseFontSize",
-            "tokenValue": "16px",
-            "tokenType": "Length",
-            "tokenInstructions": "Set this as the base font size from which scaling is applied."
-          },
-          {
-            "tokenName": "wcag-scalingFactor",
-            "tokenValue": "2",
-            "tokenType": "Multiplier",
-            "tokenInstructions": "Apply this factor to the base font size to increase text up to 200% without loss of functionality."
-          },
-          {
-            "tokenName": "wcag-maxTextSize",
-            "tokenValue": "32px",
-            "tokenType": "Length",
-            "tokenInstructions": "This is the maximum text size achievable through scaling, ensuring content remains functional at increased sizes."
-          },
-          {
-            "tokenName": "wcag-maxLineLength",
-            "tokenValue": "80ch",
-            "tokenType": "CSS Value",
-            "tokenInstructions": "Set the maximum line length for text content to improve readability, especially when text is resized."
-          },
-          {
-            "tokenName": "wcag-minLineHeight",
-            "tokenValue": "1.5",
-            "tokenType": "Number",
-            "tokenInstructions": "Set the minimum line height as a multiplier of the font size to ensure proper vertical spacing when text is resized."
-          },
-          {
-            "tokenName": "wcag-responsiveLayout",
-            "tokenValue": "true",
-            "tokenType": "Boolean",
-            "tokenInstructions": "Enable or disable responsive layout techniques (e.g., flexbox, grid) to adjust content flow and positioning when text is resized."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Visual Presentation",
-        "tokenSetDescription": "Design tokens to enhance the visual presentation of text by managing width, alignment, spacing, and direction, as stipulated by WCAG 1.4.8.",
-        "tokenSetBenefit": "Improves readability and clarity of text, particularly for users with visual or cognitive disabilities, by standardizing critical aspects of text layout.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "1.4.8",
-        "wcagPrinciple": "Perceivable",
-        "wcagLevel": "AAA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#visual-presentation",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-maxTextWidth",
-            "tokenValue": "80ch",
-            "tokenType": "Length",
-            "tokenInstructions": "Apply this maximum width to text blocks to ensure they do not exceed 80 characters or glyphs."
-          },
-          {
-            "tokenName": "wcag-minLineHeight",
-            "tokenValue": "1.5",
-            "tokenType": "Number",
-            "tokenInstructions": "Set the minimum line height as a multiplier of the font size to ensure proper vertical spacing and content density."
-          },
-          {
-            "tokenName": "wcag-contentDensity",
-            "tokenValue": "medium",
-            "tokenType": "Choice",
-            "tokenInstructions": "Set the content density to 'low', 'medium', or 'high' to adjust the amount of content displayed in a given area, impacting readability and comprehension."
-          },
-          {
-            "tokenName": "wcag-justification",
-            "tokenValue": "left",
-            "tokenType": "Text Alignment",
-            "tokenInstructions": "Set text alignment to left to avoid full justification and improve readability."
-          },
-          {
-            "tokenName": "wcag-lineSpacing",
-            "tokenValue": "1.5em",
-            "tokenType": "Multiplier",
-            "tokenInstructions": "Use this spacing multiplier within paragraphs to maintain at least space-and-a-half line spacing."
-          },
-          {
-            "tokenName": "wcag-paragraphSpacing",
-            "tokenValue": "2.25em",
-            "tokenType": "Multiplier",
-            "tokenInstructions": "Apply this spacing multiplier between paragraphs, set at least 1.5 times the line spacing."
-          },
-          {
-            "tokenName": "wcag-textDirection",
-            "tokenValue": "ltr",
-            "tokenType": "Direction",
-            "tokenInstructions": "Set text direction as left-to-right or right-to-left depending on the language and cultural context."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Adjustable Timing Settings",
-        "tokenSetDescription": "Design tokens that facilitate the creation of user-adjustable timing settings for apps, helping comply with WCAG 2.2.1 and enhancing user accessibility.",
-        "tokenSetBenefit": "Allows users to customize timing settings to suit their needs, ensuring a more accessible and personalized interaction.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "2.2.1",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "A",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#timing-adjustable",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-defaultTimeLimit",
-            "tokenValue": "120s",
-            "tokenType": "Duration",
-            "tokenInstructions": "Set this as the default time limit for timed interactions, adjustable via app settings."
-          },
-          {
-            "tokenName": "wcag-timeLimitAdjustmentRange",
-            "tokenValue": "120s-1200s",
-            "tokenType": "Range",
-            "tokenInstructions": "Provides a range of time limits that users can choose from in app settings to adjust their experience."
-          },
-          {
-            "tokenName": "wcag-automaticTimeExtension",
-            "tokenValue": "true",
-            "tokenType": "Boolean",
-            "tokenInstructions": "When enabled in settings, this allows automatic extensions of time limits for tasks."
-          },
-          {
-            "tokenName": "wcag-saveUserTimeSettings",
-            "tokenValue": "true",
-            "tokenType": "Boolean",
-            "tokenInstructions": "Ensures that user-defined time settings are saved and applied in future sessions."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "User Control Settings for Dynamic Content",
-        "tokenSetDescription": "Design tokens that enable users to customize their preferences for managing animations, autoplay content, visibility of dynamic elements, and update frequencies, complying with WCAG 2.2.2.",
-        "tokenSetBenefit": "Empowers users to adjust their interaction with dynamic content to reduce distractions, manage sensory inputs, and improve usability, ensuring accessibility for individuals with various disabilities.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "2.2.2",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "A",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#pause-stop-hide",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-motionReductionPreference",
-            "tokenValue": "none",
-            "tokenType": "Choice",
-            "tokenInstructions": "Users can select 'none', 'reduce', or 'eliminate' to control motion intensity across the platform."
-          },
-          {
-            "tokenName": "wcag-autoPlayPreference",
-            "tokenValue": "off",
-            "tokenType": "Boolean",
-            "tokenInstructions": "Users can set this to 'on' or 'off' to control the automatic playing of videos and animations."
-          },
-          {
-            "tokenName": "wcag-contentVisibilityPreference",
-            "tokenValue": "show",
-            "tokenType": "Choice",
-            "tokenInstructions": "Users can choose to 'show' or 'hide' non-essential dynamic content to reduce distractions."
-          },
-          {
-            "tokenName": "wcag-updateFrequencyPreference",
-            "tokenValue": "normal",
-            "tokenType": "Choice",
-            "tokenInstructions": "Users can adjust the update frequency to 'low', 'normal', or 'high', based on their preference for how dynamic the content should be."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Multiple Ways",
-        "tokenSetDescription": "Design tokens for enabling and customizing multiple ways to locate content within a website or application, adhering to WCAG 2.4.5.",
-        "tokenSetBenefit": "Provides users with different ways to navigate and access content, catering to diverse needs and preferences.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "2.4.5",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#multiple-ways",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-siteMapEnabled",
-            "tokenValue": "true",
-            "tokenType": "Boolean",
-            "tokenInstructions": "Enable or disable a site map for providing an overview of the website's content and structure."
-          },
-          {
-            "tokenName": "wcag-searchEnabled",
-            "tokenValue": "true",
-            "tokenType": "Boolean",
-            "tokenInstructions": "Enable or disable a search functionality for users to quickly locate specific content."
-          },
-          {
-            "tokenName": "wcag-navigationOptions",
-            "tokenValue": "sidebar,breadcrumbs,pagination",
-            "tokenType": "Array",
-            "tokenInstructions": "Define the navigation options to be provided, such as a sidebar, breadcrumbs, or pagination."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Keyboard Focus Visibility",
-        "tokenSetDescription": "Design tokens to enhance the visibility of keyboard focus indicators, ensuring that keyboard users can clearly identify which element has focus.",
-        "tokenSetBenefit": "Enhances usability for keyboard users, particularly those with visual impairments, by providing clear and customizable focus indicators.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "2.4.7",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#focus-visible",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-focusColor",
-            "tokenValue": "#FFD700",
-            "tokenType": "Color",
-            "tokenInstructions": "Apply this color to the focus indicator to ensure it is visible against a variety of backgrounds."
-          },
-          {
-            "tokenName": "wcag-focusStyle",
-            "tokenValue": "outline 2px solid",
-            "tokenType": "CSS",
-            "tokenInstructions": "Use this style for focus indicators to maintain visibility across UI components."
-          },
-          {
-            "tokenName": "wcag-focusWidth",
-            "tokenValue": "3px",
-            "tokenType": "Thickness",
-            "tokenInstructions": "Set the thickness of the focus indicator to this value to enhance visibility without distraction."
-          },
-          {
-            "tokenName": "wcag-focusAnimation",
-            "tokenValue": "fade-in 0.3s",
-            "tokenType": "Animation",
-            "tokenInstructions": "Optionally apply this animation to the focus indicator to gently draw attention."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Target Size Enhanced",
-        "tokenSetDescription": "Design tokens for ensuring enhanced target sizes for interactive elements, adhering to WCAG 2.5.5 (Level AAA).",
-        "tokenSetBenefit": "Improves accessibility for users with motor impairments or those using assistive technologies by providing larger target areas for interaction.",
-        "wcagVersion": "2.1",
-        "wcagCriterion": "2.5.5",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "AAA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG21/#target-size-enhanced",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-enhancedTargetSize",
-            "tokenValue": "48px",
-            "tokenType": "Length",
-            "tokenInstructions": "Set the minimum size for interactive elements (buttons, links, form controls, etc.) to enhance target acquisition."
-          },
-          {
-            "tokenName": "wcag-enhancedTargetSpacing",
-            "tokenValue": "16px",
-            "tokenType": "Length",
-            "tokenInstructions": "Set the minimum spacing between interactive elements to prevent accidental activation."
-          },
-          {
-            "tokenName": "wcag-enhancedTargetShape",
-            "tokenValue": "square",
-            "tokenType": "Choice",
-            "tokenInstructions": "Define the shape of interactive elements (e.g., square, circle) to optimize target acquisition."
-          }
-        ]
-      },
-      {
-        "tokenSetName": "Target Size Minimum",
-        "tokenSetDescription": "Design tokens for ensuring minimum target sizes for interactive elements, adhering to WCAG 2.5.8 (Level AA).",
-        "tokenSetBenefit": "Improves accessibility for users with motor impairments or those using assistive technologies by providing reasonably sized target areas for interaction.",
-        "wcagVersion": "2.2",
-        "wcagCriterion": "2.5.8",
-        "wcagPrinciple": "Operable",
-        "wcagLevel": "AA",
-        "wcagUrl": "https://www.w3.org/TR/WCAG22/#target-size-minimum",
-        "wcagLaw": ["S508","ADAT2","ADAT3","ACA","EAA","EAUK","DDAAU","IRPDA"],
-        "tokens": [
-          {
-            "tokenName": "wcag-minTargetSize",
-            "tokenValue": "24px",
-            "tokenType": "Length",
-            "tokenInstructions": "Set the minimum size for interactive elements (buttons, links, form controls, etc.) to ensure reasonable target acquisition."
-          },
-          {
-            "tokenName": "wcag-minTargetSpacing",
-            "tokenValue": "8px",
-            "tokenType": "Length",
-            "tokenInstructions": "Set the minimum spacing between interactive elements to prevent accidental activation."
-          },
-          {
-            "tokenName": "wcag-targetHitArea",
-            "tokenValue": "true",
-            "tokenType": "Boolean",
-            "tokenInstructions": "Enable or disable the use of larger hit areas for interactive elements to improve target acquisition."
-          }
-        ]
-      }
-    ]
+{
+  "wcag-captions-background-color": {
+    "$type": "color",
+    "$value": "#000000",
+    "$description": "WCAG 1.2.4 (AA v2.0) - Set the background color of the live closed captions for optimal contrast and readability."
+  },
+  "wcag-captions-foreground-color": {
+    "$type": "color",
+    "$value": "#ffffff",
+    "$description": "WCAG 1.2.4 (AA v2.0) - Set the text foreground color of the live closed captions for optimal contrast and readability."
+  },
+  "wcag-captions-size-multiplier": {
+    "$type": "number",
+    "$value": "1",
+    "$description": "WCAG 1.2.4 (AA v2.0) - Maximum text scaling factor to support readability without loss of content or functionality."
+  },
+  "wcag-contrast-background-color": {
+    "$type": "color",
+    "$value": "#ffffff",
+    "$description": "WCAG 1.4.3 (AA v2.0) - Ensures text and background have a contrast ratio of at least 4.5:1."
+  },
+  "wcag-contrast-foreground-color": {
+    "$type": "color",
+    "$value": "#000000",
+    "$description": "WCAG 1.4.3 (AA v2.0) - Ensures text and background have a contrast ratio of at least 4.5:1."
+  },
+  "wcag-text-resize-max-pct": {
+    "$type": "number",
+    "$value": "200",
+    "$description": "WCAG 1.4.4 (AA v2.0) - Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality."
+  },
+  "wcag-visual-text-foreground-color": {
+    "$type": "color",
+    "$value": "#ffffff",
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Allows users to select foreground color for text to improve readability and visual comfort."
+  },
+  "wcag-visual-text-background-color": {
+    "$type": "color",
+    "$value": "#000000",
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Allows users to select background color for text, enhancing contrast and readability."
+  },
+  "wcag-max-text-characters-latin-ch": {
+    "$type": "number",
+    "$value": "80",
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 80 for Latin scripts."
+  },
+  "wcag-max-text-characters-cjk-ch": {
+    "$type": "number",
+    "$value": "40",
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 40 for Chinese, Japanese, and Korean scripts."
+  },
+  "wcag-text-line-spacing-multiplier": {
+    "$type": "number",
+    "$value": "1.5",
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Minimum line spacing (leading) within paragraphs, at least space-and-a-half."
+  },
+  "wcag-text-paragraph-spacing-multiplier": {
+    "$type": "number",
+    "$value": "2.25",
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Minimum paragraph spacing, at least 1.5 times the line spacing."
+  },
+  "wcag-text-resize-no-scroll": {
+    "$type": "boolean",
+    "$value": "true",
+    "$description": "WCAG 1.4.8 (AAA v2.0) - Text can be resized up to 200 percent without horizontal scrolling on a full-screen window."
+  },
+  "wcag-reflow-max-height-px": {
+    "$type": "number",
+    "$value": "256",
+    "$description": "WCAG 1.4.10 (AA v2.1) - For content that requires horizontal scrolling (e.g., text written vertically), the content should be presentable at a height equivalent to 256 CSS pixels. The 256 CSS pixels height is equivalent to a starting viewport height of 1024 CSS pixels at 400% zoom. The criterion allows for parts of the content that require two-dimensional layout (e.g., images, diagrams, videos, games, data tables, and interfaces with toolbars) to have two-dimensional scrolling."
+  },
+  "wcag-reflow-max-width-px": {
+    "$type": "number",
+    "$value": "320",
+    "$description": "WCAG 1.4.10 (AA v2.1) - For content that requires vertical scrolling, the content should be presentable at a width equivalent to 320 CSS pixels. The 320 CSS pixels width is equivalent to a starting viewport width of 1280 CSS pixels at 400% zoom. The criterion allows for parts of the content that require two-dimensional layout (e.g., images, diagrams, videos, games, data tables, and interfaces with toolbars) to have two-dimensional scrolling."
+  },
+  "wcag-reflow-max-zoom-pct": {
+    "$type": "number",
+    "$value": "400",
+    "$description": "WCAG 1.4.10 (AA v2.1) - The content should be presentable without loss of information or functionality, and without requiring scrolling in two dimensions (horizontally and vertically). The intent of this Success Criterion is to support people with low vision who need to enlarge text and read it in a single column. When the browser zoom is used to scale content to 400%, it reflows - i.e., it is presented in one column so that scrolling in more than one direction is not necessary."
+  },
+  "wcag-line-height-pct": {
+    "$type": "string",
+    "$value": "150%",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Line height (line spacing) set to at least 150% of the font size to enhance readability."
+  },
+  "wcag-paragraph-spacing-pct": {
+    "$type": "string",
+    "$value": "200%",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Spacing following paragraphs set to at least 200% of font size to separate text blocks effectively."
+  },
+  "wcag-letter-spacing-pct": {
+    "$type": "string",
+    "$value": "12%",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Letter spacing (tracking) set to at least 12% of the font size to prevent crowding and improve legibility. Note: Only apply this token in combination with the 'wcag-word-spacing-pct' token."
+  },
+  "wcag-word-spacing-pct": {
+    "$type": "string",
+    "$value": "16%",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Word spacing set to at least 16% of the font size to enhance readability and reduce visual crowding of text. Note: Only apply this token in combination with the 'wcag-letter-spacing-pct' token."
+  },
+  "wcag-line-height-multiplier": {
+    "$type": "number",
+    "$value": "1.5",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Line height (line spacing) set to at least 1.5 times the font size to enhance readability."
+  },
+  "wcag-paragraph-spacing-multiplier": {
+    "$type": "number",
+    "$value": "2",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Spacing following paragraphs set to at least 2 times the font size to separate text blocks effectively."
+  },
+  "wcag-letter-spacing-multiplier": {
+    "$type": "number",
+    "$value": "0.12",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Letter spacing (tracking) set to at least 0.12 times the font size to prevent crowding and improve legibility. Note: only apply this token in combination with the 'wcag-word-spacing-multiplier' token."
+  },
+  "wcag-word-spacing-multiplier": {
+    "$type": "number",
+    "$value": "0.16",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Word spacing set to at least 0.16 times the font size to enhance readability and reduce visual crowding of text. Note: only apply this token in combination with the 'wcag-letter-spacing-multiplier' token."
+  },
+  "wcag-hover-focus-animation-style": {
+    "$type": "string",
+    "$value": "fade",
+    "$description": "WCAG 1.4.13 (AA v2.1) - Specifies the animation style ('fade', 'slide', 'none') used when additional content appears or disappears, enhancing the user experience without compromising accessibility. Ensures that content visible on hover or focus is also accessible through keyboard navigation, particularly relevant for custom tooltips, sub-menus, and other non-modal popups that appear on hover or focus, as these elements can pose accessibility challenges if not implemented correctly."
+  },
+  "wcag-hover-focus-content-delay-ms": {
+    "$type": "number",
+    "$value": "500",
+    "$description": "WCAG 1.4.13 (AA v2.1) - Specifies the delay time in milliseconds before the additional content disappears after focus or hover is removed, providing sufficient time for interaction without sudden changes. Ensures that content visible on hover or focus is also accessible through keyboard navigation, particularly relevant for custom tooltips, sub-menus, and other non-modal popups that appear on hover or focus, as these elements can pose accessibility challenges if not implemented correctly."
+  },
+  "wcag-focus-visible-color": {
+    "$type": "color",
+    "$value": "#33CC33",
+    "$description": "WCAG 2.4.7 (AA v2.0) - Color for focus indicators that ensures high visibility when elements receive focus."
+  },
+  "wcag-focus-visible-outline-width-px": {
+    "$type": "number",
+    "$value": "3",
+    "$description": "WCAG 2.4.7 (AA v2.0) - Width of the outline used for focus indicators to ensure visibility."
+  },
+  "wcag-focus-visible-outline-style": {
+    "$type": "string",
+    "$value": "solid",
+    "$description": "WCAG 2.4.7 (AA v2.0) - Style of the outline used for focus indicators (e.g., solid, dashed)."
+  },
+  "focus-indicator-width-px": {
+    "$type": "number",
+    "$value": "4",
+    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the width of the focus indicator in pixels to ensure it is clearly visible."
+  },
+  "focus-indicator-style": {
+    "$type": "string",
+    "$value": "solid",
+    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the style of the focus indicator, e.g., solid, dotted, dashed."
+  },
+  "focus-indicator-outline-offset-px": {
+    "$type": "number",
+    "$value": "2",
+    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the outline offset of the focus indicator from the element border in pixels to prevent visual merging."
+  },
+  "focus-indicator-radius-px": {
+    "$type": "number",
+    "$value": "4",
+    "$description": "WCAG 2.4.7 (AA v2.0) - Specifies the border-radius of the focus indicator in pixels to match design aesthetics."
+  },
+  "wcag-minimum-target-size-px": {
+    "$type": "number",
+    "$value": "44",
+    "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
+  },
+  "wcag-target-size-minimum-px": {
+    "$type": "number",
+    "$value": "24",
+    "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
   }
-]
+}
