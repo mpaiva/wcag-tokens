@@ -14,7 +14,7 @@
     "$value": "1",
     "$description": "WCAG 1.2.4 (AA v2.0) - Maximum text scaling factor to support readability without loss of content or functionality."
   },
-  "1-4-1 Use of Color (A)/wcag-pattern-circles-shape": {
+  "1-4-1 Use of Color (A)/wcag-pattern-circles": {
     "$type": "string",
     "$value": "url(#circles)",
     "$description": "WCAG 1.4.1 (A v2.0) - Circles pattern to visually distinguish elements such as interactive areas or key data points without relying solely on color."
@@ -29,7 +29,7 @@
     "$value": "#ffffff",
     "$description": "Background color for the circles pattern, ensuring readability and visibility of the pattern."
   },
-  "1-4-1 Use of Color (A)/wcag-pattern-crosses-shape": {
+  "1-4-1 Use of Color (A)/wcag-pattern-crosses": {
     "$type": "string",
     "$value": "url(#crosses)",
     "$description": "Crossing lines pattern used to differentiate elements where color is usually the primary indicator, enhancing usability for those with color vision deficiencies."
@@ -44,7 +44,7 @@
     "$value": "#34495e",
     "$description": "Background color for the crossing lines pattern, providing contrast and clarity."
   },
-  "1-4-1 Use of Color (A)/wcag-pattern-dots-shape": {
+  "1-4-1 Use of Color (A)/wcag-pattern-dots": {
     "$type": "string",
     "$value": "url(#dots)",
     "$description": "Dots pattern to separate or highlight elements, useful in charts, buttons, or backgrounds."
@@ -59,7 +59,7 @@
     "$value": "#e0e0e0",
     "$description": "Background color for the Dots pattern, enhancing the pattern's visibility and effect."
   },
-  "1-4-1 Use of Color (A)/wcag-pattern-crosshatch-shape": {
+  "1-4-1 Use of Color (A)/wcag-pattern-crosshatch": {
     "$type": "string",
     "$value": "url(#crosshatch)",
     "$description": "Crosshatch pattern that provides a tactile and visual cue to identify and differentiate elements, suitable for labels, alerts, and interactive elements."
@@ -74,7 +74,7 @@
     "$value": "#fafafa",
     "$description": "Background color for the crosshatch pattern, ensuring sufficient contrast for accessibility."
   },
-  "1-4-1 Use of Color (A)/wcag-pattern-diagonal-shape": {
+  "1-4-1 Use of Color (A)/wcag-pattern-diagonal": {
     "$type": "string",
     "$value": "url(#lines)",
     "$description": "Diagonal lines pattern to signify important sections or features in applications and documents, offering a visual alternative to color coding."
