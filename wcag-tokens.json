@@ -1,155 +1,220 @@
 {
-  "wcag-captions-background-color": {
+  "1-2-4 Captions Live (AA)/wcag-captions-background-color": {
     "$type": "color",
     "$value": "#000000",
     "$description": "WCAG 1.2.4 (AA v2.0) - Set the background color of the live closed captions for optimal contrast and readability."
   },
-  "wcag-captions-foreground-color": {
+  "1-2-4 Captions Live (AA)/wcag-captions-foreground-color": {
     "$type": "color",
     "$value": "#ffffff",
     "$description": "WCAG 1.2.4 (AA v2.0) - Set the text foreground color of the live closed captions for optimal contrast and readability."
   },
-  "wcag-captions-size-multiplier": {
+  "1-2-4 Captions Live (AA)/wcag-captions-size-multiplier": {
     "$type": "number",
     "$value": "1",
     "$description": "WCAG 1.2.4 (AA v2.0) - Maximum text scaling factor to support readability without loss of content or functionality."
   },
-  "wcag-contrast-background-color": {
+  "1-4-1 Use of Color (A)/wcag-pattern-circles-shape": {
+    "$type": "string",
+    "$value": "url(#circles)",
+    "$description": "WCAG 1.4.1 (A v2.0) - Circles pattern to visually distinguish elements such as interactive areas or key data points without relying solely on color."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-hatch-foreground": {
+    "$type": "color",
+    "$value": "#000000",
+    "$description": "Foreground color for the circles pattern, enhancing contrast against the background."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-hatch-background": {
+    "$type": "color",
+    "$value": "#ffffff",
+    "$description": "Background color for the circles pattern, ensuring readability and visibility of the pattern."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-crosses-shape": {
+    "$type": "string",
+    "$value": "url(#crosses)",
+    "$description": "Crossing lines pattern used to differentiate elements where color is usually the primary indicator, enhancing usability for those with color vision deficiencies."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-crosses-foreground": {
+    "$type": "color",
+    "$value": "#cccccc",
+    "$description": "Foreground color for the crossing lines pattern, suitable for ensuring visibility against diverse backgrounds."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-crosses-background": {
+    "$type": "color",
+    "$value": "#34495e",
+    "$description": "Background color for the crossing lines pattern, providing contrast and clarity."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-dots-shape": {
+    "$type": "string",
+    "$value": "url(#dots)",
+    "$description": "Dots pattern to separate or highlight elements, useful in charts, buttons, or backgrounds."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-dots-foreground": {
+    "$type": "color",
+    "$value": "#285678",
+    "$description": "Foreground color for the Dots pattern, ensuring it stands out on various interfaces."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-dots-background": {
+    "$type": "color",
+    "$value": "#e0e0e0",
+    "$description": "Background color for the Dots pattern, enhancing the pattern's visibility and effect."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-crosshatch-shape": {
+    "$type": "string",
+    "$value": "url(#crosshatch)",
+    "$description": "Crosshatch pattern that provides a tactile and visual cue to identify and differentiate elements, suitable for labels, alerts, and interactive elements."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-crosshatch-foreground": {
+    "$type": "color",
+    "$value": "#555555",
+    "$description": "Foreground color for the crosshatch pattern, designed to enhance legibility and focus."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-crosshatch-background": {
+    "$type": "color",
+    "$value": "#fafafa",
+    "$description": "Background color for the crosshatch pattern, ensuring sufficient contrast for accessibility."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-diagonal-shape": {
+    "$type": "string",
+    "$value": "url(#lines)",
+    "$description": "Diagonal lines pattern to signify important sections or features in applications and documents, offering a visual alternative to color coding."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-diagonal-foreground": {
+    "$type": "color",
+    "$value": "#666666",
+    "$description": "Foreground color for the diagonal lines pattern, selected to ensure clarity and visibility across devices."
+  },
+  "1-4-1 Use of Color (A)/wcag-pattern-diagonal-background": {
+    "$type": "color",
+    "$value": "#f0f0f0",
+    "$description": "Background color for the diagonal lines  pattern, providing a subtle yet effective contrast."
+  },
+  "1-4-3 Contrast Minimum (AA)/wcag-contrast-background-color": {
     "$type": "color",
     "$value": "#ffffff",
     "$description": "WCAG 1.4.3 (AA v2.0) - Ensures text and background have a contrast ratio of at least 4.5:1."
   },
-  "wcag-contrast-foreground-color": {
+  "1-4-3 Contrast Minimum (AA)/wcag-contrast-foreground-color": {
     "$type": "color",
     "$value": "#000000",
     "$description": "WCAG 1.4.3 (AA v2.0) - Ensures text and background have a contrast ratio of at least 4.5:1."
   },
-  "wcag-text-resize-max-pct": {
+  "1-4-4 Resize Text (AA)/wcag-text-resize-max-pct": {
     "$type": "number",
     "$value": "200",
     "$description": "WCAG 1.4.4 (AA v2.0) - Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality."
   },
-  "wcag-visual-text-foreground-color": {
+  "1-4-8 Visual Presentation (AAA)/wcag-visual-text-foreground-color": {
     "$type": "color",
     "$value": "#ffffff",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Allows users to select foreground color for text to improve readability and visual comfort."
   },
-  "wcag-visual-text-background-color": {
+  "1-4-8 Visual Presentation (AAA)/wcag-visual-text-background-color": {
     "$type": "color",
     "$value": "#000000",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Allows users to select background color for text, enhancing contrast and readability."
   },
-  "wcag-max-text-characters-latin-ch": {
+  "1-4-8 Visual Presentation (AAA)/wcag-max-text-characters-latin-ch": {
     "$type": "number",
     "$value": "80",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 80 for Latin scripts. Note: 1 ch unit is relative to the average character advance of a narrow glyph in the element's font, as represented by the '0' (ZERO, U+0030) glyph."
   },
-  "wcag-max-text-characters-cjk-ch": {
+  "1-4-8 Visual Presentation (AAA)/wcag-max-text-characters-cjk-ch": {
     "$type": "number",
     "$value": "40",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Maximum number of characters per line to improve readability, set to 40 for Chinese, Japanese, and Korean scripts. Note: 1 ch unit is relative to the average character advance of a narrow glyph in the element's font, as represented by the '〇' (Japanese ZERO, U+3007) the Ideographic Number Zero glyph."
   },
-  "wcag-text-line-spacing-multiplier": {
+  "1-4-8 Visual Presentation (AAA)/wcag-text-line-spacing-multiplier": {
     "$type": "number",
     "$value": "1.5",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Minimum line spacing (leading) within paragraphs, at least space-and-a-half."
   },
-  "wcag-text-paragraph-spacing-multiplier": {
+  "1-4-8 Visual Presentation (AAA)/wcag-text-paragraph-spacing-multiplier": {
     "$type": "number",
     "$value": "2.25",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Minimum paragraph spacing, at least 1.5 times the line spacing."
   },
-  "wcag-text-resize-no-scroll": {
+  "1-4-8 Visual Presentation (AAA)/wcag-text-resize-no-scroll": {
     "$type": "boolean",
     "$value": "true",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Text can be resized up to 200 percent without horizontal scrolling on a full-screen window."
   },
-  "wcag-reflow-max-height-px": {
+  "1-4-10 Reflow (AA)/wcag-reflow-max-height-px": {
     "$type": "number",
     "$value": "256",
     "$description": "WCAG 1.4.10 (AA v2.1) - For content that requires horizontal scrolling (e.g., text written vertically), the content should be presentable at a height equivalent to 256 CSS pixels. The 256 CSS pixels height is equivalent to a starting viewport height of 1024 CSS pixels at 400% zoom. The criterion allows for parts of the content that require two-dimensional layout (e.g., images, diagrams, videos, games, data tables, and interfaces with toolbars) to have two-dimensional scrolling."
   },
-  "wcag-reflow-max-width-px": {
+  "1-4-10 Reflow (AA)/wcag-reflow-max-width-px": {
     "$type": "number",
     "$value": "320",
     "$description": "WCAG 1.4.10 (AA v2.1) - For content that requires vertical scrolling, the content should be presentable at a width equivalent to 320 CSS pixels. The 320 CSS pixels width is equivalent to a starting viewport width of 1280 CSS pixels at 400% zoom. The criterion allows for parts of the content that require two-dimensional layout (e.g., images, diagrams, videos, games, data tables, and interfaces with toolbars) to have two-dimensional scrolling."
   },
-  "wcag-reflow-max-zoom-pct": {
+  "1-4-10 Reflow (AA)/wcag-reflow-max-zoom-pct": {
     "$type": "number",
     "$value": "400",
     "$description": "WCAG 1.4.10 (AA v2.1) - The content should be presentable without loss of information or functionality, and without requiring scrolling in two dimensions (horizontally and vertically). The intent of this Success Criterion is to support people with low vision who need to enlarge text and read it in a single column. When the browser zoom is used to scale content to 400%, it reflows - i.e., it is presented in one column so that scrolling in more than one direction is not necessary."
   },
-  "wcag-line-height-pct": {
+  "1-4-12 Text Spacing (AA)/wcag-line-height-pct": {
     "$type": "string",
     "$value": "150%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Line height (line spacing) set to at least 150% of the font size to enhance readability."
   },
-  "wcag-paragraph-spacing-pct": {
+  "1-4-12 Text Spacing (AA)/wcag-paragraph-spacing-pct": {
     "$type": "string",
     "$value": "200%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Spacing following paragraphs set to at least 200% of font size to separate text blocks effectively."
   },
-  "wcag-letter-spacing-pct": {
+  "1-4-12 Text Spacing (AA)/wcag-letter-spacing-pct": {
     "$type": "string",
     "$value": "12%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Letter spacing (tracking) set to at least 12% of the font size to prevent crowding and improve legibility. Note: Only apply this token in combination with the 'wcag-word-spacing-pct' token."
   },
-  "wcag-word-spacing-pct": {
+  "1-4-12 Text Spacing (AA)/wcag-word-spacing-pct": {
     "$type": "string",
     "$value": "16%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Word spacing set to at least 16% of the font size to enhance readability and reduce visual crowding of text. Note: Only apply this token in combination with the 'wcag-letter-spacing-pct' token."
   },
-  "wcag-line-height-multiplier": {
+  "1-4-12 Text Spacing (AA)/wcag-line-height-multiplier": {
     "$type": "number",
     "$value": "1.5",
     "$description": "WCAG 1.4.12 (AA v2.1) - Line height (line spacing) set to at least 1.5 times the font size to enhance readability."
   },
-  "wcag-paragraph-spacing-multiplier": {
+  "1-4-12 Text Spacing (AA)/wcag-paragraph-spacing-multiplier": {
     "$type": "number",
     "$value": "2",
     "$description": "WCAG 1.4.12 (AA v2.1) - Spacing following paragraphs set to at least 2 times the font size to separate text blocks effectively."
   },
-  "wcag-letter-spacing-multiplier": {
+  "1-4-12 Text Spacing (AA)/wcag-letter-spacing-multiplier": {
     "$type": "number",
     "$value": "0.12",
     "$description": "WCAG 1.4.12 (AA v2.1) - Letter spacing (tracking) set to at least 0.12 times the font size to prevent crowding and improve legibility. Note: only apply this token in combination with the 'wcag-word-spacing-multiplier' token."
   },
-  "wcag-word-spacing-multiplier": {
+  "1-4-12 Text Spacing (AA)/wcag-word-spacing-multiplier": {
     "$type": "number",
     "$value": "0.16",
     "$description": "WCAG 1.4.12 (AA v2.1) - Word spacing set to at least 0.16 times the font size to enhance readability and reduce visual crowding of text. Note: only apply this token in combination with the 'wcag-letter-spacing-multiplier' token."
   },
-  "wcag-hover-focus-animation-style": {
-    "$type": "string",
-    "$value": "fade",
-    "$description": "WCAG 1.4.13 (AA v2.1) - Specifies the animation style ('fade', 'slide', 'none') used when additional content appears or disappears, enhancing the user experience without compromising accessibility. Ensures that content visible on hover or focus is also accessible through keyboard navigation, particularly relevant for custom tooltips, sub-menus, and other non-modal popups that appear on hover or focus, as these elements can pose accessibility challenges if not implemented correctly."
-  },
-  "wcag-hover-focus-content-delay-ms": {
-    "$type": "number",
-    "$value": "500",
-    "$description": "WCAG 1.4.13 (AA v2.1) - Specifies the delay time in milliseconds before the additional content disappears after focus or hover is removed, providing sufficient time for interaction without sudden changes. Ensures that content visible on hover or focus is also accessible through keyboard navigation, particularly relevant for custom tooltips, sub-menus, and other non-modal popups that appear on hover or focus, as these elements can pose accessibility challenges if not implemented correctly."
-  },
-  "wcag-focus-visible-color": {
+  "2-4-7 Focus Visible (AA)/wcag-focus-visible-color": {
     "$type": "color",
     "$value": "#0088ff",
     "$description": "WCAG 2.4.7 (AA v2.0) - Default color for focus indicators that ensures high visibility when elements receive focus."
   },
-  "wcag-focus-visible-outline-width-px": {
+  "2-4-7 Focus Visible (AA)/wcag-focus-visible-outline-width-px": {
     "$type": "number",
     "$value": "2",
     "$description": "WCAG 2.4.7 (AA v2.0) - Width of the outline used for focus indicators to ensure visibility."
   },
-  "wcag-focus-visible-outline-style": {
+  "2-4-7 Focus Visible (AA)/wcag-focus-visible-outline-style": {
     "$type": "string",
     "$value": "solid",
     "$description": "WCAG 2.4.7 (AA v2.0) - Style of the outline used for focus indicators (e.g., solid, dashed)."
   },
-  "wcag-minimum-target-size-px": {
+  "2-5-5 Target Size (AAA)/wcag-minimum-target-size-px": {
     "$type": "number",
     "$value": "44",
     "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
   },
-  "wcag-target-size-minimum-px": {
+  "2-5-8 Target Size (AA)/wcag-target-size-minimum-px": {
     "$type": "number",
     "$value": "24",
     "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
