@@ -1,16 +1,44 @@
 # WCAG Tokens
 
-Explore a curated collection of design tokens designed to meet WCAG standards, aiding design systems in maintaining accessibility across size, spacing, color, typography, and timing. This repository provides guidelines, examples, and best practices to help designers and developers **implement these tokens into their existing design systems**, ensuring consistent and accessible digital interfaces.
+Explore a curated collection of design tokens crafted to comply with the **[Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)**. These tokens support accessibility across various design elements such as size, spacing, color, typography, and more. 
+
+![Screenshot of a Figma Variables collection displaying the imported WCAG tokens.](images/plugin-01.png)
+*Screenshot of a Figma Variables collection displaying the imported WCAG tokens.*
+
+We aim to offer a comprehensive set of **utility tokens**, guidelines, examples, and best practices to assist designers and developers in integrating these accessibility-focused tokens into their existing design systems, ensuring consistent and accessible digital interfaces.
 
 ## About this community
 
-Our mission is to enhance digital accessibility by providing a robust and standardized set of design tokens aligned with the Web Content Accessibility Guidelines (WCAG). We empower designers and developers to seamlessly integrate these tokens into existing design systems, ensuring that digital products are accessible to all users, including those with disabilities.
+Our mission is to enhance digital accessibility by providing a robust and standardized set of design tokens aligned with the Web Content Accessibility Guidelines (WCAG).
+
+We empower designers and developers to seamlessly integrate these tokens into existing design systems, ensuring that digital products are accessible to all users, including those with disabilities.
+
+## Figma Plugin Overview
+The WCAG Tokens Figma plugin is designed to enhance the accessibility of digital designs by integrating WCAG guidelines directly into the design process. The plugin provides several key features to support designers and accessibility specialists:
+
+### Tokens:
+
+- **Utility Tokens** – Import accessibility utility tokens as Figma variables. These tokens help ensure accessible design decisions across various design elements, such as size, spacing, color, typography, and timing.
+
+### Search:
+
+- **Guideline Search** – Search for specific WCAG criteria within the Figma design environment. This feature allows designers to find and apply relevant guidelines quickly, ensuring their designs comply with accessibility standards.
+
+### Cards:
+
+- **Notation Cards** – Annotate Figma design files with WCAG guideline cards. These cards provide quick references and educational support for design teams, increasing their knowledge of accessibility requirements and best practices.
+
 
 ## Creating WCAG Design Tokens
 
-Our initiative focuses on creating design tokens that can be used in design systems to meet different WCAG success criteria. It focuses on key areas like size, spacing, color, typography, and timing. This provides a clear method for designers and developers to make sure all digital content follows accessibility standards. These tokens act as helpful tools that allow design teams to consistently apply accessibility throughout their projects, ensuring their work is inclusive and meets global accessibility guidelines.
+Our initiative focuses on creating design tokens that can be used in design systems to meet different WCAG success criteria. It focuses on key areas like size, spacing, color, typography, and more. 
 
-Below is a comprehensive list of the key WCAG criteria that our design tokens will address:
+This provides a clear method for designers and developers to make sure all digital content follows accessibility standards. 
+
+These tokens act as helpful tools that allow design teams to consistently apply accessibility throughout their projects, ensuring their work is inclusive and meets global accessibility guidelines.
+
+## WCAG Token Set
+Below is a comprehensive list of the key WCAG criteria that our utility tokens will address:
 
 ### Size and Spacing
 
@@ -58,7 +86,7 @@ Below is a comprehensive list of the key WCAG criteria that our design tokens wi
 - **2.5.3 Label in Name**
   - Text labels must match the visual presentation for interactive elements.
 
-## Accessible Design Tokens Example
+## Example
 
 The JSON file below offers an example of the template we are using for a collection of design tokens designed to align with the Web Content Accessibility Guidelines (WCAG):
 
@@ -85,18 +113,57 @@ The JSON file below offers an example of the template we are using for a collect
 
 ### What's Next?
 
-As we continue to refine and expand our repository, we aim to keep improving the design tokens to ensure they not only meet current WCAG guidelines but also anticipate future accessibility needs. Our next steps include:
+As we continue to refine and expand our repository, our goal is to ensure our design tokens not only meet current WCAG guidelines but also anticipate future accessibility needs. Here are the next steps we plan to take:
 
-- **Updating Tokens Regularly**: We will keep the tokens up-to-date with the latest accessibility standards and design trends.
-- **Expanding Token Categories**: Plans are in place to introduce additional tokens that cover more aspects of accessibility, such as auditory and cognitive dimensions.
-- **Enhancing Documentation**: We will provide more detailed documentation and examples to make the integration process as straightforward as possible.
+#### Additional Tokens and Categories
+
+- **Additional Tokens**: Keep tokens up-to-date with the latest accessibility standards and design trends.
+- **Expanding Token Categories**: Introduce additional tokens that cover more aspects of accessibility, including auditory and cognitive dimensions.
+
+#### Enhancements in Documentation
+
+- **Enhancing Documentation**: Provide more detailed documentation and examples to make the integration process as straightforward as possible.
+- **Educational Resources**:
+  - **Inline Guidance**: Include brief explanations or links to more detailed resources about WCAG guidelines within the plugin. This helps users understand the importance of certain tokens.
+  - **Examples and Best Practices**: Offer examples of best practices for implementing the tokens in designs, helping users see practical applications.
+
+#### Improved Search Functionality
+
+- **Autocomplete and Suggestions**: Implement autocomplete functionality to suggest guidelines as users type. This can be based on partial matches or related criteria.
+- **Advanced Filters**: Allow users to filter search results by WCAG level (A, AA, AAA), guideline category, or by specific keywords related to their needs.
+
+#### Import Tokens Improvements
+
+- **Preview Changes**: Allow users to preview the visual changes the tokens will bring to the design before importing them. This can help them make more informed decisions.
+
+#### Design Token Management
+
+- **Grouping and Categorization**: Enable users to group and categorize tokens by guideline category or by the design element they impact (e.g., color, spacing, typography).
+- **Customization**: Allow users to customize imported tokens if needed and save these customizations within the plugin for future use.
+
+#### User Interface Enhancements
+
+- **Visual Feedback**: Provide visual feedback for actions such as successful imports, errors, or when a search yields no results.
+
+#### User Interaction and Customization
+
+- **Save Searches and Preferences**: Allow users to save their search queries and preferences for quicker access in future sessions.
+- **Favorite Tokens**: Enable users to mark certain tokens as favorites for easy access.
+
+#### Accessibility Features in the Plugin
+
+- **Keyboard Navigation**: Ensure the plugin itself is fully navigable using a keyboard.
+- **Screen Reader Compatibility**: Make sure the plugin is compatible with screen readers to support all users, including those with disabilities.
+
+By focusing on these areas, we aim to make our plugin an invaluable tool for designers committed to creating accessible digital content. If you have any suggestions or comments, please send us a note via the [Issues](https://github.com/mpaiva/wcag-tokens/issues) page.
+
 
 ### How You Can Contribute
 
 We warmly invite contributions from the community! Whether you're a designer, developer, accessibility expert, or just passionate about making the web more accessible, your input is valuable. Here’s how you can get involved:
 
 - **Submit Token Ideas**: If you have ideas for new tokens or improvements to existing ones, please share them with us.
-- **Report Issues**: If you find any issues or inconsistencies in the current tokens, let us know through the repository's [Issues](https://github.com/mpaiva/accessible-design-tokens/issues) section.
+- **Report Issues**: If you find any issues or inconsistencies in the current tokens, let us know through the repository's [Issues](https://github.com/mpaiva/wcag-tokens/issues) section.
 - **Improve Documentation**: Help us make our documentation clearer and more comprehensive to assist others in using and understanding our tokens.
 - **Spread the Word**: Share the repository with others who might find it useful or could contribute to its growth.
 

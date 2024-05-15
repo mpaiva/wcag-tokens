@@ -134,11 +134,6 @@
     "$value": "2.25",
     "$description": "WCAG 1.4.8 (AAA v2.0) - Minimum paragraph spacing, at least 1.5 times the line spacing."
   },
-  "1-4-8 Visual Presentation (AAA)/wcag-text-resize-no-scroll": {
-    "$type": "boolean",
-    "$value": "true",
-    "$description": "WCAG 1.4.8 (AAA v2.0) - Text can be resized up to 200 percent without horizontal scrolling on a full-screen window."
-  },
   "1-4-10 Reflow (AA)/wcag-reflow-max-height-px": {
     "$type": "number",
     "$value": "256",
