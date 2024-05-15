@@ -167,7 +167,7 @@ We warmly invite contributions from the community! Whether you're a designer, de
 - **Improve Documentation**: Help us make our documentation clearer and more comprehensive to assist others in using and understanding our tokens.
 - **Spread the Word**: Share the repository with others who might find it useful or could contribute to its growth.
 
-Together, we can build a more accessible digital world, one design token at a time! To get started and learn how to contribute to this repository, check out our [contribution guidelines](https://github.com/mpaiva/accessible-design-tokens/contribute.md).
+Together, we can build a more accessible digital world, one design token at a time!
 
 ## How to Make a Contribution
 
@@ -195,36 +195,9 @@ Together, we can build a more accessible digital world, one design token at a ti
 
 - Be respectful of all contributors.
 - Engage constructively during disagreements.
-- Follow the community guidelines for appropriate behavior.
 
-By following these guidelines, you will help us maintain the quality and efficacy of our design tokens. We look forward to your contributions and thank you for helping us make the web a more accessible place for everyone!
-
-Please remember, that your contributions indicate your agreement to abide by the repository's terms of use and its licensing agreements.
+By following these simple guidelines, you will help us maintain the quality and efficacy of our design tokens. We look forward to your contributions and thank you for helping us make the web a more accessible place for everyone!
 
 ## Questions?
 
-If you have any questions about contributing, please feel free to contact us via the repository's [Issues](https://github.com/mpaiva/accessible-design-tokens/issues) section or directly through our community communication channels.
-
-## Credits (Placeholder)
-
-### Contributors
-
-We are immensely grateful to all the individuals who have contributed their time, expertise, and passion to the development of the Accessible Design Tokens repository. Your contributions help make digital spaces more accessible to everyone.
-
-### Acknowledgments
-
-- **Web Content Accessibility Guidelines (WCAG)**: This repository is based on the principles and guidelines provided by the WCAG, an initiative of the World Wide Web Consortium (W3C) to provide a universal standard for web accessibility.
-- **Community Feedback**: Special thanks to the broader design and development community for their valuable feedback and suggestions that have shaped these design tokens.
-- **Project Sponsors and Supporters**: We appreciate the support from organizations and projects that believe in and fund our mission to improve accessibility.
-
-### Special Thanks
-
-- **[Your Organization Name]**: For initiating and supporting this project.
-- **Technical Reviewers**: To ensure the accuracy and effectiveness of our design tokens.
-- **Documentation Volunteers**: For their efforts in making our guidelines clear and understandable.
-
-We encourage anyone interested in contributing to or learning more about our efforts to contact us or visit our project page.
-
-### License
-
-This project is released under the [MIT License](LICENSE.md), allowing for widespread use and adaptation with appropriate credit.
+If you have any questions about contributing, please feel free to contact us via the repository's [Issues](https://github.com/mpaiva/wcag-tokens/issues) section or directly through our community communication channels.
