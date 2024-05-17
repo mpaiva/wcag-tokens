@@ -156,7 +156,7 @@
   },
   "1-4-12 Text Spacing (AA)/wcag-line-height-pt": {
     "$type": "number",
-    "$value": "16 * 2",
+    "$value": "24",
     "$description": "WCAG 1.4.12 (AA v2.1) - Line height (line spacing) set to at least 150% of the font size to enhance readability."
   },
   "1-4-12 Text Spacing (AA)/wcag-paragraph-spacing-pct": {
@@ -212,6 +212,16 @@
   "2-5-5 Target Size (AAA)/wcag-minimum-target-size-px": {
     "$type": "number",
     "$value": "44",
+    "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
+  },
+  "2-5-5 Target Size (AAA)/wcag-minimum-target-size-half-px": {
+    "$type": "number",
+    "$value": "22",
+    "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
+  },
+  "2-5-5 Target Size (AAA)/wcag-minimum-target-size-quarter-px": {
+    "$type": "number",
+    "$value": "11",
     "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
   },
   "2-5-8 Target Size (AA)/wcag-target-size-minimum-px": {
