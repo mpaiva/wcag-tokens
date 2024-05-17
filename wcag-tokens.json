@@ -228,5 +228,15 @@
     "$type": "number",
     "$value": "24",
     "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
+  },
+  "2-5-8 Target Size (AA)/wcag-target-size-minimum-half-px": {
+    "$type": "number",
+    "$value": "12",
+    "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
+  },
+  "2-5-8 Target Size (AA)/wcag-target-size-minimum-quarter-px": {
+    "$type": "number",
+    "$value": "6",
+    "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
   }
 }
