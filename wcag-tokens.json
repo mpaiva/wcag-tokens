@@ -150,22 +150,27 @@
     "$description": "WCAG 1.4.10 (AA v2.1) - The content should be presentable without loss of information or functionality, and without requiring scrolling in two dimensions (horizontally and vertically). The intent of this Success Criterion is to support people with low vision who need to enlarge text and read it in a single column. When the browser zoom is used to scale content to 400%, it reflows - i.e., it is presented in one column so that scrolling in more than one direction is not necessary."
   },
   "1-4-12 Text Spacing (AA)/wcag-line-height-pct": {
-    "$type": "string",
+    "$type": "dimension",
     "$value": "150%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Line height (line spacing) set to at least 150% of the font size to enhance readability."
   },
+  "1-4-12 Text Spacing (AA)/wcag-line-height-pt": {
+    "$type": "number",
+    "$value": "24",
+    "$description": "WCAG 1.4.12 (AA v2.1) - Line height (line spacing) set to at least 150% of the font size to enhance readability."
+  },
   "1-4-12 Text Spacing (AA)/wcag-paragraph-spacing-pct": {
-    "$type": "string",
+    "$type": "dimension",
     "$value": "200%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Spacing following paragraphs set to at least 200% of font size to separate text blocks effectively."
   },
   "1-4-12 Text Spacing (AA)/wcag-letter-spacing-pct": {
-    "$type": "string",
+    "$type": "dimension",
     "$value": "12%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Letter spacing (tracking) set to at least 12% of the font size to prevent crowding and improve legibility. Note: Only apply this token in combination with the 'wcag-word-spacing-pct' token."
   },
   "1-4-12 Text Spacing (AA)/wcag-word-spacing-pct": {
-    "$type": "string",
+    "$type": "dimension",
     "$value": "16%",
     "$description": "WCAG 1.4.12 (AA v2.1) - Word spacing set to at least 16% of the font size to enhance readability and reduce visual crowding of text. Note: Only apply this token in combination with the 'wcag-letter-spacing-pct' token."
   },
@@ -191,7 +196,7 @@
   },
   "2-4-7 Focus Visible (AA)/wcag-focus-visible-color": {
     "$type": "color",
-    "$value": "#F60",
+    "$value": "#33CC33",
     "$description": "WCAG 2.4.7 (AA v2.0) - Default color for focus indicators that ensures high visibility when elements receive focus."
   },
   "2-4-7 Focus Visible (AA)/wcag-focus-visible-outline-width-px": {
@@ -209,9 +214,29 @@
     "$value": "44",
     "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
   },
+  "2-5-5 Target Size (AAA)/wcag-minimum-target-size-half-px": {
+    "$type": "number",
+    "$value": "22",
+    "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
+  },
+  "2-5-5 Target Size (AAA)/wcag-minimum-target-size-quarter-px": {
+    "$type": "number",
+    "$value": "11",
+    "$description": "WCAG 2.5.5 (AAA v2.1) - The main requirement of this criterion is that the size of the target for pointer inputs should be at least 44 by 44 CSS pixels, except in certain cases. The exceptions are: Equivalent: If there is an equivalent link or control on the same page that is at least 44 by 44 CSS pixels. Inline: If the target is part of a sentence or block of text. Note: This is a Level AAA criterion, which means it is a recommended best practice. However, adhering to this criterion can significantly enhance the user experience for a wide range of users, especially those with disabilities or impairments that affect their ability to interact with small targets."
+  },
   "2-5-8 Target Size (AA)/wcag-target-size-minimum-px": {
     "$type": "number",
     "$value": "24",
+    "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
+  },
+  "2-5-8 Target Size (AA)/wcag-target-size-minimum-half-px": {
+    "$type": "number",
+    "$value": "12",
+    "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
+  },
+  "2-5-8 Target Size (AA)/wcag-target-size-minimum-quarter-px": {
+    "$type": "number",
+    "$value": "6",
     "$description": "WCAG 2.5.8 (AA v2.2) - Specifies the minimum size for target areas of pointer inputs, ensuring ease of interaction."
   }
 }
