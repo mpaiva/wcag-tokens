@@ -79,9 +79,6 @@ figma.ui.onmessage = async (msg) => {
     }
 };
 
-
-
-
 async function importTokens(files: Record<string, JsonTokenDocument>): Promise<OperationResult[]> {
     let results: OperationResult[] = [];
 
@@ -161,8 +158,13 @@ async function createOrUpdateVariable(tokenName: string, value: any, type: Varia
 
     try {
         let collections = await figma.variables.getLocalVariableCollectionsAsync();
-        let collection = collections.length > 0 ? collections[0] : await figma.variables.createVariableCollection('Default Collection');
+        let collection = collections.find(c => c.name === "WCAG Tokens");
+        // let collection = collections.length > 0 ? collections[0] : await figma.variables.createVariableCollection('Default Collection');
 
+        if (!collection) {
+            collection = await figma.variables.createVariableCollection("WCAG Tokens");
+        }
+        
         let variables = await figma.variables.getLocalVariablesAsync();
         let variable = variables.find(v => v.name === tokenName);
 
@@ -371,9 +373,9 @@ async function createWcagCard(item: WCAGItem) {
     // figma.viewport.scrollAndZoomIntoView([frame]);
     lastXPosition += frame.width + 20;
     console.log("Frame created and appended to the page.");
-  }
+}
   
-  async function createText(content: string, style: { fontWeight?: string; fontSize?: number; color?: string; lineHeight?: number }) {
+async function createText(content: string, style: { fontWeight?: string; fontSize?: number; color?: string; lineHeight?: number }) {
     const text = figma.createText();
   
     await figma.loadFontAsync({ family: "Inter", style: style.fontWeight || "Regular" });
@@ -393,11 +395,11 @@ async function createWcagCard(item: WCAGItem) {
   
   
     return text;
-  }
+}
   
-  function hexToRgbFigma(hex: string) {
-    let r = parseInt(hex.substring(0, 2), 16) / 255;
-    let g = parseInt(hex.substring(2, 4), 16) / 255;
-    let b = parseInt(hex.substring(4, 6), 16) / 255;
-    return { r, g, b };
-  }
+function hexToRgbFigma(hex: string) {
+let r = parseInt(hex.substring(0, 2), 16) / 255;
+let g = parseInt(hex.substring(2, 4), 16) / 255;
+let b = parseInt(hex.substring(4, 6), 16) / 255;
+return { r, g, b };
+}

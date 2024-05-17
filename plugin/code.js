@@ -133,7 +133,11 @@ function createOrUpdateVariable(tokenName, value, type) {
         }
         try {
             let collections = yield figma.variables.getLocalVariableCollectionsAsync();
-            let collection = collections.length > 0 ? collections[0] : yield figma.variables.createVariableCollection('Default Collection');
+            let collection = collections.find(c => c.name === "WCAG Tokens");
+            // let collection = collections.length > 0 ? collections[0] : await figma.variables.createVariableCollection('Default Collection');
+            if (!collection) {
+                collection = yield figma.variables.createVariableCollection("WCAG Tokens");
+            }
             let variables = yield figma.variables.getLocalVariablesAsync();
             let variable = variables.find(v => v.name === tokenName);
             if (!variable) {
