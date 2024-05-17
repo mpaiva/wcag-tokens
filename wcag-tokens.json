@@ -191,7 +191,7 @@
   },
   "2-4-7 Focus Visible (AA)/wcag-focus-visible-color": {
     "$type": "color",
-    "$value": "#33CC33",
+    "$value": "#F60",
     "$description": "WCAG 2.4.7 (AA v2.0) - Default color for focus indicators that ensures high visibility when elements receive focus."
   },
   "2-4-7 Focus Visible (AA)/wcag-focus-visible-outline-width-px": {
