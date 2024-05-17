@@ -38,8 +38,9 @@
       <!-- Import WCAG Tokens -->
       <div x-show="activeTab === 'Import WCAG Tokens'">
         <div class="px-4 py-2 flex flex-col bg-white border-y border-gray-300">
-          <p class="mb-2">Import accessibility utility tokens as Figma variables. These tokens help ensure accessible design decisions across various design elements, such as size, spacing, color, typography, and more.</p>
-          <button x-html="importButtonText" class="px-3 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded" x-on:click="importWCAGTokens()"></button>
+          <button x-html="importButtonText" class="px-3 mt-4 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded" x-on:click="importWCAGTokens()"></button>
+          <p class="mt-4 mb-4"><span class="font-bold">Note:</span>These tokens suggestions help ensure accessible design decisions across various design elements,
+            such as size, spacing, color, typography, and more.</p>
           <!-- Import Result Message -->
           <div x-html="resultsImport"></div>
 
