@@ -26,7 +26,7 @@ type JsonTokenType = 'color' | 'dimension' | 'duration' | 'number' | 'boolean' |
 
 let lastXPosition = 0;  // Ensure this is declared globally
 
-figma.showUI(__html__, { width: 320, height: 640 });
+figma.showUI(__html__, { width: 320, height: 780 });
 
 figma.ui.onmessage = async (msg) => {
     try {
@@ -132,6 +132,11 @@ async function createWcagCard(item: WCAGItem) {
         await figma.loadFontAsync({ family: "Inter", style: "Regular" });
         console.log("Fonts loaded.");
 
+        // Create a hidden component
+        const component = figma.createComponent();
+        component.name = `${item.ref_id} - ${item.title}`;
+        component.visible = false;
+
         const frame = figma.createFrame();
         frame.name = `${item.ref_id} - ${item.title}`;
         frame.resize(394, 100);
@@ -149,11 +154,6 @@ async function createWcagCard(item: WCAGItem) {
         frame.itemSpacing = 3;
         frame.clipsContent = true;
 
-        const viewportCenter = figma.viewport.center;
-        frame.x = viewportCenter.x - frame.width / 2 + lastXPosition;
-        frame.y = viewportCenter.y - frame.height / 2;
-
-        console.log("Creating text elements...");
         const refIDText = await createText(item.ref_id, {
             fontWeight: 'Bold',
             fontSize: 20,
@@ -193,10 +193,8 @@ async function createWcagCard(item: WCAGItem) {
             lineHeight: 24
         });
         frame.appendChild(urlText);
-        console.log("Text elements created.");
 
         if (item.references && item.references.length > 0) {
-            console.log("Creating references...");
             const referencesFrame = figma.createFrame();
             referencesFrame.name = "References Container";
             referencesFrame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
@@ -234,11 +232,9 @@ async function createWcagCard(item: WCAGItem) {
 
             frame.appendChild(referencesFrame);
             referencesFrame.resize(394 - 32, referencesFrame.height);
-            console.log("References created.");
         }
 
         if (item.notes && item.notes.length > 0) {
-            console.log("Creating notes...");
             const notesFrame = figma.createFrame();
             notesFrame.name = "Notes Container";
             notesFrame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
@@ -268,11 +264,9 @@ async function createWcagCard(item: WCAGItem) {
 
             frame.appendChild(notesFrame);
             notesFrame.resize(394 - 32, notesFrame.height);
-            console.log("Notes created.");
         }
 
         if (item.special_cases && item.special_cases.length > 0) {
-            console.log("Creating special cases...");
             const specialCasesFrame = figma.createFrame();
             specialCasesFrame.name = "Special Cases Container";
             specialCasesFrame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
@@ -302,13 +296,23 @@ async function createWcagCard(item: WCAGItem) {
 
             frame.appendChild(specialCasesFrame);
             specialCasesFrame.resize(394 - 32, specialCasesFrame.height);
-            console.log("Special cases created.");
         }
 
         frame.resize(394, frame.height);
-        figma.currentPage.appendChild(frame);
-        lastXPosition += frame.width + 20;
-        console.log("Frame created and appended to the page.");
+        component.appendChild(frame);
+
+        const instance = component.createInstance();
+        instance.x = figma.viewport.center.x - instance.width / 2 + lastXPosition;
+        instance.y = figma.viewport.center.y - instance.height / 2;
+        instance.visible = true;
+
+        figma.currentPage.appendChild(instance);
+        lastXPosition += instance.width + 20;
+
+        // Delete the component after creating the instance
+        component.remove();
+
+        console.log("Component instance created and appended to the page, and the original component removed.");
     } catch (error) {
         console.error("Error in createWcagCard:", error);
         if (error instanceof Error) {
