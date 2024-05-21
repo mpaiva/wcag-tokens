@@ -26,7 +26,7 @@ type JsonTokenType = 'color' | 'dimension' | 'duration' | 'number' | 'boolean' |
 
 let lastXPosition = 0;  // Ensure this is declared globally
 
-figma.showUI(__html__, { width: 320, height: 780 });
+figma.showUI(__html__, { width: 320, height: 640 });
 
 figma.ui.onmessage = async (msg) => {
     try {

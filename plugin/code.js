@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 let lastXPosition = 0; // Ensure this is declared globally
-figma.showUI(__html__, { width: 320, height: 780 });
+figma.showUI(__html__, { width: 320, height: 640 });
 figma.ui.onmessage = (msg) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (msg.type === 'create-wcag-card') {
