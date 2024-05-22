@@ -136,7 +136,7 @@
         searchResultText: '',
 
         init() {
-          fetch("https://raw.githubusercontent.com/mpaiva/wcag-tokens/main/wcag-search.json")
+          fetch("https://raw.githubusercontent.com/mpaiva/wcag-tokens/main/wcag-search-src.json")
             .then((response) => response.json())
             .then((data) => this.jsonData = data);
           window.addEventListener('online', () => this.updateOnlineStatus());
