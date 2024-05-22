@@ -4,6 +4,7 @@ type WCAGItem = {
     description: string;
     url: string;
     level?: string;
+    version?: string;
     references?: { title: string; url: string }[];
     notes?: { content: string }[];
     special_cases?: { title: string; description: string }[];
@@ -139,7 +140,7 @@ async function createWcagCard(item: WCAGItem) {
 
         const frame = figma.createFrame();
         frame.name = `${item.ref_id} - ${item.title}`;
-        frame.resize(394, 100);
+        frame.resize(394, 120);
         frame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
         frame.strokeWeight = 1;
         frame.strokes = [{ type: 'SOLID', color: hexToRgbFigma('E3D5F6') }];
@@ -169,6 +170,14 @@ async function createWcagCard(item: WCAGItem) {
             lineHeight: 24
         });
         frame.appendChild(levelText);
+
+        const versionText = await createText(item.version || "", {
+            fontWeight: 'Regular',
+            fontSize: 16,
+            color: '111111',
+            lineHeight: 24
+        });
+        frame.appendChild(versionText);
 
         const titleText = await createText(item.title, {
             fontWeight: 'Bold',

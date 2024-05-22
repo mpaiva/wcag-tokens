@@ -120,7 +120,7 @@ function createWcagCard(item) {
             component.visible = false;
             const frame = figma.createFrame();
             frame.name = `${item.ref_id} - ${item.title}`;
-            frame.resize(394, 100);
+            frame.resize(394, 120);
             frame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
             frame.strokeWeight = 1;
             frame.strokes = [{ type: 'SOLID', color: hexToRgbFigma('E3D5F6') }];
@@ -148,6 +148,13 @@ function createWcagCard(item) {
                 lineHeight: 24
             });
             frame.appendChild(levelText);
+            const versionText = yield createText(item.version || "", {
+                fontWeight: 'Regular',
+                fontSize: 16,
+                color: '111111',
+                lineHeight: 24
+            });
+            frame.appendChild(versionText);
             const titleText = yield createText(item.title, {
                 fontWeight: 'Bold',
                 fontSize: 28,
