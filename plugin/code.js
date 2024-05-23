@@ -12,12 +12,12 @@ let lastXPosition = 0; // Ensure this is declared globally
 figma.showUI(__html__, { width: 320, height: 640 });
 figma.ui.onmessage = (msg) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        if (msg.type === 'create-wcag-card') {
+        if (msg.type === "create-wcag-card") {
             const item = msg.item;
             console.log("Item received for WCAG card creation:", item);
             yield createWcagCard(item);
         }
-        else if (msg.type === 'import-files') {
+        else if (msg.type === "import-files") {
             let allSuccess = true;
             const files = {};
             msg.files.forEach((file) => {
@@ -32,18 +32,24 @@ figma.ui.onmessage = (msg) => __awaiter(void 0, void 0, void 0, function* () {
             if (allSuccess) {
                 const results = yield importTokens(files);
                 results.forEach((result) => {
-                    if (result.result === 'error') {
+                    if (result.result === "error") {
                         allSuccess = false;
-                        figma.ui.postMessage({ type: 'error', message: result.text });
+                        figma.ui.postMessage({ type: "error", message: result.text });
                     }
                     figma.notify(result.text);
                 });
             }
             if (allSuccess) {
-                figma.ui.postMessage({ type: 'success', message: 'All files processed successfully' });
+                figma.ui.postMessage({
+                    type: "success",
+                    message: "All files processed successfully",
+                });
             }
             else {
-                figma.ui.postMessage({ type: 'error', message: 'One or more files could not be processed successfully.' });
+                figma.ui.postMessage({
+                    type: "error",
+                    message: "One or more files could not be processed successfully.",
+                });
             }
         }
         else {
@@ -52,10 +58,16 @@ figma.ui.onmessage = (msg) => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (error) {
         if (error instanceof Error) {
-            figma.ui.postMessage({ type: 'error', message: `Unhandled error: ${error.message}` });
+            figma.ui.postMessage({
+                type: "error",
+                message: `Unhandled error: ${error.message}`,
+            });
         }
         else {
-            figma.ui.postMessage({ type: 'error', message: `Unhandled error: ${String(error)}` });
+            figma.ui.postMessage({
+                type: "error",
+                message: `Unhandled error: ${String(error)}`,
+            });
         }
     }
 });
@@ -63,12 +75,18 @@ function handleJsonParseError(fileName, error) {
     if (error instanceof Error) {
         figma.notify(`Error in ${fileName}: ${error.message}`);
         console.error(`Error parsing ${fileName}: ${error.message}`);
-        figma.ui.postMessage({ type: 'error', message: `Error in ${fileName}: ${error.message}` });
+        figma.ui.postMessage({
+            type: "error",
+            message: `Error in ${fileName}: ${error.message}`,
+        });
     }
     else {
         figma.notify(`Error in ${fileName}: Unknown parsing error`);
         console.error(`Error parsing ${fileName}: Unknown error`);
-        figma.ui.postMessage({ type: 'error', message: `Error in ${fileName}: Unknown parsing error` });
+        figma.ui.postMessage({
+            type: "error",
+            message: `Error in ${fileName}: Unknown parsing error`,
+        });
     }
 }
 function importTokens(files) {
@@ -80,7 +98,7 @@ function importTokens(files) {
                     const figmaType = tokenTypeToFigmaType(tokenDetails.$type);
                     if (!figmaType) {
                         const errorText = `Token type '${tokenDetails.$type}' is not supported for ${tokenName} in ${filename}.`;
-                        results.push({ result: 'error', text: errorText });
+                        results.push({ result: "error", text: errorText });
                         console.error(errorText);
                         continue;
                     }
@@ -97,10 +115,16 @@ function importTokens(files) {
 }
 function handleErrorProcessingToken(tokenName, filename, error, results) {
     if (error instanceof Error) {
-        results.push({ result: 'error', text: `Error processing ${tokenName} in ${filename}: ${error.message}` });
+        results.push({
+            result: "error",
+            text: `Error processing ${tokenName} in ${filename}: ${error.message}`,
+        });
     }
     else {
-        results.push({ result: 'error', text: `Error processing ${tokenName} in ${filename}: Unknown error` });
+        results.push({
+            result: "error",
+            text: `Error processing ${tokenName} in ${filename}: Unknown error`,
+        });
     }
 }
 function createWcagCard(item) {
@@ -120,152 +144,183 @@ function createWcagCard(item) {
             component.visible = false;
             const frame = figma.createFrame();
             frame.name = `${item.ref_id} - ${item.title}`;
-            frame.resize(394, 100);
-            frame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
-            frame.strokeWeight = 1;
-            frame.strokes = [{ type: 'SOLID', color: hexToRgbFigma('E3D5F6') }];
-            frame.cornerRadius = 8;
-            frame.layoutMode = 'VERTICAL';
-            frame.primaryAxisSizingMode = 'AUTO';
-            frame.counterAxisSizingMode = 'FIXED';
+            frame.layoutMode = "VERTICAL";
+            frame.primaryAxisSizingMode = "AUTO";
+            frame.counterAxisSizingMode = "AUTO";
             frame.paddingTop = 16;
             frame.paddingBottom = 16;
             frame.paddingLeft = 16;
             frame.paddingRight = 16;
             frame.itemSpacing = 3;
+            frame.fills = [{ type: "SOLID", color: hexToRgbFigma("F9F7FD") }];
+            frame.strokeWeight = 1;
+            frame.strokes = [{ type: "SOLID", color: hexToRgbFigma("E3D5F6") }];
+            frame.cornerRadius = 8;
             frame.clipsContent = true;
             const refIDText = yield createText(item.ref_id, {
-                fontWeight: 'Bold',
+                fontWeight: "Bold",
                 fontSize: 20,
-                color: '7938D3',
-                lineHeight: 28
+                color: "7938D3",
+                lineHeight: 28,
+                autoResize: true, // Enable autoResize
             });
-            frame.appendChild(refIDText);
             const levelText = yield createText(item.level || "", {
-                fontWeight: 'Bold',
+                fontWeight: "Bold",
                 fontSize: 16,
-                color: '111111',
-                lineHeight: 24
+                color: "111111",
+                lineHeight: 24,
+                autoResize: true, // Enable autoResize
             });
-            frame.appendChild(levelText);
+            const versionText = yield createText(item.version || "", {
+                fontWeight: "Regular",
+                fontSize: 16,
+                color: "000000",
+                lineHeight: 24,
+                autoResize: true, // Enable autoResize
+            });
+            // Create a horizontal frame to contain the text nodes
+            const horizontalFrame = figma.createFrame();
+            horizontalFrame.name = "TEXT CONTAINER";
+            horizontalFrame.layoutMode = "HORIZONTAL"; // Set layout mode to horizontal
+            horizontalFrame.primaryAxisSizingMode = "AUTO"; // Automatically adjust frame size
+            horizontalFrame.counterAxisSizingMode = "AUTO"; // Automatically adjust frame size
+            horizontalFrame.itemSpacing = 10; // Space between items
+            horizontalFrame.fills = [{ type: "SOLID", color: hexToRgbFigma("F9F7FD") }];
+            horizontalFrame.strokeWeight = 1;
+            horizontalFrame.strokes = [
+                { type: "SOLID", color: hexToRgbFigma("000000") },
+            ];
+            horizontalFrame.cornerRadius = 8;
+            // Append the text nodes to the horizontal frame
+            horizontalFrame.appendChild(refIDText);
+            horizontalFrame.appendChild(levelText);
+            horizontalFrame.appendChild(versionText);
+            frame.appendChild(horizontalFrame);
             const titleText = yield createText(item.title, {
-                fontWeight: 'Bold',
+                fontWeight: "Bold",
                 fontSize: 28,
-                color: '111111',
-                lineHeight: 36
+                color: "111111",
+                lineHeight: 36,
             });
             frame.appendChild(titleText);
             const descriptionText = yield createText(item.description, {
-                fontWeight: 'Regular',
+                fontWeight: "Regular",
                 fontSize: 20,
-                color: '111111',
-                lineHeight: 28
+                color: "111111",
+                lineHeight: 28,
             });
             frame.appendChild(descriptionText);
             const urlText = yield createText(item.url, {
-                fontWeight: 'Regular',
+                fontWeight: "Regular",
                 fontSize: 16,
-                color: '0000FF',
-                lineHeight: 24
+                color: "0000FF",
+                lineHeight: 24,
             });
             frame.appendChild(urlText);
             if (item.references && item.references.length > 0) {
                 const referencesFrame = figma.createFrame();
                 referencesFrame.name = "References Container";
-                referencesFrame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
-                referencesFrame.layoutMode = 'VERTICAL';
+                referencesFrame.layoutMode = "VERTICAL";
+                referencesFrame.primaryAxisSizingMode = "AUTO";
+                referencesFrame.counterAxisSizingMode = "AUTO";
                 referencesFrame.paddingTop = 16;
                 referencesFrame.itemSpacing = 3;
                 referencesFrame.clipsContent = true;
-                referencesFrame.resize(394, referencesFrame.height);
+                referencesFrame.fills = [
+                    { type: "SOLID", color: hexToRgbFigma("F9F7FD") },
+                ];
                 const referencesTitle = yield createText("References", {
-                    fontWeight: 'Bold',
+                    fontWeight: "Bold",
                     fontSize: 20,
-                    color: '111111',
-                    lineHeight: 28
+                    color: "111111",
+                    lineHeight: 28,
                 });
                 referencesFrame.appendChild(referencesTitle);
                 for (const reference of item.references) {
                     const referenceTitleText = yield createText(reference.title, {
-                        fontWeight: 'Bold',
+                        fontWeight: "Bold",
                         fontSize: 16,
-                        color: '111111',
-                        lineHeight: 24
+                        color: "111111",
+                        lineHeight: 24,
                     });
                     referencesFrame.appendChild(referenceTitleText);
                     const referenceUrlText = yield createText(reference.url, {
-                        fontWeight: 'Regular',
+                        fontWeight: "Regular",
                         fontSize: 16,
-                        color: '0000FF',
-                        lineHeight: 24
+                        color: "0000FF",
+                        lineHeight: 24,
                     });
                     referencesFrame.appendChild(referenceUrlText);
                 }
                 frame.appendChild(referencesFrame);
-                referencesFrame.resize(394 - 32, referencesFrame.height);
             }
             if (item.notes && item.notes.length > 0) {
                 const notesFrame = figma.createFrame();
                 notesFrame.name = "Notes Container";
-                notesFrame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
-                notesFrame.layoutMode = 'VERTICAL';
+                notesFrame.layoutMode = "VERTICAL";
+                notesFrame.primaryAxisSizingMode = "AUTO";
+                notesFrame.counterAxisSizingMode = "AUTO";
                 notesFrame.paddingTop = 16;
                 notesFrame.itemSpacing = 3;
                 notesFrame.clipsContent = true;
-                notesFrame.resize(394, notesFrame.height);
+                notesFrame.fills = [{ type: "SOLID", color: hexToRgbFigma("F9F7FD") }];
                 const notesTitle = yield createText("Notes", {
-                    fontWeight: 'Bold',
+                    fontWeight: "Bold",
                     fontSize: 20,
-                    color: '111111',
-                    lineHeight: 28
+                    color: "111111",
+                    lineHeight: 28,
                 });
                 notesFrame.appendChild(notesTitle);
                 for (const note of item.notes) {
                     const noteText = yield createText(note.content, {
-                        fontWeight: 'Regular',
+                        fontWeight: "Regular",
                         fontSize: 16,
-                        color: '111111',
-                        lineHeight: 24
+                        color: "111111",
+                        lineHeight: 24,
                     });
                     notesFrame.appendChild(noteText);
                 }
                 frame.appendChild(notesFrame);
-                notesFrame.resize(394 - 32, notesFrame.height);
             }
             if (item.special_cases && item.special_cases.length > 0) {
                 const specialCasesFrame = figma.createFrame();
                 specialCasesFrame.name = "Special Cases Container";
-                specialCasesFrame.fills = [{ type: 'SOLID', color: hexToRgbFigma('F9F7FD') }];
-                specialCasesFrame.layoutMode = 'VERTICAL';
+                specialCasesFrame.layoutMode = "VERTICAL";
+                specialCasesFrame.primaryAxisSizingMode = "AUTO";
+                specialCasesFrame.counterAxisSizingMode = "AUTO";
                 specialCasesFrame.paddingTop = 16;
                 specialCasesFrame.itemSpacing = 3;
                 specialCasesFrame.clipsContent = true;
-                specialCasesFrame.resize(394, specialCasesFrame.height);
+                specialCasesFrame.fills = [
+                    { type: "SOLID", color: hexToRgbFigma("F9F7FD") },
+                ];
                 const specialCasesTitle = yield createText("Special Cases", {
-                    fontWeight: 'Bold',
+                    fontWeight: "Bold",
                     fontSize: 20,
-                    color: '111111',
-                    lineHeight: 28
+                    color: "111111",
+                    lineHeight: 28,
                 });
                 specialCasesFrame.appendChild(specialCasesTitle);
                 for (const specialCase of item.special_cases) {
                     const specialCaseText = yield createText(`${specialCase.title}: ${specialCase.description}`, {
-                        fontWeight: 'Regular',
+                        fontWeight: "Regular",
                         fontSize: 16,
-                        color: '111111',
-                        lineHeight: 24
+                        color: "111111",
+                        lineHeight: 24,
                     });
                     specialCasesFrame.appendChild(specialCaseText);
                 }
                 frame.appendChild(specialCasesFrame);
-                specialCasesFrame.resize(394 - 32, specialCasesFrame.height);
             }
-            frame.resize(394, frame.height);
+            // Append the frame to the component and adjust its size
             component.appendChild(frame);
+            component.resize(frame.width, frame.height);
             const instance = component.createInstance();
             instance.x = figma.viewport.center.x - instance.width / 2 + lastXPosition;
             instance.y = figma.viewport.center.y - instance.height / 2;
             instance.visible = true;
+            // Log the width of the instance
+            console.log("Instance width:", instance.width);
             figma.currentPage.appendChild(instance);
             lastXPosition += instance.width + 20;
             // Delete the component after creating the instance
@@ -275,10 +330,16 @@ function createWcagCard(item) {
         catch (error) {
             console.error("Error in createWcagCard:", error);
             if (error instanceof Error) {
-                figma.ui.postMessage({ type: 'error', message: `Error creating WCAG card: ${error.message}` });
+                figma.ui.postMessage({
+                    type: "error",
+                    message: `Error creating WCAG card: ${error.message}`,
+                });
             }
             else {
-                figma.ui.postMessage({ type: 'error', message: `Error creating WCAG card: ${String(error)}` });
+                figma.ui.postMessage({
+                    type: "error",
+                    message: `Error creating WCAG card: ${String(error)}`,
+                });
             }
         }
     });
@@ -288,18 +349,25 @@ function createText(content, style) {
         try {
             const text = figma.createText();
             console.log(`Loading font: ${style.fontWeight || "Regular"}`);
-            yield figma.loadFontAsync({ family: "Inter", style: style.fontWeight || "Regular" });
+            yield figma.loadFontAsync({
+                family: "Inter",
+                style: style.fontWeight || "Regular",
+            });
             console.log(`Font loaded: ${style.fontWeight || "Regular"}`);
             text.fontName = { family: "Inter", style: style.fontWeight || "Regular" };
-            text.textAutoResize = 'HEIGHT';
-            text.resize(394 - 32, text.height);
+            if (style.autoResize) {
+                text.textAutoResize = "WIDTH_AND_HEIGHT"; // Set auto width and height if autoResize is true
+            }
+            else {
+                text.resize(394 - 32, text.height); // Otherwise, set a fixed width (adjust as needed)
+            }
             text.characters = content;
             text.fontSize = style.fontSize || 12;
             if (style.color) {
-                text.fills = [{ type: 'SOLID', color: hexToRgbFigma(style.color) }];
+                text.fills = [{ type: "SOLID", color: hexToRgbFigma(style.color) }];
             }
             if (style.lineHeight) {
-                text.lineHeight = { value: style.lineHeight, unit: 'PIXELS' };
+                text.lineHeight = { value: style.lineHeight, unit: "PIXELS" };
             }
             return text;
         }
@@ -317,24 +385,29 @@ function hexToRgbFigma(hex) {
 }
 function tokenTypeToFigmaType($type) {
     switch ($type) {
-        case "color": return "COLOR";
+        case "color":
+            return "COLOR";
         case "dimension":
         case "duration":
-        case "number": return "FLOAT";
-        case "boolean": return "BOOLEAN";
-        case "string": return "STRING";
-        default: return null;
+        case "number":
+            return "FLOAT";
+        case "boolean":
+            return "BOOLEAN";
+        case "string":
+            return "STRING";
+        default:
+            return null;
     }
 }
 function prepareValue(value, type) {
     switch (type) {
-        case 'COLOR':
+        case "COLOR":
             return jsonColorToFigmaColor(value);
-        case 'FLOAT':
+        case "FLOAT":
             return parseFloat(value);
-        case 'BOOLEAN':
-            return value.toLowerCase() === 'true';
-        case 'STRING':
+        case "BOOLEAN":
+            return value.toLowerCase() === "true";
+        case "STRING":
             return value.toString();
         default:
             return value;
@@ -343,21 +416,23 @@ function prepareValue(value, type) {
 function createOrUpdateVariable(tokenName, value, type) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!figma.variables) {
-            console.error('Variables feature is not enabled.');
+            console.error("Variables feature is not enabled.");
             return;
         }
         try {
             let collections = yield figma.variables.getLocalVariableCollectionsAsync();
-            let collection = collections.find(c => c.name === "WCAG Tokens");
+            let collection = collections.find((c) => c.name === "WCAG Tokens");
             if (!collection) {
                 collection = yield figma.variables.createVariableCollection("WCAG Tokens");
             }
             let variables = yield figma.variables.getLocalVariablesAsync();
-            let variable = variables.find(v => v.name === tokenName);
+            let variable = variables.find((v) => v.name === tokenName);
             if (!variable) {
                 variable = yield figma.variables.createVariable(tokenName, collection, type);
             }
-            let modeId = collection.modes.length > 0 ? collection.modes[0].modeId : yield collection.addMode('Default Mode');
+            let modeId = collection.modes.length > 0
+                ? collection.modes[0].modeId
+                : yield collection.addMode("Default Mode");
             yield variable.setValueForMode(modeId, value);
         }
         catch (error) {
