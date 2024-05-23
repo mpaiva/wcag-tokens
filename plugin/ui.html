@@ -10,9 +10,7 @@
 </head>
 
 <body class="font-sans antialiased text-gray-900 text-xs bg-gray-100">
-
   <header class="sticky top-0 bg-gray-100">
-    <!-- Tabs -->
     <div class="pt-2">
       <div class="grid grid-cols-2 px-2 -mb-px">
         <button @click="activeTab = 'Search Guidelines'" type="button"
@@ -26,7 +24,6 @@
       </div>
     </div>
 
-    <!-- Search Guidelines -->
     <div x-show="activeTab === 'Search Guidelines'">
       <div class="px-4 py-2 flex flex-col gap-2 bg-white border-y border-gray-300">
         <h4>Search for guidelines</h4>
@@ -38,15 +35,14 @@
             x-on:click="searchGuidelines()">Search</button>
         </div>
         <div>Try 2.5.5 or hit enter to explore.</div>
-        <!-- Network Error Message -->
+        <div x-show="isLoading" class="text-blue-600">Searching...</div>
         <div x-show="!isOnline" class="bg-red-600/20 border border-red-600/20 p-2 flex items-center gap-1 rounded">
-          <p>🤔 We're offline at the moment.</p>
+          <p>🤔 We're offline at the moment. Please check your internet connection.</p>
           <button @click="checkConnection" x-text="connectionButtonText" class="text-blue-600"></button>
         </div>
       </div>
     </div>
 
-    <!-- Import WCAG Tokens -->
     <div x-show="activeTab === 'Import WCAG Tokens'">
       <div class="px-4 py-2 flex flex-col bg-white border-y border-gray-300">
         <button x-html="importButtonText"
@@ -55,12 +51,9 @@
         <p class="mt-4 mb-4"><span class="font-bold">Note:</span> These tokens suggestions help ensure accessible design
           decisions across various design elements,
           such as size, spacing, color, typography, and more.</p>
-        <!-- Import Result Message -->
         <div x-html="resultsImport"></div>
-
-        <!-- Network Error Message -->
         <div x-show="!isOnline" class="bg-red-600/20 border border-red-600/20 p-2 mt-2 flex items-center gap-1 rounded">
-          <p>🤔 We're offline at the moment.</p>
+          <p>🤔 We're offline at the moment. Please check your internet connection.</p>
           <button @click="checkConnection" x-text="connectionButtonText" class="text-blue-600"></button>
         </div>
       </div>
@@ -68,7 +61,6 @@
   </header>
 
   <main class="pb-6">
-    <!-- Card Design -->
     <section x-show="activeTab === 'Search Guidelines'">
       <div class="flex flex-col gap-4 p-4">
         <div class="font-semibold" x-text="searchResultText"></div>
@@ -129,6 +121,7 @@
         activeTab: 'Search Guidelines',
         isOnline: navigator.onLine,
         connectionButtonText: 'Try Again',
+        isLoading: false,
 
         // Search 
         query: '',
@@ -154,9 +147,11 @@
           }, 2000);
         },
 
-        searchGuidelines() {
+        async searchGuidelines() {
+          this.isLoading = true;
           this.results = this.findInJson(this.jsonData, this.query);
           this.searchResultText = `${this.results.length} guidelines found.`;
+          this.isLoading = false;
         },
         findInJson(items, query) {
           let results = [];
@@ -176,17 +171,14 @@
               results.push(item);
             }
 
-            // Check nested guidelines
             if (item.guidelines) {
               results = results.concat(this.findInJson(item.guidelines, query));
             }
 
-            // Check success criteria
             if (item.success_criteria) {
               results = results.concat(this.findInJson(item.success_criteria, query));
             }
 
-            // Check special cases
             if (item.special_cases) {
               item.special_cases.forEach((specialCase) => {
                 const specialCaseTitleMatch = specialCase.title && specialCase.title.toLowerCase().includes(searchTerm);
@@ -200,7 +192,6 @@
               });
             }
 
-            // Check notes
             if (item.notes) {
               item.notes.forEach((note) => {
                 const noteMatch = note.content && note.content.toLowerCase().includes(searchTerm);
@@ -213,7 +204,6 @@
               });
             }
 
-            // Check references
             if (item.references) {
               item.references.forEach((reference) => {
                 const referenceTitleMatch = reference.title && reference.title.toLowerCase().includes(searchTerm);

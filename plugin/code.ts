@@ -31,7 +31,7 @@ type JsonTokenType =
   | "boolean"
   | "string";
 
-let lastXPosition = 0; // Ensure this is declared globally
+let lastXPosition = 0;
 
 figma.showUI(__html__, { width: 320, height: 640 });
 
@@ -94,6 +94,11 @@ figma.ui.onmessage = async (msg) => {
   }
 };
 
+/**
+ * Handles JSON parse errors and logs the error message.
+ * @param fileName The name of the file that caused the error.
+ * @param error The error object.
+ */
 function handleJsonParseError(fileName: string, error: unknown) {
   if (error instanceof Error) {
     figma.notify(`Error in ${fileName}: ${error.message}`);
@@ -112,6 +117,11 @@ function handleJsonParseError(fileName: string, error: unknown) {
   }
 }
 
+/**
+ * Imports tokens from the provided JSON files and creates or updates variables in Figma.
+ * @param files The JSON files containing the tokens.
+ * @returns A promise that resolves to an array of operation results.
+ */
 async function importTokens(
   files: Record<string, JsonTokenDocument>
 ): Promise<OperationResult[]> {
@@ -139,6 +149,13 @@ async function importTokens(
   return results;
 }
 
+/**
+ * Handles errors that occur while processing tokens and logs the error message.
+ * @param tokenName The name of the token that caused the error.
+ * @param filename The name of the file that caused the error.
+ * @param error The error object.
+ * @param results The array of operation results to which the error message should be added.
+ */
 function handleErrorProcessingToken(
   tokenName: string,
   filename: string,
@@ -158,6 +175,10 @@ function handleErrorProcessingToken(
   }
 }
 
+/**
+ * Creates a WCAG card in Figma based on the provided item data.
+ * @param item The WCAG item data.
+ */
 async function createWcagCard(item: WCAGItem) {
   try {
     if (!item || !item.ref_id || !item.title) {
@@ -196,7 +217,7 @@ async function createWcagCard(item: WCAGItem) {
       fontSize: 28,
       color: "7938D3",
       lineHeight: 28,
-      autoResize: true, // Enable autoResize
+      autoResize: true,
     });
 
     const refIDContainer = figma.createFrame();
@@ -213,9 +234,9 @@ async function createWcagCard(item: WCAGItem) {
     const levelText = await createText(item.level || "", {
       fontWeight: "Bold",
       fontSize: 16,
-      color: "FFFFFF", // White text
+      color: "FFFFFF",
       lineHeight: 24,
-      autoResize: true, // Enable autoResize
+      autoResize: true,
     });
 
     const levelContainer = figma.createFrame();
@@ -233,9 +254,9 @@ async function createWcagCard(item: WCAGItem) {
     const versionText = await createText(item.version || "", {
       fontWeight: "Bold",
       fontSize: 16,
-      color: "FFFFFF", // White text
+      color: "FFFFFF",
       lineHeight: 24,
-      autoResize: true, // Enable autoResize
+      autoResize: true,
     });
 
     const versionContainer = figma.createFrame();
@@ -252,16 +273,14 @@ async function createWcagCard(item: WCAGItem) {
     ];
     versionContainer.appendChild(versionText);
 
-    // Create a horizontal frame to contain the text nodes
     const horizontalFrame = figma.createFrame();
     horizontalFrame.name = "TEXT CONTAINER";
-    horizontalFrame.layoutMode = "HORIZONTAL"; // Set layout mode to horizontal
-    horizontalFrame.primaryAxisSizingMode = "AUTO"; // Automatically adjust frame size
-    horizontalFrame.counterAxisSizingMode = "AUTO"; // Automatically adjust frame size
-    horizontalFrame.itemSpacing = 10; // Space between items
-    horizontalFrame.fills = []; // Transparent background
+    horizontalFrame.layoutMode = "HORIZONTAL";
+    horizontalFrame.primaryAxisSizingMode = "AUTO";
+    horizontalFrame.counterAxisSizingMode = "AUTO";
+    horizontalFrame.itemSpacing = 10;
+    horizontalFrame.fills = [];
 
-    // Append the text node containers to the horizontal frame
     horizontalFrame.appendChild(refIDContainer);
     horizontalFrame.appendChild(levelContainer);
     horizontalFrame.appendChild(versionContainer);
@@ -402,7 +421,6 @@ async function createWcagCard(item: WCAGItem) {
       frame.appendChild(specialCasesFrame);
     }
 
-    // Append the frame to the component and adjust its size
     component.appendChild(frame);
     component.resize(frame.width, frame.height);
 
@@ -411,13 +429,11 @@ async function createWcagCard(item: WCAGItem) {
     instance.y = figma.viewport.center.y - instance.height / 2;
     instance.visible = true;
 
-    // Log the width of the instance
     console.log("Instance width:", instance.width);
 
     figma.currentPage.appendChild(instance);
     lastXPosition += instance.width + 20;
 
-    // Delete the component after creating the instance
     component.remove();
 
     console.log(
@@ -439,9 +455,12 @@ async function createWcagCard(item: WCAGItem) {
   }
 }
 
-
-
-
+/**
+ * Creates a text node in Figma with the specified content and style.
+ * @param content The text content.
+ * @param style The style options for the text node.
+ * @returns The created text node.
+ */
 async function createText(
   content: string,
   style: {
@@ -449,7 +468,7 @@ async function createText(
     fontSize?: number;
     color?: string;
     lineHeight?: number;
-    autoResize?: boolean; // Add an optional parameter for autoResize
+    autoResize?: boolean;
   }
 ) {
   try {
@@ -465,9 +484,9 @@ async function createText(
     text.fontName = { family: "Inter", style: style.fontWeight || "Regular" };
 
     if (style.autoResize) {
-      text.textAutoResize = "WIDTH_AND_HEIGHT"; // Set auto width and height if autoResize is true
+      text.textAutoResize = "WIDTH_AND_HEIGHT";
     } else {
-      text.resize(394 - 32, text.height); // Otherwise, set a fixed width (adjust as needed)
+      text.resize(394 - 32, text.height);
     }
 
     text.characters = content;
@@ -487,7 +506,11 @@ async function createText(
   }
 }
 
-
+/**
+ * Converts a hex color value to an RGB object for Figma.
+ * @param hex The hex color value.
+ * @returns The RGB color object.
+ */
 function hexToRgbFigma(hex: string) {
   const r = parseInt(hex.substring(0, 2), 16) / 255;
   const g = parseInt(hex.substring(2, 4), 16) / 255;
@@ -495,6 +518,11 @@ function hexToRgbFigma(hex: string) {
   return { r, g, b };
 }
 
+/**
+ * Converts a JSON token type to a Figma variable type.
+ * @param $type The JSON token type.
+ * @returns The corresponding Figma variable type, or null if not supported.
+ */
 function tokenTypeToFigmaType(
   $type: JsonTokenType
 ): VariableResolvedDataType | null {
@@ -514,6 +542,12 @@ function tokenTypeToFigmaType(
   }
 }
 
+/**
+ * Prepares a value for a Figma variable based on its type.
+ * @param value The value to be prepared.
+ * @param type The type of the Figma variable.
+ * @returns The prepared value.
+ */
 function prepareValue(value: any, type: VariableResolvedDataType): any {
   switch (type) {
     case "COLOR":
@@ -529,6 +563,12 @@ function prepareValue(value: any, type: VariableResolvedDataType): any {
   }
 }
 
+/**
+ * Creates or updates a Figma variable with the specified name, value, and type.
+ * @param tokenName The name of the variable.
+ * @param value The value of the variable.
+ * @param type The type of the variable.
+ */
 async function createOrUpdateVariable(
   tokenName: string,
   value: any,
@@ -571,6 +611,11 @@ async function createOrUpdateVariable(
   }
 }
 
+/**
+ * Converts a hex color value to an RGBA color object for Figma.
+ * @param hex The hex color value.
+ * @returns The RGBA color object.
+ */
 function jsonColorToFigmaColor(hex: string): {
   r: number;
   g: number;

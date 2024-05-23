@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-let lastXPosition = 0; // Ensure this is declared globally
+let lastXPosition = 0;
 figma.showUI(__html__, { width: 320, height: 640 });
 figma.ui.onmessage = (msg) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -71,6 +71,11 @@ figma.ui.onmessage = (msg) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
+/**
+ * Handles JSON parse errors and logs the error message.
+ * @param fileName The name of the file that caused the error.
+ * @param error The error object.
+ */
 function handleJsonParseError(fileName, error) {
     if (error instanceof Error) {
         figma.notify(`Error in ${fileName}: ${error.message}`);
@@ -89,6 +94,11 @@ function handleJsonParseError(fileName, error) {
         });
     }
 }
+/**
+ * Imports tokens from the provided JSON files and creates or updates variables in Figma.
+ * @param files The JSON files containing the tokens.
+ * @returns A promise that resolves to an array of operation results.
+ */
 function importTokens(files) {
     return __awaiter(this, void 0, void 0, function* () {
         let results = [];
@@ -113,6 +123,13 @@ function importTokens(files) {
         return results;
     });
 }
+/**
+ * Handles errors that occur while processing tokens and logs the error message.
+ * @param tokenName The name of the token that caused the error.
+ * @param filename The name of the file that caused the error.
+ * @param error The error object.
+ * @param results The array of operation results to which the error message should be added.
+ */
 function handleErrorProcessingToken(tokenName, filename, error, results) {
     if (error instanceof Error) {
         results.push({
@@ -127,6 +144,10 @@ function handleErrorProcessingToken(tokenName, filename, error, results) {
         });
     }
 }
+/**
+ * Creates a WCAG card in Figma based on the provided item data.
+ * @param item The WCAG item data.
+ */
 function createWcagCard(item) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -162,7 +183,7 @@ function createWcagCard(item) {
                 fontSize: 28,
                 color: "7938D3",
                 lineHeight: 28,
-                autoResize: true, // Enable autoResize
+                autoResize: true,
             });
             const refIDContainer = figma.createFrame();
             refIDContainer.layoutMode = "HORIZONTAL";
@@ -177,9 +198,9 @@ function createWcagCard(item) {
             const levelText = yield createText(item.level || "", {
                 fontWeight: "Bold",
                 fontSize: 16,
-                color: "FFFFFF", // White text
+                color: "FFFFFF",
                 lineHeight: 24,
-                autoResize: true, // Enable autoResize
+                autoResize: true,
             });
             const levelContainer = figma.createFrame();
             levelContainer.layoutMode = "HORIZONTAL";
@@ -195,9 +216,9 @@ function createWcagCard(item) {
             const versionText = yield createText(item.version || "", {
                 fontWeight: "Bold",
                 fontSize: 16,
-                color: "FFFFFF", // White text
+                color: "FFFFFF",
                 lineHeight: 24,
-                autoResize: true, // Enable autoResize
+                autoResize: true,
             });
             const versionContainer = figma.createFrame();
             versionContainer.layoutMode = "HORIZONTAL";
@@ -212,15 +233,13 @@ function createWcagCard(item) {
                 { type: "SOLID", color: hexToRgbFigma("7938D3") },
             ];
             versionContainer.appendChild(versionText);
-            // Create a horizontal frame to contain the text nodes
             const horizontalFrame = figma.createFrame();
             horizontalFrame.name = "TEXT CONTAINER";
-            horizontalFrame.layoutMode = "HORIZONTAL"; // Set layout mode to horizontal
-            horizontalFrame.primaryAxisSizingMode = "AUTO"; // Automatically adjust frame size
-            horizontalFrame.counterAxisSizingMode = "AUTO"; // Automatically adjust frame size
-            horizontalFrame.itemSpacing = 10; // Space between items
-            horizontalFrame.fills = []; // Transparent background
-            // Append the text node containers to the horizontal frame
+            horizontalFrame.layoutMode = "HORIZONTAL";
+            horizontalFrame.primaryAxisSizingMode = "AUTO";
+            horizontalFrame.counterAxisSizingMode = "AUTO";
+            horizontalFrame.itemSpacing = 10;
+            horizontalFrame.fills = [];
             horizontalFrame.appendChild(refIDContainer);
             horizontalFrame.appendChild(levelContainer);
             horizontalFrame.appendChild(versionContainer);
@@ -341,18 +360,15 @@ function createWcagCard(item) {
                 }
                 frame.appendChild(specialCasesFrame);
             }
-            // Append the frame to the component and adjust its size
             component.appendChild(frame);
             component.resize(frame.width, frame.height);
             const instance = component.createInstance();
             instance.x = figma.viewport.center.x - instance.width / 2 + lastXPosition;
             instance.y = figma.viewport.center.y - instance.height / 2;
             instance.visible = true;
-            // Log the width of the instance
             console.log("Instance width:", instance.width);
             figma.currentPage.appendChild(instance);
             lastXPosition += instance.width + 20;
-            // Delete the component after creating the instance
             component.remove();
             console.log("Component instance created and appended to the page, and the original component removed.");
         }
@@ -373,6 +389,12 @@ function createWcagCard(item) {
         }
     });
 }
+/**
+ * Creates a text node in Figma with the specified content and style.
+ * @param content The text content.
+ * @param style The style options for the text node.
+ * @returns The created text node.
+ */
 function createText(content, style) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -385,10 +407,10 @@ function createText(content, style) {
             console.log(`Font loaded: ${style.fontWeight || "Regular"}`);
             text.fontName = { family: "Inter", style: style.fontWeight || "Regular" };
             if (style.autoResize) {
-                text.textAutoResize = "WIDTH_AND_HEIGHT"; // Set auto width and height if autoResize is true
+                text.textAutoResize = "WIDTH_AND_HEIGHT";
             }
             else {
-                text.resize(394 - 32, text.height); // Otherwise, set a fixed width (adjust as needed)
+                text.resize(394 - 32, text.height);
             }
             text.characters = content;
             text.fontSize = style.fontSize || 12;
@@ -406,12 +428,22 @@ function createText(content, style) {
         }
     });
 }
+/**
+ * Converts a hex color value to an RGB object for Figma.
+ * @param hex The hex color value.
+ * @returns The RGB color object.
+ */
 function hexToRgbFigma(hex) {
     const r = parseInt(hex.substring(0, 2), 16) / 255;
     const g = parseInt(hex.substring(2, 4), 16) / 255;
     const b = parseInt(hex.substring(4, 6), 16) / 255;
     return { r, g, b };
 }
+/**
+ * Converts a JSON token type to a Figma variable type.
+ * @param $type The JSON token type.
+ * @returns The corresponding Figma variable type, or null if not supported.
+ */
 function tokenTypeToFigmaType($type) {
     switch ($type) {
         case "color":
@@ -428,6 +460,12 @@ function tokenTypeToFigmaType($type) {
             return null;
     }
 }
+/**
+ * Prepares a value for a Figma variable based on its type.
+ * @param value The value to be prepared.
+ * @param type The type of the Figma variable.
+ * @returns The prepared value.
+ */
 function prepareValue(value, type) {
     switch (type) {
         case "COLOR":
@@ -442,6 +480,12 @@ function prepareValue(value, type) {
             return value;
     }
 }
+/**
+ * Creates or updates a Figma variable with the specified name, value, and type.
+ * @param tokenName The name of the variable.
+ * @param value The value of the variable.
+ * @param type The type of the variable.
+ */
 function createOrUpdateVariable(tokenName, value, type) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!figma.variables) {
@@ -469,6 +513,11 @@ function createOrUpdateVariable(tokenName, value, type) {
         }
     });
 }
+/**
+ * Converts a hex color value to an RGBA color object for Figma.
+ * @param hex The hex color value.
+ * @returns The RGBA color object.
+ */
 function jsonColorToFigmaColor(hex) {
     if (!/^#[0-9A-F]{6}$/i.test(hex)) {
         console.error(`Invalid hex color: ${hex}`);
