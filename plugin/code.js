@@ -159,25 +159,59 @@ function createWcagCard(item) {
             frame.clipsContent = true;
             const refIDText = yield createText(item.ref_id, {
                 fontWeight: "Bold",
-                fontSize: 20,
+                fontSize: 28,
                 color: "7938D3",
                 lineHeight: 28,
                 autoResize: true, // Enable autoResize
             });
+            const refIDContainer = figma.createFrame();
+            refIDContainer.layoutMode = "HORIZONTAL";
+            refIDContainer.counterAxisSizingMode = "AUTO";
+            refIDContainer.primaryAxisSizingMode = "AUTO";
+            refIDContainer.paddingLeft = 0;
+            refIDContainer.paddingRight = 8;
+            refIDContainer.paddingTop = 4;
+            refIDContainer.paddingBottom = 4;
+            refIDContainer.cornerRadius = 12;
+            refIDContainer.appendChild(refIDText);
             const levelText = yield createText(item.level || "", {
                 fontWeight: "Bold",
                 fontSize: 16,
-                color: "111111",
+                color: "FFFFFF", // White text
                 lineHeight: 24,
                 autoResize: true, // Enable autoResize
             });
+            const levelContainer = figma.createFrame();
+            levelContainer.layoutMode = "HORIZONTAL";
+            levelContainer.counterAxisSizingMode = "AUTO";
+            levelContainer.primaryAxisSizingMode = "AUTO";
+            levelContainer.paddingLeft = 8;
+            levelContainer.paddingRight = 8;
+            levelContainer.paddingTop = 4;
+            levelContainer.paddingBottom = 4;
+            levelContainer.cornerRadius = 4;
+            levelContainer.fills = [{ type: "SOLID", color: hexToRgbFigma("111111") }];
+            levelContainer.appendChild(levelText);
             const versionText = yield createText(item.version || "", {
-                fontWeight: "Regular",
+                fontWeight: "Bold",
                 fontSize: 16,
-                color: "000000",
+                color: "FFFFFF", // White text
                 lineHeight: 24,
                 autoResize: true, // Enable autoResize
             });
+            const versionContainer = figma.createFrame();
+            versionContainer.layoutMode = "HORIZONTAL";
+            versionContainer.counterAxisSizingMode = "AUTO";
+            versionContainer.primaryAxisSizingMode = "AUTO";
+            versionContainer.paddingLeft = 8;
+            versionContainer.paddingRight = 8;
+            versionContainer.paddingTop = 4;
+            versionContainer.paddingBottom = 4;
+            versionContainer.cornerRadius = 4;
+            versionContainer.fills = [
+                { type: "SOLID", color: hexToRgbFigma("7938D3") },
+            ];
+            versionContainer.appendChild(versionText);
             // Create a horizontal frame to contain the text nodes
             const horizontalFrame = figma.createFrame();
             horizontalFrame.name = "TEXT CONTAINER";
@@ -185,16 +219,11 @@ function createWcagCard(item) {
             horizontalFrame.primaryAxisSizingMode = "AUTO"; // Automatically adjust frame size
             horizontalFrame.counterAxisSizingMode = "AUTO"; // Automatically adjust frame size
             horizontalFrame.itemSpacing = 10; // Space between items
-            horizontalFrame.fills = [{ type: "SOLID", color: hexToRgbFigma("F9F7FD") }];
-            horizontalFrame.strokeWeight = 1;
-            horizontalFrame.strokes = [
-                { type: "SOLID", color: hexToRgbFigma("000000") },
-            ];
-            horizontalFrame.cornerRadius = 8;
-            // Append the text nodes to the horizontal frame
-            horizontalFrame.appendChild(refIDText);
-            horizontalFrame.appendChild(levelText);
-            horizontalFrame.appendChild(versionText);
+            horizontalFrame.fills = []; // Transparent background
+            // Append the text node containers to the horizontal frame
+            horizontalFrame.appendChild(refIDContainer);
+            horizontalFrame.appendChild(levelContainer);
+            horizontalFrame.appendChild(versionContainer);
             frame.appendChild(horizontalFrame);
             const titleText = yield createText(item.title, {
                 fontWeight: "Bold",
