@@ -2,14 +2,14 @@
   "name": "WCAG Plugin",
   "id": "1373362852131056921",
   "api": "1.0.0",
-  "main": "code.js",
+  "main": "build/code.js",
   "capabilities": [],
   "enableProposedApi": false,
   "documentAccess": "dynamic-page",
   "editorType": [
     "figma"
   ],
-  "ui": "ui.html",
+  "ui": "build/ui.html",
   "networkAccess": {
     "allowedDomains": [
       "https://raw.githubusercontent.com",

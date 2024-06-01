@@ -1,11 +1,20 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "module": "es6",
     "lib": ["es2017", "esnext.asynciterable"],
+    "outDir": "./build",
     "strict": true,
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@figma"
-    ]
-  }
+    ],
+    "allowJs": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
