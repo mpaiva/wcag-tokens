@@ -1,5 +1,7 @@
+
 # Feature: WCAG Search Plugin Filter Functionality
 
+```
 As a user of the WCAG Search Plugin,
 I want to filter the search results by version and level,
 So that I can easily find the relevant WCAG guidelines that match my criteria.
@@ -84,3 +86,5 @@ And I click the "Search" button
 Then the search results are filtered
 And searchResultText includes "(P.O.U.R principles)" after the number of guidelines found
 And only the items not without version and level are shown
+
+```
