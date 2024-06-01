@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" x-data="wcagPlugin()">
+
 <head>
   <meta charset="UTF-8">
   <title>WCAG Tokens</title>
@@ -7,54 +8,59 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/inter.css" />
 </head>
-<body class="font-sans antialiased text-gray-900 text-xs bg-gray-100">
 
+<body class="font-sans antialiased text-gray-900 text-xs bg-gray-100">
   <header class="sticky top-0 bg-gray-100">
-    <!-- Tabs -->
     <div class="pt-2">
       <div class="grid grid-cols-2 px-2 -mb-px">
-        <button @click="activeTab = 'Search Guidelines'" type="button" :class="{'text-blue-600 font-medium border-transparent': activeTab !== 'Search Guidelines', 'bg-white border-gray-300 font-semibold': activeTab === 'Search Guidelines'}"  class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Search Guidelines</button>
-        <button @click="activeTab = 'Import WCAG Tokens'" type="button" :class="{'text-blue-600 font-medium border-transparent': activeTab !== 'Import WCAG Tokens', 'bg-white border-gray-300 font-semibold': activeTab === 'Import WCAG Tokens'}"  class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Import WCAG Tokens</button>
+        <button @click="activeTab = 'Search Guidelines'" type="button"
+          :class="{'text-blue-600 font-medium border-transparent': activeTab !== 'Search Guidelines', 'bg-white border-gray-300 font-semibold': activeTab === 'Search Guidelines'}"
+          class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Search
+          Guidelines</button>
+        <button @click="activeTab = 'Import WCAG Tokens'" type="button"
+          :class="{'text-blue-600 font-medium border-transparent': activeTab !== 'Import WCAG Tokens', 'bg-white border-gray-300 font-semibold': activeTab === 'Import WCAG Tokens'}"
+          class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Import WCAG
+          Tokens</button>
       </div>
     </div>
 
-    <!-- Search Guidelines -->
     <div x-show="activeTab === 'Search Guidelines'">
       <div class="px-4 py-2 flex flex-col gap-2 bg-white border-y border-gray-300">
         <h4>Search for guidelines</h4>
         <div class="flex gap-2">
-          <input class="h-8 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 flex-1 px-3" type="text" x-model="query" x-on:keydown.enter="searchGuidelines()">
-          <button class="px-3 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded" x-on:click="searchGuidelines()">Search</button>
+          <input
+            class="h-8 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 flex-1 px-3"
+            type="text" x-model="query" x-on:keydown.enter="searchGuidelines()">
+          <button class="px-3 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded"
+            x-on:click="searchGuidelines()">Search</button>
         </div>
         <div>Try 2.5.5 or hit enter to explore.</div>
-        <!-- Network Error Message -->
+        <div x-show="isLoading" class="text-blue-600">Searching...</div>
         <div x-show="!isOnline" class="bg-red-600/20 border border-red-600/20 p-2 flex items-center gap-1 rounded">
-          <p>🤔 We're offline at the moment.</p>
+          <p>🤔 We're offline at the moment. Please check your internet connection.</p>
           <button @click="checkConnection" x-text="connectionButtonText" class="text-blue-600"></button>
         </div>
-      </div>  
+      </div>
     </div>
 
-    <!-- Import WCAG Tokens -->
     <div x-show="activeTab === 'Import WCAG Tokens'">
       <div class="px-4 py-2 flex flex-col bg-white border-y border-gray-300">
-        <button x-html="importButtonText" class="px-3 mt-4 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded" x-on:click="importWCAGTokens()"></button>
-        <p class="mt-4 mb-4"><span class="font-bold">Note:</span> These tokens suggestions help ensure accessible design decisions across various design elements,
+        <button x-html="importButtonText"
+          class="px-3 mt-4 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded"
+          x-on:click="importWCAGTokens()"></button>
+        <p class="mt-4 mb-4"><span class="font-bold">Note:</span> These tokens suggestions help ensure accessible design
+          decisions across various design elements,
           such as size, spacing, color, typography, and more.</p>
-        <!-- Import Result Message -->
         <div x-html="resultsImport"></div>
-
-        <!-- Network Error Message -->
         <div x-show="!isOnline" class="bg-red-600/20 border border-red-600/20 p-2 mt-2 flex items-center gap-1 rounded">
-          <p>🤔 We're offline at the moment.</p>
+          <p>🤔 We're offline at the moment. Please check your internet connection.</p>
           <button @click="checkConnection" x-text="connectionButtonText" class="text-blue-600"></button>
         </div>
-      </div>  
+      </div>
     </div>
   </header>
 
   <main class="pb-6">
-    <!-- Card Design -->
     <section x-show="activeTab === 'Search Guidelines'">
       <div class="flex flex-col gap-4 p-4">
         <div class="font-semibold" x-text="searchResultText"></div>
@@ -62,7 +68,8 @@
           <div class="flex flex-col gap-4">
             <template x-for="item in results" :key="item.ref_id">
               <div class="border rounded-lg border-gray-300 bg-white p-2">
-                <h2 class="font-semibold text-sm mb-1.5" x-text="`${item.ref_id} - ${item.title} ${item.level ? '(' + item.level + ')' : ''}`"></h2>
+                <h2 class="font-semibold text-sm mb-1.5"
+                  x-text="`${item.ref_id} - ${item.title} ${item.level ? '(' + item.level + ')' : ''} ${item.version ? '- ' + item.version : ''}`"></h2>
                 <p x-text="`${item.description || 'No description available'}`"></p>
                 <a class="text-blue-600" :href="item.url" target="_blank" x-text="item.url"></a>
                 <div class="mt-1.5" x-show="item.special_cases && item.special_cases.length > 0">
@@ -89,7 +96,9 @@
                     </template>
                   </ul>
                 </div>
-                <button x-show="item.level" @click="addCard(item)" class="mt-3 bg-emerald-600 text-center block p-2 text-white rounded font-semibold duration-150 hover:bg-emerald-700 w-full">Drop card</button>
+                <button x-show="item.level" @click="addCard(item)"
+                  class="mt-3 bg-emerald-600 text-center block p-2 text-white rounded font-semibold duration-150 hover:bg-emerald-700 w-full">Drop
+                  card</button>
               </div>
             </template>
           </div>
@@ -100,8 +109,9 @@
 
   <footer class="bg-white px-4 py-2 border-t border-gray-300 fixed w-full bottom-0">
     <ul class="flex items-center gap-2">
-      <li>Version 0.1.0</li>
-      <li><a class="text-blue-600" href="https://github.com/mpaiva/wcag-tokens/issues/new/choose" target="_blank">Feedback</a></li>
+      <li>Version 3.0</li>
+      <li><a class="text-blue-600" href="https://github.com/mpaiva/wcag-tokens/issues/new/choose"
+          target="_blank">Feedback</a></li>
     </ul>
   </footer>
 
@@ -111,6 +121,7 @@
         activeTab: 'Search Guidelines',
         isOnline: navigator.onLine,
         connectionButtonText: 'Try Again',
+        isLoading: false,
 
         // Search 
         query: '',
@@ -118,7 +129,7 @@
         searchResultText: '',
 
         init() {
-          fetch("https://raw.githubusercontent.com/mpaiva/wcag-tokens/main/wcag-search.json")
+          fetch("https://raw.githubusercontent.com/mpaiva/wcag-tokens/main/wcag-search-src.json")
             .then((response) => response.json())
             .then((data) => this.jsonData = data);
           window.addEventListener('online', () => this.updateOnlineStatus());
@@ -136,26 +147,69 @@
           }, 2000);
         },
 
-        searchGuidelines() {
+        async searchGuidelines() {
+          this.isLoading = true;
           this.results = this.findInJson(this.jsonData, this.query);
           this.searchResultText = `${this.results.length} guidelines found.`;
+          this.isLoading = false;
         },
         findInJson(items, query) {
           let results = [];
           const lowerCaseQuery = query.toLowerCase();
+          const isExactPhrase = lowerCaseQuery.startsWith('"') && lowerCaseQuery.endsWith('"');
+          const searchTerm = isExactPhrase ? lowerCaseQuery.slice(1, -1) : lowerCaseQuery;
+
           items.forEach((item) => {
-            if (item.ref_id.toLowerCase().includes(lowerCaseQuery) || item.title.toLowerCase().includes(lowerCaseQuery) || item.description.toLowerCase().includes(lowerCaseQuery)) {
+            const refIdMatch = item.ref_id && item.ref_id.toLowerCase().includes(searchTerm);
+            const titleMatch = item.title && item.title.toLowerCase().includes(searchTerm);
+            const descriptionMatch = item.description && item.description.toLowerCase().includes(searchTerm);
+            const urlMatch = item.url && item.url.toLowerCase().includes(searchTerm);
+            const levelMatch = item.level && item.level.toLowerCase().includes(searchTerm);
+            const versionMatch = item.version && item.version.toLowerCase().includes(searchTerm);
+
+            if (refIdMatch || titleMatch || descriptionMatch || urlMatch || levelMatch || versionMatch) {
               results.push(item);
             }
+
             if (item.guidelines) {
               results = results.concat(this.findInJson(item.guidelines, query));
             }
+
             if (item.success_criteria) {
               results = results.concat(this.findInJson(item.success_criteria, query));
             }
+
             if (item.special_cases) {
-              item.special_cases.forEach(specialCase => {
-                if (specialCase.title && specialCase.title.toLowerCase().includes(lowerCaseQuery) || specialCase.description && specialCase.description.toLowerCase().includes(lowerCaseQuery)) {
+              item.special_cases.forEach((specialCase) => {
+                const specialCaseTitleMatch = specialCase.title && specialCase.title.toLowerCase().includes(searchTerm);
+                const specialCaseDescriptionMatch = specialCase.description && specialCase.description.toLowerCase().includes(searchTerm);
+
+                if (specialCaseTitleMatch || specialCaseDescriptionMatch) {
+                  if (!results.includes(item)) {
+                    results.push(item);
+                  }
+                }
+              });
+            }
+
+            if (item.notes) {
+              item.notes.forEach((note) => {
+                const noteMatch = note.content && note.content.toLowerCase().includes(searchTerm);
+
+                if (noteMatch) {
+                  if (!results.includes(item)) {
+                    results.push(item);
+                  }
+                }
+              });
+            }
+
+            if (item.references) {
+              item.references.forEach((reference) => {
+                const referenceTitleMatch = reference.title && reference.title.toLowerCase().includes(searchTerm);
+                const referenceUrlMatch = reference.url && reference.url.toLowerCase().includes(searchTerm);
+
+                if (referenceTitleMatch || referenceUrlMatch) {
                   if (!results.includes(item)) {
                     results.push(item);
                   }
@@ -163,6 +217,7 @@
               });
             }
           });
+
           return results;
         },
         addCard(item) {
@@ -176,6 +231,7 @@
             description: item.description,
             url: item.url,
             level: item.level,
+            version: item.version,
             special_cases: item.special_cases ? item.special_cases.map(sc => ({ title: sc.title, description: sc.description })) : [],
             notes: item.notes ? item.notes.map(note => ({ content: note.content })) : [],
             references: item.references ? item.references.map(ref => ({ url: ref.url, title: ref.title })) : []
@@ -238,4 +294,5 @@
     }
   </script>
 </body>
+
 </html>
