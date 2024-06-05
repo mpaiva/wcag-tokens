@@ -3,7 +3,7 @@
     "target": "es6",
     "module": "es6",
     "lib": ["es2017", "esnext.asynciterable"],
-    "outDir": "./build",
+    "outDir": "./dist",
     "strict": true,
     "typeRoots": [
       "./node_modules/@types",
@@ -15,6 +15,6 @@
     "resolveJsonModule": true
   },
   "include": [
-    "src/**/*"
+    "src/figma-scripts/*"
   ]
 }

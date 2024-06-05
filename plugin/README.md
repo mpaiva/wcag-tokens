@@ -1,40 +1,41 @@
-Below are the steps to get your plugin running. You can also find instructions at:
+# WCAG-Tokens: Figma Plugin with Astro
 
-  https://www.figma.com/plugin-docs/plugin-quickstart-guide/
+## 🚀 Project Structure
 
-This plugin template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+Inside of your Astro project, you'll see the following folders and files:
 
-First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
-libraries. You can find the download link here:
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── figma-scripts/
+│   │   └── index.ts
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-  https://nodejs.org/en/download/
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Next, install TypeScript using the command:
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-  npm install -g typescript
+Any static assets, like images, can be placed in the `public/` directory.
 
-Finally, in the directory of your plugin, get the latest type definitions for the plugin API by running:
+## 🧞 Commands
 
-  npm install --save-dev @figma/plugin-typings
+All commands are run from the root of the project, from a terminal:
 
-If you are familiar with JavaScript, TypeScript will look very familiar. In fact, valid JavaScript code
-is already valid Typescript code.
-
-TypeScript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
-
-For more information, visit https://www.typescriptlang.org/
-
-Using TypeScript requires a compiler to convert TypeScript (code.ts) into JavaScript (code.js)
-for the browser to run.
-
-We recommend writing TypeScript code using Visual Studio code:
-
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Open this directory in Visual Studio Code.
-3. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-    then select "npm: watch". You will have to do this again every time
-    you reopen Visual Studio Code.
-
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321` -- You can check UI related changes direclty on browser |
+| `npm run build`           | Build your production site to `./dist/` -- Create build for UI and watch changes for figma-scripts  |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+ 
