@@ -1,49 +1,18 @@
-<header class="sticky top-0 bg-gray-100">
-  <div class="pt-2">
-    <div class="grid grid-cols-2 px-2 -mb-px">
-      <button @click="activeTab = 'Search Guidelines'" type="button"
-        :class="{'text-blue-600 font-medium border-transparent': activeTab !== 'Search Guidelines', 'bg-white border-gray-300 font-semibold': activeTab === 'Search Guidelines'}"
-        class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Search
-        Guidelines</button>
-      <button @click="activeTab = 'Import WCAG Tokens'" type="button"
-        :class="{'text-blue-600 font-medium border-transparent': activeTab !== 'Import WCAG Tokens', 'bg-white border-gray-300 font-semibold': activeTab === 'Import WCAG Tokens'}"
-        class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Import WCAG
-        Tokens</button>
-    </div>
+---
+import Tabs from './Tabs.astro';
+import SearchGuidelines from './guidelines/Search.astro';
+import ImportWCAGTokens from './ImportWCAGTokens.astro';
+---
+
+<header x-data class="sticky top-0 bg-gray-100">
+  <Tabs />
+
+  <div x-show="$store.tabs.activeTab === 'Search Guidelines'">
+    <SearchGuidelines />
   </div>
 
-  <div x-show="activeTab === 'Search Guidelines'">
-    <div class="px-4 py-2 flex flex-col gap-2 bg-white border-y border-gray-300">
-      <h4>Search for guidelines</h4>
-      <div class="flex gap-2">
-        <input
-          class="h-8 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 flex-1 px-3"
-          type="text" x-model="query" x-on:keydown.enter="searchGuidelines()">
-        <button class="px-3 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded"
-          x-on:click="searchGuidelines()">Search</button>
-      </div>
-      <div>Try 2.5.5 or hit enter to explore.</div>
-      <div x-show="isLoading" class="text-blue-600">Searching...</div>
-      <div x-show="!isOnline" class="bg-red-600/20 border border-red-600/20 p-2 flex items-center gap-1 rounded">
-        <p>🤔 We're offline at the moment. Please check your internet connection.</p>
-        <button @click="checkConnection" x-text="connectionButtonText" class="text-blue-600"></button>
-      </div>
-    </div>
-  </div>
-
-  <div x-show="activeTab === 'Import WCAG Tokens'">
-    <div class="px-4 py-2 flex flex-col bg-white border-y border-gray-300">
-      <button x-html="importButtonText"
-        class="px-3 mt-4 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded"
-        x-on:click="importWCAGTokens()"></button>
-      <p class="mt-4 mb-4"><span class="font-bold">Note:</span> These tokens suggestions help ensure accessible design
-        decisions across various design elements,
-        such as size, spacing, color, typography, and more.</p>
-      <div x-html="resultsImport"></div>
-      <div x-show="!isOnline" class="bg-red-600/20 border border-red-600/20 p-2 mt-2 flex items-center gap-1 rounded">
-        <p>🤔 We're offline at the moment. Please check your internet connection.</p>
-        <button @click="checkConnection" x-text="connectionButtonText" class="text-blue-600"></button>
-      </div>
-    </div>
+  <div x-show="$store.tabs.activeTab === 'Import WCAG Tokens'">
+    <ImportWCAGTokens />
   </div>
 </header>
+

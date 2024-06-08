@@ -1,0 +1,60 @@
+---
+import Network from './Network.astro';
+---
+  
+<div x-data="importWCAGTokens()" class="px-4 pt-2 pb-4 flex flex-col bg-white border-y border-gray-300">
+  <button x-html="importButtonText"
+    class="px-3 mt-4 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded"
+    x-on:click="importWCAGTokens()"></button>
+  <p class="mt-4 mb-2"><span class="font-bold">Note:</span> These tokens suggestions help ensure accessible design
+    decisions across various design elements,
+    such as size, spacing, color, typography, and more.</p>
+  <div x-html="resultsImport"></div>
+  <Network />
+</div>
+
+
+
+<script is:inline>
+  const wcagTokensUrl = "https://raw.githubusercontent.com/mpaiva/wcag-tokens/main/wcag-tokens.json";
+
+  document.addEventListener("alpine:init", () => {
+    Alpine.data('importWCAGTokens', () => ({
+      resultsImport: '',
+      importButtonText: 'Import tokens as variables',
+  
+      importWCAGTokens() {
+        this.resultsImport = '';
+        this.importButtonText = 'Loading tokens...';
+        fetch(wcagTokensUrl)
+          .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch WCAG tokens');
+            return response.json();
+          })
+          .then(json => {
+            parent.postMessage({
+              pluginMessage: {
+                type: 'import-files',
+                files: [{ name: 'wcag-tokens.json', content: JSON.stringify(json) }]
+              }
+            }, '*');
+            this.resultsImport = '<p class="p-2 mt-2 border-emerald-600/20 border bg-emerald-600/20 rounded">🎉 Successfully imported tokens.</p>';
+            setTimeout(() => {
+              this.resultsImport = '';
+            }, 5000);
+          })
+          .catch(error => {
+            console.error('Failed to load WCAG tokens:', error);
+            this.resultsImport = `<p class="p-2 mt-2 border-red-600/20 border bg-red-600/20 rounded">🤔 Error while importing tokens.</p>`;
+            setTimeout(() => {
+              this.resultsImport = '';
+            }, 5000);
+          })
+          .finally(() => {
+            this.importButtonText = 'Import tokens as variables';
+          });
+      }
+    }));
+  });
+  </script>
+  

@@ -1,0 +1,20 @@
+<div x-data class="pt-2">
+  <div class="grid grid-cols-2 px-2 -mb-px">
+    <button @click="$store.tabs.activeTab = 'Search Guidelines'" type="button"
+      :class="{'text-blue-600 font-medium border-transparent': $store.tabs.activeTab !== 'Search Guidelines', 'bg-white border-gray-300 font-semibold': $store.tabs.activeTab === 'Search Guidelines'}"
+      class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Search
+      Guidelines</button>
+    <button @click="$store.tabs.activeTab = 'Import WCAG Tokens'" type="button"
+      :class="{'text-blue-600 font-medium border-transparent': $store.tabs.activeTab !== 'Import WCAG Tokens', 'bg-white border-gray-300 font-semibold': $store.tabs.activeTab === 'Import WCAG Tokens'}"
+      class="pt-3 pb-2 text-center transition-colors duration-150 border border-b-0 rounded-t-lg">Import WCAG
+      Tokens</button>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('tabs', {
+      activeTab: 'Search Guidelines'
+    });
+  });
+</script>

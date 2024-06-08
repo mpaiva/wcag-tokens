@@ -3,18 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>WCAG Tokens</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="generator" content={Astro.generator} />
 	<script is:inline src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/inter.css" />
 </head>
  
-	<body x-data="wcagPlugin()" class="font-sans antialiased text-gray-900 text-xs bg-gray-100">
+	<body class="font-sans antialiased text-gray-900 text-xs bg-gray-100">
 		<slot />
 	</body>
 
-	<script>
-		import "../scripts/wcagPlugin.js";
-		import "../scripts/tailwindConfig.js";
+	 <!-- Tailwind Config Code -->
+	 <script is:inline>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: {
+						sans: ['Inter', 'sans-serif'],
+					},
+					colors: {
+						"blue-600": "#0454A3",
+						"blue-700": "#03407B",
+						"emerald-600": "#18834B",
+						"emerald-700": "#0E6B3B",
+						"red-600": "#FF9999",
+					},
+				}
+			}
+		}
 	 </script>
 	 <script is:inline src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </html>
