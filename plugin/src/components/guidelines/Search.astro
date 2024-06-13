@@ -18,7 +18,13 @@ import Filters from './Filters.astro';
   </div>
   <div>Try 2.5.5 or hit enter to explore.</div>
 	<Filters />
-  <button class="px-3 py-2 font-semibold text-white bg-blue-600 duration-150 hover:bg-blue-700 rounded" x-on:click="$store.guidelines.searchGuidelines()">Search</button>
+	<div class="flex items-center gap-2">
+		<button class="px-3 py-2 flex-1 font-semibold ring-1 text-white bg-blue-600 ring-blue-600 hover:ring-blue-700 duration-150 hover:bg-blue-700 rounded" x-on:click="$store.guidelines.searchGuidelines()">Search</button>
+		<div x-show="$store.guidelines.filterCount > 0" class="flex-1">
+			<button class="px-3 py-2 w-full font-semibold ring-1 duration-150 rounded text-gray-900 ring-gray-900 hover:bg-gray-900 hover:text-white" x-on:click="$store.guidelines.resetFilters()">Reset</button>
+		</div>
+	</div>
+  
   <div x-show="$store.guidelines.isLoading" class="text-blue-600 flex-shrink-0">Searching...</div>
   <Network />
 </div>
@@ -42,6 +48,12 @@ import Filters from './Filters.astro';
 					// Computed property for counting filters
 					get filterCount() {
 						return this.selectedVersions.length + this.selectedLevels.length;
+					},
+
+					// Reset Filters
+					resetFilters() {
+						this.selectedVersions = [];
+						this.selectedLevels = [];
 					},
 					
           // Fetch guidelines data
