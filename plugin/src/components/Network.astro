@@ -1,0 +1,27 @@
+  <div x-data x-show="$store.network.isOnline === false" class="bg-red-600/20 border border-red-600/20 mt-2 p-2 flex items-center gap-1 rounded">
+    <p>🤔 We're offline at the moment. Please check your internet connection.</p>
+    <button @click="$store.network.checkConnection()" x-text="$store.network.connectionButtonText" class="text-blue-600 flex-shrink-0"></button>
+  </div>
+
+	<!-- Apline Code -->
+	<script is:inline>
+    document.addEventListener("alpine:init", () => {
+      Alpine.store('network', {
+        isOnline: navigator.onLine,
+        connectionButtonText: 'Try Again',
+        updateOnlineStatus() {
+          this.isOnline = navigator.onLine;
+        },
+        checkConnection() {
+          this.connectionButtonText = 'Trying...';
+          setTimeout(() => {
+            this.updateOnlineStatus();
+            this.connectionButtonText = 'Try Again';
+          }, 2000);
+        }
+      });
+
+      window.addEventListener('online', () => Alpine.store('network').updateOnlineStatus());
+      window.addEventListener('offline', () => Alpine.store('network').updateOnlineStatus());
+    });
+ </script>

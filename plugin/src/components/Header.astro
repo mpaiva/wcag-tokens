@@ -1,0 +1,18 @@
+---
+import Tabs from './Tabs.astro';
+import SearchGuidelines from './guidelines/Search.astro';
+import ImportWCAGTokens from './ImportWCAGTokens.astro';
+---
+
+<header x-data class="sticky top-0 bg-gray-100">
+  <Tabs />
+
+  <div x-show="$store.tabs.activeTab === 'Search Guidelines'">
+    <SearchGuidelines />
+  </div>
+
+  <div x-show="$store.tabs.activeTab === 'Import WCAG Tokens'">
+    <ImportWCAGTokens />
+  </div>
+</header>
+

@@ -1,0 +1,48 @@
+<div x-show="$store.guidelines.showFilters" class="flex flex-col pt-2">
+  <div class="flex flex-col">
+    <h4 class="font-bold">Version:</h4>
+    <ul class="flex">
+      <li>
+        <label class="p-2 flex gap-2 align-items-center cursor-pointer">
+            <input x-model="$store.guidelines.selectedVersions" class="cursor-pointer accent-blue-600" type="checkbox" value="WCAG 2.0">
+            <span>2.0</span>
+        </label>
+      </li>
+      <li>
+        <label class="p-2 flex gap-2 align-items-center cursor-pointer">
+            <input x-model="$store.guidelines.selectedVersions" class="cursor-pointer accent-blue-600" type="checkbox" value="WCAG 2.1">
+            <span>2.1</span>
+        </label>
+      </li>
+      <li>
+        <label class="p-2 flex gap-2 align-items-center cursor-pointer">
+            <input x-model="$store.guidelines.selectedVersions" class="cursor-pointer accent-blue-600" type="checkbox" value="WCAG 2.2">
+            <span>2.2</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="flex flex-col">
+    <h4 class="font-bold">Level:</h4>
+    <ul class="flex">
+      <li>
+        <label class="p-2 flex gap-2 align-items-center cursor-pointer">
+            <input x-model="$store.guidelines.selectedLevels" class="cursor-pointer accent-blue-600" type="checkbox" value="A">
+            <span>A</span>
+        </label>
+      </li>
+      <li>
+        <label class="p-2 flex gap-2 align-items-center cursor-pointer">
+            <input x-model="$store.guidelines.selectedLevels" class="cursor-pointer accent-blue-600" type="checkbox" value="AA">
+            <span>AA</span>
+        </label>
+      </li>
+      <li>
+        <label class="p-2 flex gap-2 align-items-center cursor-pointer">
+            <input x-model="$store.guidelines.selectedLevels" class="cursor-pointer accent-blue-600" type="checkbox" value="AAA">
+            <span>AAA</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>

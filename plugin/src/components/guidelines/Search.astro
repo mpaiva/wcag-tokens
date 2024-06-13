@@ -1,0 +1,169 @@
+---
+import Network from '../Network.astro';
+import Filters from './Filters.astro';
+---
+
+<div x-data class="px-4 pt-2 pb-4 flex flex-col gap-2 bg-white border-y border-gray-300">
+  <h4 class="font-bold">Search for guidelines</h4>
+  <div class="flex gap-2">
+    <input
+      class="h-8 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 flex-1 px-3"
+      type="text" x-model="$store.guidelines.query" x-on:keydown.enter="$store.guidelines.searchGuidelines()">
+      <button
+      class="px-3 py-1.5 font-semibold border duration-150 rounded group"
+      :class="$store.guidelines.showFilters ? 'bg-gray-900 text-white border-gray-900' : 'text-gray-900 border-gray-900 hover:bg-gray-900 hover:text-white'"
+      x-on:click="$store.guidelines.showFilters = !$store.guidelines.showFilters">
+      <span class="flex items-center gap-1" x-html="$store.guidelines.showFilters ? 'Hide Filters' : `Show Filters ${$store.guidelines.filterCount > 0 ? `<span class=\'size-3 rounded-full text-[10px] text-white bg-gray-900 group-hover:bg-white group-hover:text-gray-900 duration-150 text-semibold items-center justify-center flex\'>${$store.guidelines.filterCount}</span>` : ''}`"></span>
+    </button>
+  </div>
+  <div>Try 2.5.5 or hit enter to explore.</div>
+	<Filters />
+	<div class="flex items-center gap-2">
+		<button class="px-3 py-2 flex-1 font-semibold ring-1 text-white bg-blue-600 ring-blue-600 hover:ring-blue-700 duration-150 hover:bg-blue-700 rounded" x-on:click="$store.guidelines.searchGuidelines()">Search</button>
+		<div x-show="$store.guidelines.filterCount > 0" class="flex-1">
+			<button class="px-3 py-2 w-full font-semibold ring-1 duration-150 rounded text-gray-900 ring-gray-900 hover:bg-gray-900 hover:text-white" x-on:click="$store.guidelines.resetFilters()">Reset</button>
+		</div>
+	</div>
+  
+  <div x-show="$store.guidelines.isLoading" class="text-blue-600 flex-shrink-0">Searching...</div>
+  <Network />
+</div>
+
+
+<script is:inline>
+  const wcagSearchUrl = "https://raw.githubusercontent.com/mpaiva/wcag-tokens/main/wcag-search-src.json";
+
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('guidelines', {
+          // State variables
+					isLoading: false,
+					query: '',
+					results: [],
+					searchResultText: '',
+					selectedVersions: [],
+					selectedLevels: [],
+					jsonData: [],
+					showFilters: false,
+
+					// Computed property for counting filters
+					get filterCount() {
+						return this.selectedVersions.length + this.selectedLevels.length;
+					},
+
+					// Reset Filters
+					resetFilters() {
+						this.selectedVersions = [];
+						this.selectedLevels = [];
+					},
+					
+          // Fetch guidelines data
+					fetchGuidelinesData() {
+						fetch(wcagSearchUrl)
+							.then(response => response.json())
+							.then(data => {
+								this.jsonData = data;
+							})
+							.catch(error => console.error('Error fetching data:', error));
+					},
+
+          // Search guidelines functionality
+					async searchGuidelines() {
+						this.isLoading = true;
+						this.results = this.findInJson(this.jsonData, this.query, [...this.selectedVersions], [...this.selectedLevels]);
+						this.searchResultText = `${this.results.length} guidelines found.`;
+						this.isLoading = false;
+					},
+
+          // Find guidelines in JSON data
+					findInJson(items, query, versions, levels) {
+						let results = [];
+						const lowerCaseQuery = query.toLowerCase();
+						const isExactPhrase = lowerCaseQuery.startsWith('"') && lowerCaseQuery.endsWith('"');
+						const searchTerm = isExactPhrase ? lowerCaseQuery.slice(1, -1) : lowerCaseQuery;
+
+						items.forEach(item => {
+							const refIdMatch = item.ref_id && item.ref_id.toLowerCase().includes(searchTerm);
+							const titleMatch = item.title && item.title.toLowerCase().includes(searchTerm);
+							const descriptionMatch = item.description && item.description.toLowerCase().includes(searchTerm);
+							const urlMatch = item.url && item.url.toLowerCase().includes(searchTerm);
+							const levelMatch = item.level && item.level.toLowerCase().includes(searchTerm);
+							const versionMatch = item.version && item.version.toLowerCase().includes(searchTerm);
+
+							const filterLevelMatch = levels.length === 0 || (item.level && levels.includes(item.level));
+							const filterVersionMatch = versions.length === 0 || (item.version && versions.includes(item.version));
+
+							// Search term match and filter match
+							if ((refIdMatch || titleMatch || descriptionMatch || urlMatch || levelMatch || versionMatch) && filterLevelMatch && filterVersionMatch) {
+								results.push(item);
+							}
+
+							// Recursively check nested structures for guidelines
+							if (item.guidelines) {
+								results = results.concat(this.findInJson(item.guidelines, query, versions, levels).filter(subItem => {
+									const subItemFilterLevelMatch = levels.length === 0 || (subItem.level && levels.includes(subItem.level));
+									const subItemFilterVersionMatch = versions.length === 0 || (subItem.version && versions.includes(subItem.version));
+									return subItemFilterLevelMatch && subItemFilterVersionMatch;
+								}));
+							}
+
+							// Recursively check nested structures for success criteria
+							if (item.success_criteria) {
+								results = results.concat(this.findInJson(item.success_criteria, query, versions, levels).filter(subItem => {
+									const subItemFilterLevelMatch = levels.length === 0 || (subItem.level && levels.includes(subItem.level));
+									const subItemFilterVersionMatch = versions.length === 0 || (subItem.version && versions.includes(subItem.version));
+									return subItemFilterLevelMatch && subItemFilterVersionMatch;
+								}));
+							}
+
+							// Recursively check nested structures for special cases
+							if (item.special_cases) {
+								item.special_cases.forEach(specialCase => {
+									const specialCaseTitleMatch = specialCase.title && specialCase.title.toLowerCase().includes(searchTerm);
+									const specialCaseDescriptionMatch = specialCase.description && specialCase.description.toLowerCase().includes(searchTerm);
+
+									if ((specialCaseTitleMatch || specialCaseDescriptionMatch) && filterLevelMatch && filterVersionMatch) {
+										if (!results.includes(item)) {
+											results.push(item);
+										}
+									}
+								});
+							}
+
+							// Recursively check nested structures for notes
+							if (item.notes) {
+								item.notes.forEach(note => {
+									const noteMatch = note.content && note.content.toLowerCase().includes(searchTerm);
+
+									if (noteMatch) {
+										if (!results.includes(item)) {
+											results.push(item);
+										}
+									}
+								});
+							}
+
+							// Recursively check nested structures for references
+							if (item.references) {
+								item.references.forEach(reference => {
+									const referenceTitleMatch = reference.title && reference.title.toLowerCase().includes(searchTerm);
+									const referenceUrlMatch = reference.url && reference.url.toLowerCase().includes(searchTerm);
+
+									if (referenceTitleMatch || referenceUrlMatch) {
+										if (!results.includes(item)) {
+											results.push(item);
+										}
+									}
+								});
+							}
+						});
+
+						return results;
+					},
+
+					// Initialization function
+					init() {
+						this.fetchGuidelinesData();
+					},
+    });
+  });
+  </script>

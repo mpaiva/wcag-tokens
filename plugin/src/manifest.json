@@ -1,0 +1,20 @@
+{
+  "name": "WCAG Plugin",
+  "id": "1373362852131056921",
+  "api": "1.0.0",
+  "main": "index.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "index.html",
+  "networkAccess": {
+    "allowedDomains": [
+      "https://raw.githubusercontent.com",
+      "https://cdn.jsdelivr.net",
+      "https://cdn.tailwindcss.com"
+    ]
+  }
+}
