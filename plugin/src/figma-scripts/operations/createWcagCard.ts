@@ -139,48 +139,6 @@ export async function createWcagCard(item: WCAGItem) {
     });
     frame.appendChild(urlText);
 
-    if (item.references && item.references.length > 0) {
-      const referencesFrame = figma.createFrame();
-      referencesFrame.name = "References Container";
-      referencesFrame.layoutMode = "VERTICAL";
-      referencesFrame.primaryAxisSizingMode = "AUTO";
-      referencesFrame.counterAxisSizingMode = "AUTO";
-      referencesFrame.paddingTop = PADDING.large;
-      referencesFrame.itemSpacing = 3;
-      referencesFrame.clipsContent = true;
-      referencesFrame.fills = [
-        { type: "SOLID", color: hexToRgbFigma(COLORS.base) },
-      ];
-
-      const referencesTitle = await createText("References", {
-        fontWeight: FONT_WEIGHT.bold,
-        fontSize: FONT_SIZES.medium,
-        color: COLORS.text,
-        lineHeight: LINE_HEIGHTS.medium,
-      });
-      referencesFrame.appendChild(referencesTitle);
-
-      for (const reference of item.references) {
-        const referenceTitleText = await createText(reference.title, {
-          fontWeight: FONT_WEIGHT.bold,
-          fontSize: FONT_SIZES.small,
-          color: COLORS.text,
-          lineHeight: LINE_HEIGHTS.small,
-        });
-        referencesFrame.appendChild(referenceTitleText);
-
-        const referenceUrlText = await createText(reference.url, {
-          fontWeight: FONT_WEIGHT.regular,
-          fontSize: FONT_SIZES.small,
-          color: COLORS.link,
-          lineHeight: LINE_HEIGHTS.small,
-        });
-        referencesFrame.appendChild(referenceUrlText);
-      }
-
-      frame.appendChild(referencesFrame);
-    }
-
     if (item.notes && item.notes.length > 0) {
       const notesFrame = figma.createFrame();
       notesFrame.name = "Notes Container";
@@ -249,6 +207,49 @@ export async function createWcagCard(item: WCAGItem) {
 
       frame.appendChild(specialCasesFrame);
     }
+
+    if (item.references && item.references.length > 0) {
+      const referencesFrame = figma.createFrame();
+      referencesFrame.name = "References Container";
+      referencesFrame.layoutMode = "VERTICAL";
+      referencesFrame.primaryAxisSizingMode = "AUTO";
+      referencesFrame.counterAxisSizingMode = "AUTO";
+      referencesFrame.paddingTop = PADDING.large;
+      referencesFrame.itemSpacing = 3;
+      referencesFrame.clipsContent = true;
+      referencesFrame.fills = [
+        { type: "SOLID", color: hexToRgbFigma(COLORS.base) },
+      ];
+
+      const referencesTitle = await createText("References", {
+        fontWeight: FONT_WEIGHT.bold,
+        fontSize: FONT_SIZES.medium,
+        color: COLORS.text,
+        lineHeight: LINE_HEIGHTS.medium,
+      });
+      referencesFrame.appendChild(referencesTitle);
+
+      for (const reference of item.references) {
+        const referenceTitleText = await createText(reference.title, {
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZES.small,
+          color: COLORS.text,
+          lineHeight: LINE_HEIGHTS.small,
+        });
+        referencesFrame.appendChild(referenceTitleText);
+
+        const referenceUrlText = await createText(reference.url, {
+          fontWeight: FONT_WEIGHT.regular,
+          fontSize: FONT_SIZES.small,
+          color: COLORS.link,
+          lineHeight: LINE_HEIGHTS.small,
+        });
+        referencesFrame.appendChild(referenceUrlText);
+      }
+
+      frame.appendChild(referencesFrame);
+    }
+
 
     component.appendChild(frame);
     component.resize(frame.width, frame.height);
